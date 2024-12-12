@@ -6,84 +6,9 @@
     <title data-i18n="title">Sytze Simonse | Tech & AI Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="translations.js"></script>
-    <style>
-        :root {
-            --background-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --primary-color: #8ecae6;
-            --secondary-color: #219ebc;
-            --hover-color: #023047;
-        }
-        
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-size: 1.125rem;
-        }
-
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(120deg, #1a1a1a, #1f2937);
-            opacity: 0.7;
-        }
-
-        .gradient-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(142, 202, 230, 0.05), transparent);
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .mission-statement {
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-            animation: fadeIn 1.5s ease-in forwards;
-            animation-delay: 0.5s;
-        }
-
-        .link-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .link-button:hover {
-            color: var(--secondary-color);
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            padding: 1rem;
-            background: rgba(26, 26, 26, 0.8);
-            backdrop-filter: blur(5px);
-        }
-    </style>
 </head>
 <body>
     <div class="gradient-bg"></div>
@@ -112,9 +37,18 @@
             <div class="contact-box p-6 mt-8">
                 <p id="location" class="mb-4"></p>
                 <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">✉️ <span id="email"></span></a>
-                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">👥 <span id="linkedin"></span></a>
-                    <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">💻 <span id="github"></span></a>
+                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="contact.email"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fab fa-linkedin"></i>
+                        <span data-i18n="contact.linkedin"></span>
+                    </a>
+                    <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fab fa-github"></i>
+                        <span data-i18n="contact.github"></span>
+                    </a>
                 </div>
             </div>
         </div>
