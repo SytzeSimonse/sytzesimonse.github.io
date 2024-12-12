@@ -6,7 +6,7 @@ class OrbAnimation {
         this.mouseY = 0;
         this.orbX = 0;
         this.orbY = 0;
-        this.easing = 0.1;
+        this.easing = 0.05;
         this.lastMouseMoveTime = Date.now();
         this.isAutonomous = false;
         this.targetX = 0;
