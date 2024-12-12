@@ -32,13 +32,18 @@ body {
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    margin-bottom: 2rem;
     box-shadow: 0 0 20px rgba(142, 202, 230, 0.2);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.profile-photo:hover {
+    filter: grayscale(0%);
 }
 
 .gradient-bg {
