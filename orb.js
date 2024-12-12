@@ -7,6 +7,9 @@ class OrbAnimation {
         this.orbX = 0;
         this.orbY = 0;
         this.easing = 0.1;
+        this.lastMouseMoveTime = Date.now();
+        this.isAutonomous = false;
+        this.autonomousAngle = 0;
         
         this.init();
     }
@@ -17,6 +20,8 @@ class OrbAnimation {
         document.addEventListener('mousemove', (e) => {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
+            this.lastMouseMoveTime = Date.now();
+            this.isAutonomous = false;
         });
         this.animate();
     }
@@ -27,9 +32,28 @@ class OrbAnimation {
     }
 
     drawOrb() {
-        // Smooth movement towards mouse position
-        this.orbX += (this.mouseX - this.orbX) * this.easing;
-        this.orbY += (this.mouseY - this.orbY) * this.easing;
+        const currentTime = Date.now();
+        if (currentTime - this.lastMouseMoveTime > 7000) {
+            this.isAutonomous = true;
+        }
+
+        if (this.isAutonomous) {
+            // Circular autonomous movement
+            const centerX = this.canvas.width / 2;
+            const centerY = this.canvas.height / 2;
+            const radius = 100;
+            
+            this.autonomousAngle += 0.02;
+            const targetX = centerX + Math.cos(this.autonomousAngle) * radius;
+            const targetY = centerY + Math.sin(this.autonomousAngle) * radius;
+            
+            this.orbX += (targetX - this.orbX) * this.easing;
+            this.orbY += (targetY - this.orbY) * this.easing;
+        } else {
+            // Normal mouse following behavior
+            this.orbX += (this.mouseX - this.orbX) * this.easing;
+            this.orbY += (this.mouseY - this.orbY) * this.easing;
+        }
 
         // Create gradient
         const gradient = this.ctx.createRadialGradient(
