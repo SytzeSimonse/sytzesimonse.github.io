@@ -6,6 +6,7 @@
     <title>Sytze Simonse | Tech & AI Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
     <style>
         :root {
             --background-color: #1a1a1a;
@@ -88,7 +89,7 @@
     <div class="gradient-bg"></div>
     
     <nav class="fixed top-0 right-0 p-4">
-        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors">
+        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors" data-i18n="langToggle">
             EN | NL
         </button>
     </nav>
@@ -96,17 +97,16 @@
     <div class="container max-w-3xl mx-auto px-6 min-h-screen flex flex-col justify-center items-center py-16">
         <div class="text-center space-y-8 fade-in">
             <div class="text-lg md:text-xl mb-12 space-y-6" id="bio">
+                <p data-i18n="bio.intro"></p>
+                <p data-i18n="bio.background"></p>
                 <p>
-                    Hi! I'm Sytze Simonse, a tech specialist 🚀 with a passion for education and knowledge sharing 📚. 
-                    With a background in Geo-Information Sciences (GIS) and experience in digital transformation, I specialize in making complex technical concepts clear and accessible for everyone.
-                </p>
-                <p>
-                    Together with Kamiel Verhelst, I founded the <a href="/ai-learning-lab.html" class="text-primary-color hover:text-secondary-color transition-colors">AI Learning Lab</a>, where we guide and support organizations in implementing AI responsibly and effectively.
+                    <span data-i18n="bio.aiLab"></span>
+                    <a href="/ai-learning-lab.html" class="text-primary-color hover:text-secondary-color transition-colors">AI Learning Lab</a>
                 </p>
             </div>
 
             <div class="mission-statement text-xl md:text-2xl mb-12 px-4">
-                "My mission is to democratize technological advancement, ensuring that innovation serves all." 🌟
+                "<span data-i18n="mission"></span>" 🌟
             </div>
 
             <div class="contact-box p-6 mt-8">
@@ -121,37 +121,31 @@
     </div>
 
     <script>
-        const translations = {
-            en: {
-                bio: `Hi! I'm Sytze Simonse, a tech specialist 🚀 with a passion for education and knowledge sharing 📚. 
-                    With a background in Geo-Information Sciences (GIS) and experience in digital transformation, I specialize in making complex technical concepts clear and accessible for everyone.
-                    
-                    Together with Kamiel Verhelst, I founded the AI Learning Lab, where we guide and support organizations in implementing AI responsibly and effectively.`,
-                mission: "My mission is to democratize technological advancement, ensuring that innovation serves all. 🌟",
-                footer: "📍 Based in Rotterdam, Netherlands | 🌐 Product Lead @ Digital Transformation"
-            },
-            nl: {
-                bio: `Hoi! Ik ben Sytze Simonse, een techneut 🚀 met een passie voor onderwijs en kennisdeling 📚. 
-                    Met een achtergrond in Geo-Information Sciences (GIS) en ervaring in digitale transformatie, ben ik gespecialiseerd in het helder en toegankelijk maken van complexe technische concepten.
-                    
-                    Samen met Kamiel Verhelst heb ik het AI Learning Lab opgericht, waar we organisaties begeleiden bij het verantwoord en effectief implementeren van AI.`,
-                mission: "Mijn missie is om technologische vooruitgang te democratiseren, zodat innovatie voor iedereen toegankelijk is. 🌟",
-                footer: "📍 Gevestigd in Rotterdam | 🌐 Product Lead @ Digital Transformation"
-            }
-        };
-
         let currentLang = 'en';
+
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = translations[currentLang];
+                for (const k of keys) {
+                    value = value[k];
+                }
+                element.textContent = value;
+            });
+        }
 
         document.getElementById('langToggle').addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'nl' : 'en';
+            document.documentElement.lang = currentLang;
             updateContent();
         });
 
-        function updateContent() {
-            document.getElementById('bio').innerHTML = translations[currentLang].bio.split('\n').map(p => `<p>${p.trim()}</p>`).join('');
-            document.querySelector('.mission-statement').textContent = `"${translations[currentLang].mission}"`;
-            document.querySelector('footer p').textContent = translations[currentLang].footer;
-        }
+        // Initialize content when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.documentElement.lang = currentLang;
+            updateContent();
+        });
     </script>
 </body>
 </html>
