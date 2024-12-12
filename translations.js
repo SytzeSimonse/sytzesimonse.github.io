@@ -11,7 +11,8 @@ const translations = {
             location: "📍 Rotterdam, Netherlands",
             email: "Email",
             linkedin: "LinkedIn",
-            github: "GitHub"
+            github: "GitHub",
+            kvk: "KVK: 85266256"
         },
         langToggle: "EN | NL"
     },
@@ -27,7 +28,8 @@ const translations = {
             location: "📍 Rotterdam",
             email: "E-mail",
             linkedin: "LinkedIn",
-            github: "GitHub"
+            github: "GitHub",
+            kvk: "KVK: 85266256"
         },
         langToggle: "NL | EN"
     }
