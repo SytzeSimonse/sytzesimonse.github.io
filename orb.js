@@ -55,9 +55,19 @@ class OrbAnimation {
                 this.wanderTimer = 0;
             }
             
-            // Move towards the current target
-            this.orbX += (this.targetX - this.orbX) * this.easing;
-            this.orbY += (this.targetY - this.orbY) * this.easing;
+            // Calculate direction vector
+            const dx = this.targetX - this.orbX;
+            const dy = this.targetY - this.orbY;
+            
+            // Calculate distance
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance > 1) {  // Only move if we're not already at the target
+                // Normalize direction and apply constant speed
+                const speed = 2;  // Pixels per frame
+                this.orbX += (dx / distance) * speed;
+                this.orbY += (dy / distance) * speed;
+            }
         } else {
             // Normal mouse following behavior
             this.orbX += (this.mouseX - this.orbX) * this.easing;
