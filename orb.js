@@ -9,7 +9,9 @@ class OrbAnimation {
         this.easing = 0.1;
         this.lastMouseMoveTime = Date.now();
         this.isAutonomous = false;
-        this.autonomousAngle = 0;
+        this.targetX = 0;
+        this.targetY = 0;
+        this.wanderTimer = 0;
         
         this.init();
     }
@@ -22,6 +24,10 @@ class OrbAnimation {
             this.mouseY = e.clientY;
             this.lastMouseMoveTime = Date.now();
             this.isAutonomous = false;
+            // Set initial target to current position when stopping autonomous mode
+            this.targetX = this.orbX;
+            this.targetY = this.orbY;
+            this.wanderTimer = 0;
         });
         this.animate();
     }
@@ -38,17 +44,20 @@ class OrbAnimation {
         }
 
         if (this.isAutonomous) {
-            // Circular autonomous movement
-            const centerX = this.canvas.width / 2;
-            const centerY = this.canvas.height / 2;
-            const radius = 100;
+            // Random wandering movement
+            this.wanderTimer++;
             
-            this.autonomousAngle += 0.02;
-            const targetX = centerX + Math.cos(this.autonomousAngle) * radius;
-            const targetY = centerY + Math.sin(this.autonomousAngle) * radius;
+            // Pick a new random target every 100 frames
+            if (this.wanderTimer >= 100) {
+                const padding = 100; // Keep orb away from edges
+                this.targetX = padding + Math.random() * (this.canvas.width - 2 * padding);
+                this.targetY = padding + Math.random() * (this.canvas.height - 2 * padding);
+                this.wanderTimer = 0;
+            }
             
-            this.orbX += (targetX - this.orbX) * this.easing;
-            this.orbY += (targetY - this.orbY) * this.easing;
+            // Move towards the current target
+            this.orbX += (this.targetX - this.orbX) * this.easing;
+            this.orbY += (this.targetY - this.orbY) * this.easing;
         } else {
             // Normal mouse following behavior
             this.orbX += (this.mouseX - this.orbX) * this.easing;
