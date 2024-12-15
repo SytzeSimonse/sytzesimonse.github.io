@@ -77,10 +77,10 @@ class OrbAnimation {
         // Create gradient
         const gradient = this.ctx.createRadialGradient(
             this.orbX, this.orbY, 0,
-            this.orbX, this.orbY, 30
+            this.orbX, this.orbY, 50
         );
-        gradient.addColorStop(0, 'rgba(142, 202, 230, 0.3)');
-        gradient.addColorStop(0.5, 'rgba(142, 202, 230, 0.1)');
+        gradient.addColorStop(0, 'rgba(142, 202, 230, 0.5)');
+        gradient.addColorStop(0.5, 'rgba(142, 202, 230, 0.2)');
         gradient.addColorStop(1, 'rgba(142, 202, 230, 0)');
 
         // Clear previous frame
@@ -89,7 +89,7 @@ class OrbAnimation {
         // Draw orb
         this.ctx.beginPath();
         this.ctx.fillStyle = gradient;
-        this.ctx.arc(this.orbX, this.orbY, 30, 0, Math.PI * 2);
+        this.ctx.arc(this.orbX, this.orbY, 50, 0, Math.PI * 2);
         this.ctx.fill();
     }
 
