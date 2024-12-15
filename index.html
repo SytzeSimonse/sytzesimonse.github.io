@@ -23,18 +23,18 @@
     </nav>
 
     <div class="container max-w-6xl mx-auto px-6 h-screen flex items-center">
-        <div class="grid grid-cols-5 gap-8 fade-in">
-            <div class="flex justify-center items-center col-span-2">
-                <img src="profile_photo.jpeg" alt="Sytze Simonse" class="profile-photo">
-            </div>
-            <div class="text-left space-y-8 col-span-3">
-                <div class="text-lg md:text-xl space-y-6" id="bio">
+        <div class="flex flex-col items-center gap-8 fade-in">
+            <div class="text-lg md:text-xl space-y-6 max-w-3xl" id="bio">
                 <p data-i18n="bio.intro"></p>
                 <p data-i18n="bio.background"></p>
-                <p data-i18n="bio.aiLab"></p>
+                <p><span data-i18n="bio.aiLab"></span> <a href="ai-learning-lab.html" class="ai-lab-link">AI Learning Lab</a></p>
                 </div>
 
-                <div class="mission-statement text-xl md:text-2xl px-4">
+                <div class="flex justify-center w-full">
+                    <img src="profile_photo.jpeg" alt="Sytze Simonse" class="profile-photo">
+                </div>
+
+                <div class="mission-statement text-xl md:text-2xl px-4 text-center">
                     <span data-i18n="mission"></span>
                 </div>
 
