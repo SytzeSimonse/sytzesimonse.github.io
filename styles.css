@@ -110,12 +110,16 @@ footer {
 }
 .ai-lab-link {
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: underline;
     transition: all 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(142, 202, 230, 0.1);
+    border-radius: 4px;
 }
 
 .ai-lab-link:hover {
     color: var(--secondary-color);
     text-decoration: none;
+    background-color: rgba(142, 202, 230, 0.2);
 }
