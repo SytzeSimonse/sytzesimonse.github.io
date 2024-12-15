@@ -14,8 +14,14 @@
     <canvas id="orbCanvas"></canvas>
     <div class="gradient-bg"></div>
     
-    <nav class="fixed top-0 right-0 p-4">
-        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors" data-i18n="langToggle">
+    <div class="w-full text-center py-2 sm:hidden">
+        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors text-sm" data-i18n="langToggle">
+            EN | NL
+        </button>
+    </div>
+
+    <nav class="fixed top-0 right-0 p-4 hidden sm:block">
+        <button id="langToggle-desktop" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors" data-i18n="langToggle">
             EN | NL
         </button>
     </nav>
@@ -73,10 +79,13 @@
             });
         }
 
-        document.getElementById('langToggle').addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'nl' : 'en';
-            document.documentElement.lang = currentLang;
-            updateContent();
+        // Handle language toggle for both mobile and desktop buttons
+        document.querySelectorAll('#langToggle, #langToggle-desktop').forEach(button => {
+            button.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'nl' : 'en';
+                document.documentElement.lang = currentLang;
+                updateContent();
+            });
         });
 
         // Initialize content when page loads
