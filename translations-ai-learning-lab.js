@@ -73,6 +73,21 @@ const translations = {
                 "bio": "Developer with a passion for open source, Geo, and technology with societal impact. Technical Data Consultant at Geodan and Co-Founder of Watkanikdoen.nl. Combines technical expertise with a vision for creating meaningful technological solutions that serve society."
             }
         },
+        "achievements": {
+            "title": "What You'll Achieve",
+            "opportunities": {
+                "title": "Finding Opportunities",
+                "description": "Learn to identify and evaluate AI opportunities specific to your organization's context and challenges."
+            },
+            "implementation": {
+                "title": "Making It Happen",
+                "description": "Develop practical strategies for implementing AI solutions while managing risks and resources effectively."
+            },
+            "people": {
+                "title": "Bringing People Along",
+                "description": "Build skills to lead change and foster adoption of AI initiatives within your team and organization."
+            }
+        },
         "cta": {
             "title": "Join Our Next Session",
             "timing": "First sessions starting from the third week of February 2025",
@@ -152,6 +167,21 @@ const translations = {
             "kamiel": {
                 "name": "Kamiel Verhelst",
                 "bio": "Ontwikkelaar met een passie voor open source, Geo en technologie met maatschappelijke impact. Technisch Data Consultant bij Geodan en Mede-oprichter van Watkanikdoen.nl. Combineert technische expertise met een visie voor het creëren van betekenisvolle technologische oplossingen die de samenleving dienen."
+            }
+        },
+        "achievements": {
+            "title": "Wat Je Zult Bereiken",
+            "opportunities": {
+                "title": "Kansen Ontdekken",
+                "description": "Leer AI-kansen identificeren en evalueren specifiek voor de context en uitdagingen van jouw organisatie."
+            },
+            "implementation": {
+                "title": "In Praktijk Brengen",
+                "description": "Ontwikkel praktische strategieën voor het implementeren van AI-oplossingen met effectief beheer van risico's en middelen."
+            },
+            "people": {
+                "title": "Mensen Meekrijgen",
+                "description": "Ontwikkel vaardigheden om verandering te leiden en adoptie van AI-initiatieven binnen je team en organisatie te stimuleren."
             }
         },
         "cta": {
