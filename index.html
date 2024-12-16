@@ -4,18 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sytze Simonse | Tech & AI Specialist</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Sytze Simonse - Tech and AI specialist based in Rotterdam, Netherlands. Expert in digital transformation and data science.">
-    <meta name="keywords" content="Sytze Simonse, digital transformation, AI specialist, tech specialist, Rotterdam, Netherlands">
-    <meta name="author" content="Sytze Simonse">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Sytze Simonse | Tech & AI Specialist">
-    <meta property="og:description" content="Tech and AI specialist passionate about driving digital transformation">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sytzesimonse.nl">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --background-color: #1a1a1a;
@@ -26,104 +16,145 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
             background-color: var(--background-color);
             color: var(--text-color);
+            font-size: 1.125rem;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(120deg, #1a1a1a, #1f2937);
+            opacity: 0.7;
         }
 
-        .profile {
-            text-align: center;
-            margin-bottom: 2rem;
+        .gradient-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(142, 202, 230, 0.05), transparent);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .bio {
-            margin-bottom: 2rem;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .mission-statement {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            animation: fadeIn 1.5s ease-in forwards;
+            animation-delay: 0.5s;
         }
 
-        .contact {
-            text-align: center;
-        }
-
-        .contact a {
-            display: inline-block;
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            border: 2px solid var(--primary-color);
-            border-radius: 5px;
+        .link-button {
+            position: relative;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .contact a:hover {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border-color: var(--primary-color);
+        .link-button:hover {
+            color: var(--secondary-color);
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .tagline {
-                font-size: 1rem;
-            }
+        .contact-box {
+            border: 1px solid rgba(142, 202, 230, 0.2);
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <h1>Sytze Simonse</h1>
-            <div class="tagline">Tech & AI Specialist | Digital Transformation Expert</div>
-        </div>
-        
-        <div class="bio">
-            <p>
-                Tech and AI enthusiast passionate about driving change and empowering others. 
-                Specializing in digital transformation, artificial intelligence, and bridging the gap 
-                between technology and business. Based in Rotterdam, Netherlands.
-            </p>
-        </div>
+    <div class="gradient-bg"></div>
+    
+    <nav class="fixed top-0 right-0 p-4">
+        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors">
+            EN | NL
+        </button>
+    </nav>
 
-        <div class="contact">
-            <a href="mailto:sytze.simonse@proton.me" aria-label="Email">Email</a>
-            <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+    <div class="container max-w-3xl mx-auto px-6 min-h-screen flex flex-col justify-center items-center py-16">
+        <div class="text-center space-y-8 fade-in">
+            <div class="text-lg md:text-xl mb-12 space-y-6" id="bio"></div>
+
+            <div class="mission-statement text-xl md:text-2xl mb-12 px-4" id="mission"></div>
+
+            <div class="contact-box p-6 mt-8">
+                <p id="location" class="mb-4"></p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">✉️ <span id="email"></span></a>
+                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">👥 <span id="linkedin"></span></a>
+                    <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">💻 <span id="github"></span></a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        class LanguageManager {
+            constructor(defaultLang = 'en') {
+                this.currentLang = defaultLang;
+                this.loadLanguage(defaultLang);
+            }
+
+            async loadLanguage(lang) {
+                try {
+                    await this.loadScript(`lang-${lang}.js`);
+                    this.updateContent();
+                    alert("Werkt!")
+                } catch (error) {
+                    console.error('Error loading language file:', error);
+                    alert();
+                }
+            }
+
+            loadScript(src) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.head.appendChild(script);
+                });
+            }
+
+            updateContent() {
+                document.getElementById('bio').innerHTML = lang.bio.split('\n').map(p => `<p>${p.trim()}</p>`).join('');
+                document.getElementById('mission').textContent = `${lang.mission}`;
+                document.getElementById('location').textContent = lang.location;
+                document.getElementById('email').textContent = lang.email;
+                document.getElementById('linkedin').textContent = lang.linkedin;
+                document.getElementById('github').textContent = lang.github;
+            }
+
+            toggleLanguage() {
+                this.currentLang = this.currentLang === 'en' ? 'nl' : 'en';
+                this.loadLanguage(this.currentLang);
+            }
+        }
+
+        const languageManager = new LanguageManager();
+        document.getElementById('langToggle').addEventListener('click', () => {
+            languageManager.toggleLanguage();
+        });
+    </script>
 </body>
 </html>
