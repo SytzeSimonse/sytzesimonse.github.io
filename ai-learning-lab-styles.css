@@ -1,8 +1,22 @@
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #219ebc;
+    --secondary-color: #023047;
+    --hover-color: #8ecae6;
+}
+
 body {
     font-family: 'Space Grotesk', sans-serif;
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+/* Add bullet points styling */
+ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
 }
 
 .gradient-bg {
