@@ -5,99 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Learning Lab | Practical AI Implementation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(120deg, #1a1a1a, #1f2937);
+        }
+
+        .card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(142, 202, 230, 0.1);
+        }
+
+        .logo-container {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea, .contact-form select {
+            background: rgba(31, 41, 55, 0.7);
+            border: 1px solid rgba(142, 202, 230, 0.2);
+            color: #e0e0e0;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            border-color: #219ebc;
+            outline: none;
+        }
+    </style>
 </head>
-<body class="bg-gray-900">
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
-        <header class="text-center mb-16">
-            <h1 class="text-4xl font-bold text-white mb-4">AI Learning Lab</h1>
-            <p class="text-xl text-gray-400 mb-8">Where Practice Meets Innovation</p>
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <p class="text-lg text-gray-300">Unlike traditional workshops focusing on technical possibilities alone, our Learning Lab helps you discover practical, responsible AI implementations while building on your industry's, company's and team's unique context and challenges. You'll leave with both actionable insights and a network of peers to support your AI journey.</p>
-            </div>
-        </header>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="logo-container mb-8">
+            <svg viewBox="0 0 200 100" class="w-full">
+                <circle cx="70" cy="50" r="35" fill="none" stroke="#219ebc" stroke-width="3"/>
+                <circle cx="130" cy="50" r="35" fill="none" stroke="#2a9d8f" stroke-width="3"/>
+                <line x1="35" y1="50" x2="165" y2="50" stroke="#264653" stroke-width="2" stroke-dasharray="4 4"/>
+                <circle cx="70" cy="50" r="4" fill="#219ebc"/>
+                <circle cx="130" cy="50" r="4" fill="#2a9d8f"/>
+                <circle cx="100" cy="50" r="4" fill="#264653"/>
+            </svg>
+        </div>
 
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6">Our Approach</h2>
-            <div class="bg-gray-800 p-6 rounded-lg shadow">
-                <p class="text-gray-300 mb-4">The AI Learning Lab is an interactive session built on the principle of mutual learning. We believe that the best insights come from combining diverse perspectives and experiences. Our facilitators aren't presenting themselves as "AI wizards" – instead, they bring technical expertise and a deep commitment to responsible AI adoption to guide meaningful discussions and practical implementation.</p>
-                <p class="text-gray-300">Together, we explore how AI can be thoughtfully integrated into your organization while considering broader societal impacts and ethical implications.</p>
+        <h1 class="text-4xl font-bold text-center mb-4">AI Learning Lab</h1>
+        <p class="text-xl text-center mb-12 text-gray-400">Where Practice Meets Innovation</p>
+
+        <div class="card p-6 rounded-lg mb-12">
+            <p class="text-lg mb-6">Unlike traditional workshops focusing on technical possibilities alone, our Learning Lab helps you discover practical, responsible AI implementations while building on your industry's, company's and team's unique context and challenges. You'll leave with both actionable insights and a network of peers to support your AI journey.</p>
+        </div>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Our Approach</h2>
+            <div class="card p-6 rounded-lg">
+                <p class="mb-4">The AI Learning Lab is an interactive session built on the principle of mutual learning. We believe that the best insights come from combining diverse perspectives and experiences.</p>
+                <p>Together, we explore how AI can be thoughtfully integrated into your organization while considering broader societal impacts and ethical implications.</p>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6">What You'll Achieve</h2>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Workshop Details</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Format</h3>
+                    <ul class="space-y-2">
+                        <li>• Half-day interactive session (4 hours)</li>
+                        <li>• Conducted at your company's location</li>
+                        <li>• Small groups of professionals from different organizations</li>
+                        <li>• Morning or afternoon sessions</li>
+                    </ul>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Participation</h3>
+                    <ul class="space-y-2">
+                        <li>• Minimum 2 participants per organization</li>
+                        <li>• Ideal for team leaders and change advocates</li>
+                        <li>• Basic digital literacy required</li>
+                        <li>• Open to all sectors and industries</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Learning Journey</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Finding Opportunities</h3>
-                    <p class="text-gray-300 mb-4">Map out concrete AI opportunities in your team's workflow, considering privacy, budget, and environmental impact.</p>
-                    <p class="text-blue-400 font-medium">Outcome: 3+ validated use cases</p>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Before</h3>
+                    <p>Pre-workshop assessment and preparation materials to identify your current AI challenges and opportunities.</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Making It Happen</h3>
-                    <p class="text-gray-300 mb-4">Create a practical 90-day implementation plan with clear metrics, risk management, and success tracking.</p>
-                    <p class="text-blue-400 font-medium">Outcome: Ready-to-execute roadmap</p>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">During</h3>
+                    <p>Interactive sessions combining theory and practice, with real-world case discussions and action planning.</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Bringing People Along</h3>
-                    <p class="text-gray-300 mb-4">Transform skepticism into support with effective change management and people-first guidelines.</p>
-                    <p class="text-blue-400 font-medium">Outcome: Engaged team ready for change</p>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">After</h3>
+                    <p>Personal follow-up session after 2 weeks to discuss implementation progress and connect to peer network.</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6">Value You'll Gain</h2>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Who Should Join?</h2>
+            <div class="card p-6 rounded-lg">
+                <p class="mb-4">This workshop is ideal for professionals who:</p>
+                <ul class="space-y-2">
+                    <li>• Lead or manage teams</li>
+                    <li>• Want to drive responsible AI adoption in their organization</li>
+                    <li>• Seek practical implementation strategies</li>
+                    <li>• Value sustainable and ethical technology use</li>
+                    <li>• Are interested in building a peer learning network</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Meet Your Facilitators</h2>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Immediate Impact</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>✓ Practical 90-day implementation roadmap</li>
-                        <li>✓ Tool selection criteria and recommendations</li>
-                        <li>✓ Clear success metrics framework</li>
-                        <li>✓ Confident AI landscape navigation</li>
-                    </ul>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Sytze Simonse</h3>
+                    <p>An experienced technical educator who has taught at various levels, from university courses in Remote Sensing & Machine Learning to high school Computer Science. With a background in Geo-Information Sciences and experience in digital transformation, Sytze excels at making complex technical concepts accessible and actionable.</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Long-term Benefits</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>✓ Enhanced team innovation capability</li>
-                        <li>✓ Active peer learning network</li>
-                        <li>✓ Ongoing knowledge exchange</li>
-                        <li>✓ Sustainable AI implementation support</li>
-                    </ul>
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Kamiel Verhelst</h3>
+                    <p>Developer with a passion for open source, Geo, and technology with societal impact. Technical Data Consultant at Geodan and Co-Founder of Watkanikdoen.nl. Combines technical expertise with a vision for creating meaningful technological solutions that serve society.</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6">Meet Your Facilitators</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Sytze Simonse</h3>
-                    <p class="text-gray-300">An experienced technical educator who has taught at various levels, from university courses in Remote Sensing & Machine Learning to high school Computer Science. With a background in Geo-Information Sciences and experience in digital transformation, Sytze excels at making complex technical concepts accessible and actionable.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-white">Kamiel Verhelst</h3>
-                    <p class="text-gray-300">Developer with a passion for open source, Geo, and technology with societal impact. Technical Data Consultant at Geodan and Co-Founder of Watkanikdoen.nl. Combines technical expertise with a vision for creating meaningful technological solutions that serve society.</p>
-                </div>
+        <section class="text-center mb-12">
+            <h2 class="text-2xl font-bold mb-6">Join Our Next Session</h2>
+            <div class="card p-6 rounded-lg">
+                <p class="mb-4">First sessions starting from the third week of February 2025</p>
+                <p class="mb-6">Limited to 12 participants per session</p>
+                <a href="show-interest-page.html" class="inline-block bg-[#219ebc] text-white px-8 py-3 rounded-lg hover:bg-[#2a9d8f] transition-colors">
+                    Show Interest
+                </a>
             </div>
         </section>
 
-        <section class="text-center mb-16">
-            <h2 class="text-2xl font-bold text-white mb-6">Upcoming Sessions</h2>
-            <div class="bg-gray-800 p-6 rounded-lg shadow">
-                <p class="text-gray-300 mb-4">First sessions starting from the third week of February 2025</p>
-                <p class="text-gray-400">Limited to 12 participants per session</p>
-            </div>
-        </section>
-
-        <section class="text-center">
-            <h2 class="text-2xl font-bold text-white mb-6">Stay Updated</h2>
-            <a href="#" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                Join the Waiting List
-            </a>
-            <p class="mt-4 text-gray-400">Be the first to know about upcoming sessions and early-bird rates</p>
-        </section>
     </div>
 </body>
 </html>
