@@ -3,157 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sytze Simonse | Tech & AI Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --background-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --primary-color: #8ecae6;
-            --secondary-color: #219ebc;
-            --hover-color: #023047;
-        }
-        
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-size: 1.125rem;
-        }
-
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(120deg, #1a1a1a, #1f2937);
-            opacity: 0.7;
-        }
-
-        .gradient-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(142, 202, 230, 0.05), transparent);
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .mission-statement {
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-            animation: fadeIn 1.5s ease-in forwards;
-            animation-delay: 0.5s;
-        }
-
-        .link-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .link-button:hover {
-            color: var(--secondary-color);
-        }
-
-        .contact-box {
-            border: 1px solid rgba(142, 202, 230, 0.2);
-            background: rgba(26, 26, 26, 0.5);
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+    <script src="orb.js" defer></script>
 </head>
 <body>
+    <canvas id="orbCanvas"></canvas>
     <div class="gradient-bg"></div>
     
-    <nav class="fixed top-0 right-0 p-4">
-        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors">
+    <div class="w-full text-center py-2 sm:hidden">
+        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors text-sm" data-i18n="langToggle">
+            EN | NL
+        </button>
+    </div>
+
+    <nav class="fixed top-0 right-0 p-4 hidden sm:block">
+        <button id="langToggle-desktop" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors" data-i18n="langToggle">
             EN | NL
         </button>
     </nav>
 
-    <div class="container max-w-3xl mx-auto px-6 min-h-screen flex flex-col justify-center items-center py-16">
-        <div class="text-center space-y-8 fade-in">
-            <div class="text-lg md:text-xl mb-12 space-y-6" id="bio"></div>
+    <div class="container max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex items-center mt-8 sm:mt-16">
+        <div class="flex flex-col items-center gap-8 fade-in">
+            <div class="text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center px-2 sm:px-4" id="bio">
+                <p data-i18n="bio.intro"></p>
+                <p data-i18n="bio.background"></p>
+                <!-- <p><span data-i18n="bio.aiLab"></span></p> -->
+                </div>
 
-            <div class="mission-statement text-xl md:text-2xl mb-12 px-4" id="mission"></div>
+                <div class="flex justify-center w-full">
+                    <img src="profile_photo.jpeg" alt="Sytze Simonse" class="profile-photo">
+                </div>
 
-            <div class="contact-box p-6 mt-8">
+                <div class="mission-statement text-base sm:text-lg md:text-xl px-4 sm:px-8 md:px-16 text-center">
+                    "<span data-i18n="mission"></span>"
+                </div>
+
+                <div class="contact-box p-4 sm:p-6">
                 <p id="location" class="mb-4"></p>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">✉️ <span id="email"></span></a>
-                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">👥 <span id="linkedin"></span></a>
-                    <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">💻 <span id="github"></span></a>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-6">
+                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fas fa-envelope"></i>
+                        <span data-i18n="contact.email"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fab fa-linkedin"></i>
+                        <span data-i18n="contact.linkedin"></span>
+                    </a>
+                    <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                        <i class="fab fa-github"></i>
+                        <span data-i18n="contact.github"></span>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-400 text-center" data-i18n="contact.kvk"></p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        class LanguageManager {
-            constructor(defaultLang = 'en') {
-                this.currentLang = defaultLang;
-                this.loadLanguage(defaultLang);
-            }
+        let currentLang = 'en';
 
-            async loadLanguage(lang) {
-                try {
-                    await this.loadScript(`lang-${lang}.js`);
-                    this.updateContent();
-                    alert("Werkt!")
-                } catch (error) {
-                    console.error('Error loading language file:', error);
-                    alert();
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = translations[currentLang];
+                for (const k of keys) {
+                    value = value[k];
                 }
-            }
-
-            loadScript(src) {
-                return new Promise((resolve, reject) => {
-                    const script = document.createElement('script');
-                    script.src = src;
-                    script.onload = resolve;
-                    script.onerror = reject;
-                    document.head.appendChild(script);
-                });
-            }
-
-            updateContent() {
-                document.getElementById('bio').innerHTML = lang.bio.split('\n').map(p => `<p>${p.trim()}</p>`).join('');
-                document.getElementById('mission').textContent = `${lang.mission}`;
-                document.getElementById('location').textContent = lang.location;
-                document.getElementById('email').textContent = lang.email;
-                document.getElementById('linkedin').textContent = lang.linkedin;
-                document.getElementById('github').textContent = lang.github;
-            }
-
-            toggleLanguage() {
-                this.currentLang = this.currentLang === 'en' ? 'nl' : 'en';
-                this.loadLanguage(this.currentLang);
-            }
+                element.innerHTML = value;
+            });
         }
 
-        const languageManager = new LanguageManager();
-        document.getElementById('langToggle').addEventListener('click', () => {
-            languageManager.toggleLanguage();
+        // Handle language toggle for both mobile and desktop buttons
+        document.querySelectorAll('#langToggle, #langToggle-desktop').forEach(button => {
+            button.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'nl' : 'en';
+                document.documentElement.lang = currentLang;
+                updateContent();
+            });
+        });
+
+        // Initialize content when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.documentElement.lang = currentLang;
+            updateContent();
         });
     </script>
 </body>
