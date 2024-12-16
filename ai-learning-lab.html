@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Learning Lab | Practical AI Implementation</title>
+    <title data-i18n="meta.title">AI Learning Lab | Practical AI Implementation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -41,6 +41,12 @@
     </style>
 </head>
 <body class="gradient-bg min-h-screen">
+    <nav class="fixed top-0 right-0 p-4">
+        <button id="langToggle" class="bg-transparent border border-[#219ebc] text-[#219ebc] px-4 py-2 rounded hover:bg-[#219ebc] hover:text-white transition-colors">
+            EN | NL
+        </button>
+    </nav>
+
     <div class="container mx-auto px-4 py-8 max-w-4xl">
         <div class="logo-container mb-8">
             <svg viewBox="0 0 200 100" class="w-full">
@@ -53,18 +59,18 @@
             </svg>
         </div>
 
-        <h1 class="text-4xl font-bold text-center mb-4">AI Learning Lab</h1>
-        <p class="text-xl text-center mb-12 text-gray-400">Where Practice Meets Innovation</p>
+        <h1 class="text-4xl font-bold text-center mb-4" data-i18n="header.title">AI Learning Lab</h1>
+        <p class="text-xl text-center mb-12 text-gray-400" data-i18n="header.subtitle">Where Practice Meets Innovation</p>
 
         <div class="card p-6 rounded-lg mb-12">
-            <p class="text-lg mb-6">Unlike traditional workshops focusing on technical possibilities alone, our Learning Lab helps you discover practical, responsible AI implementations while building on your industry's, company's and team's unique context and challenges. You'll leave with both actionable insights and a network of peers to support your AI journey.</p>
+            <p class="text-lg mb-6" data-i18n="intro.description"></p>
         </div>
 
         <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6">Our Approach</h2>
+            <h2 class="text-2xl font-bold mb-6" data-i18n="approach.title">Our Approach</h2>
             <div class="card p-6 rounded-lg">
-                <p class="mb-4">The AI Learning Lab is an interactive session built on the principle of mutual learning. We believe that the best insights come from combining diverse perspectives and experiences.</p>
-                <p>Together, we explore how AI can be thoughtfully integrated into your organization while considering broader societal impacts and ethical implications.</p>
+                <p class="mb-4" data-i18n="approach.description1"></p>
+                <p data-i18n="approach.description2"></p>
             </div>
         </section>
 
@@ -150,5 +156,35 @@
         </section>
 
     </div>
+
+    <script src="translations-ai-learning-lab.js"></script>
+    <script>
+        let currentLang = 'en';
+
+        function updateContent() {
+            document.documentElement.lang = currentLang;
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = translations[currentLang];
+                for (const k of keys) {
+                    value = value[k];
+                }
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = value;
+                } else {
+                    element.innerHTML = value;
+                }
+            });
+        }
+
+        document.getElementById('langToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'nl' : 'en';
+            updateContent();
+        });
+
+        // Initialize content
+        document.addEventListener('DOMContentLoaded', updateContent);
+    </script>
 </body>
 </html>
