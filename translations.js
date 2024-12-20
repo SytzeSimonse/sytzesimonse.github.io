@@ -6,7 +6,7 @@ const translations = {
             background: "With a background in Geo-Information Sciences (GIS) and experience in digital transformation, I specialize in making complex technical concepts clear and accessible for everyone.",
             aiLab: "Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors'>Kamiel Verhelst</a>, I founded the <a href='ai-learning-lab.html' class='text-primary-color font-bold hover:text-secondary-color transition-colors'>AI Learning Lab</a>, where we guide and support organizations in implementing AI responsibly and effectively."
         },
-        mission: "My ambition is to make technological innovation accessible to everyone through education, while ensuring sustainable and socially responsible implementation.",
+        mission: "My ambition is to make technological innovation accessible to everyone through education, ensuring it serves both people and planet.",
         contact: {
             location: "📍 Rotterdam, Netherlands",
             email: "Email",
