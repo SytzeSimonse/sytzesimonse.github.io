@@ -12,7 +12,8 @@ const translations = {
             email: "Email",
             linkedin: "LinkedIn",
             github: "GitHub",
-            kvk: "KVK: 85266256"
+            kvk: "KVK: 85266256",
+            gis: "GIS SE"
         },
         langToggle: "EN | NL"
     },
@@ -29,7 +30,8 @@ const translations = {
             email: "E-mail",
             linkedin: "LinkedIn",
             github: "GitHub",
-            kvk: "KVK: 85266256"
+            kvk: "KVK: 85266256",
+            gis: "GIS SE"
         },
         langToggle: "NL | EN"
     }
