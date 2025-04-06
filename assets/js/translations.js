@@ -1,6 +1,9 @@
 const translations = {
     en: {
         title: "Sytze Simonse | Tech & AI Specialist",
+        nav: {
+            presentations: "Presentations"
+        },
         bio: {
             intro: "Hi! I'm Sytze Simonse, a tech specialist with a passion for education.",
             background: "With a background in Geo-Information Sciences (GIS) and experience in digital transformation, I specialize in making complex technical concepts clear and accessible for everyone.",
@@ -24,6 +27,9 @@ const translations = {
     },
     nl: {
         title: "Sytze Simonse | Tech & AI Specialist",
+        nav: {
+            presentations: "Presentaties"
+        },
         bio: {
             intro: "Hi! Ik ben Sytze Simonse, een techneut met een passie voor onderwijs.",
             background: "Met een achtergrond in Geo-Information Sciences (GIS) en ervaring in digitale transformatie, ben ik gespecialiseerd in het helder en toegankelijk maken van complexe technische concepten.",
