@@ -43,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     object-fit: cover;
     filter: grayscale(50%);
-    transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
@@ -167,4 +166,9 @@ h1, h2, h3, h4, h5, h6 {
     .container {
         gap: 3vh;
     }
+}
+
+.kvk-number {
+    text-align: center !important;
+    width: 100%;
 }
