@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.cdnjs.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Added font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="translations.js"></script>
-    <script src="orb.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/orb.js" defer></script>
 </head>
 <body>
     <canvas id="orbCanvas"></canvas>
@@ -31,38 +32,36 @@
     </nav>
 
     <div class="container max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex items-center mt-8 sm:mt-16">
-        <div class="flex flex-col items-center gap-8 fade-in">
-            <div class="text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center px-2 sm:px-4" id="bio">
-                <p data-i18n="bio.intro"></p>
-                <p data-i18n="bio.background"></p>
-                <!-- <p><span data-i18n="bio.aiLab"></span></p> -->
+        <div class="flex flex-col md:flex-row items-center gap-8 fade-in">
+            <div class="profile-section md:w-1/2">
+                <div class="flex justify-center md:justify-start w-full">
+                    <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
                 </div>
-
-                <div class="flex justify-center w-full">
-                    <img src="profile_photo.jpeg" alt="Sytze Simonse" class="profile-photo">
-                </div>
-
-                <div class="mission-statement text-base sm:text-lg md:text-xl px-4 sm:px-8 md:px-16 text-center">
-                    "<span data-i18n="mission"></span>"
+            </div>
+            <div class="content-section md:w-1/2">
+                <div class="text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center md:text-left px-2 sm:px-4" id="bio">
+                    <p data-i18n="bio.intro"></p>
+                    <p data-i18n="bio.background"></p>
+                    <!-- <p><span data-i18n="bio.aiLab"></span></p> -->
                 </div>
 
                 <div class="contact-box p-4 sm:p-1">
-                <p id="location" class="mb-4" data-i18n="contact.location"></p>
-                <div class="flex flex-wrap justify-center gap-3 sm:gap-6">
-                    <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
-                        <i class="fas fa-envelope"></i>
-                        <span data-i18n="contact.email"></span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                        <i class="fab fa-linkedin"></i>
-                        <span data-i18n="contact.linkedin"></span>
-                    </a>
-                    <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                        <i class="fab fa-github"></i>
-                        <span data-i18n="contact.github"></span>
-                    </a>
-                </div>
-                <p class="text-sm text-gray-400 text-center" data-i18n="contact.kvk"></p>
+                    <p id="location" class="mb-4" data-i18n="contact.location"></p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-6">
+                        <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
+                            <i class="fas fa-envelope"></i>
+                            <span data-i18n="contact.email"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                            <i class="fab fa-linkedin"></i>
+                            <span data-i18n="contact.linkedin"></span>
+                        </a>
+                        <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="contact.github"></span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-400 text-center md:text-left" data-i18n="contact.kvk"></p>
                 </div>
             </div>
         </div>
