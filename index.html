@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sytze Simonse | GIS & Technology Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Added font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/translations.js"></script>
     <script src="assets/js/orb.js" defer></script>
@@ -31,49 +29,60 @@
         </button>
     </nav>
 
-    <nav class="fixed top-0 left-0 p-4 hidden sm:block">
-        <a href="presentations/index.html" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors inline-flex items-center gap-2">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <span data-i18n="nav.presentations">Presentations</span>
-        </a>
-    </nav>
+    <div class="container max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col justify-center mt-8 sm:mt-0">        
+        <!-- Main content area -->
+        <div class="content-card fade-in mt-10">
+            <div class="space-y-7">
+                <div class="text-sm sm:text-base space-y-5 max-w-3xl mx-auto" id="bio">
+                    <div class="text-center mt-6">
+                        <p class="text-lg sm:text-xl max-w-2xl mx-auto text-primary-color font-medium" data-i18n="bio.intro">
+                            Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.
+                        </p>
+                    </div>
 
-    <div class="container max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex items-center mt-8 sm:mt-16">
-        <div class="flex flex-col md:flex-row items-center gap-8 fade-in">
-            <div class="profile-section md:w-1/2">
-                <div class="flex justify-center md:justify-start w-full">
-                    <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
-                </div>
-            </div>
-            <div class="content-section md:w-1/2">
-                <div class="text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center md:text-left px-2 sm:px-4" id="bio">
-                    <p data-i18n="bio.intro"></p>
-                    <p data-i18n="bio.background"></p>
-                    <!-- <p><span data-i18n="bio.aiLab"></span></p> -->
+                    <p data-i18n="bio.background" class="text-base">
+                        With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.
+                    </p>
                 </div>
 
-                <div class="project-section text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center md:text-left px-2 sm:px-4 mt-6">
-                    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3" data-i18n="projects.enoki.title">Enoki</h2>
-                    <p data-i18n="projects.enoki.description"></p>
+                <div class="skills-section text-sm sm:text-base space-y-2 max-w-3xl mx-auto text-center">
+                    <h2 class="text-lg sm:text-xl font-semibold mb-3">Expertise & Passions</h2>
+                    <div class="flex flex-wrap gap-2 text-center justify-center mb-4">
+                        <span class="bg-primary-color bg-opacity-10 text-primary-color px-3 py-1 rounded-full text-sm">GIS & Geo-Data</span>
+                        <span class="bg-primary-color bg-opacity-10 text-primary-color px-3 py-1 rounded-full text-sm">FOSS Tools</span>
+                        <span class="bg-primary-color bg-opacity-10 text-primary-color px-3 py-1 rounded-full text-sm">Technical Education</span>
+                        <span class="bg-primary-color bg-opacity-10 text-primary-color px-3 py-1 rounded-full text-sm">Knowledge Sharing</span>
+                    </div>
+                </div>
+                
+                <div class="language-section text-sm sm:text-base max-w-3xl mx-auto text-center">
+                    <h2 class="text-lg sm:text-xl font-semibold mb-3">Languages</h2>
+                    <div class="flex flex-wrap gap-2 mb-4 justify-center">
+                        <span class="border border-primary-color text-primary-color px-3 py-1 rounded-full text-sm">🇳🇱 Dutch (Native)</span>
+                        <span class="border border-primary-color text-primary-color px-3 py-1 rounded-full text-sm">🇬🇧 English (C2)</span>
+                        <span class="border border-primary-color text-primary-color px-3 py-1 rounded-full text-sm">🇵🇹 Portuguese (C1)</span>
+                        <span class="border border-primary-color text-primary-color px-3 py-1 rounded-full text-sm">🇷🇺 Russian (B1)</span>
+                        <span class="border border-primary-color text-primary-color px-3 py-1 rounded-full text-sm">🇩🇪 German (B1)</span>
+                    </div>
                 </div>
 
-                <div class="contact-box p-4 sm:p-1">
-                    <p id="location" class="mb-4" data-i18n="contact.location"></p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-6">
-                        <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fas fa-envelope"></i>
-                            <span data-i18n="contact.email"></span>
+                <div class="contact-box p-4 sm:p-1 mt-8 max-w-3xl mx-auto text-center">
+                    <p id="location" class="mb-4" data-i18n="contact.location">📍 Rotterdam, Netherlands</p>
+                    <div class="social-links flex flex-wrap gap-5 justify-center">
+                        <a href="mailto:sytze.simonse@proton.me" class="social-icon email-icon">
+                            <span class="icon-tooltip" data-i18n="contact.email">Email</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fab fa-linkedin"></i>
-                            <span data-i18n="contact.linkedin"></span>
+                        <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin-icon">
+                            <span class="icon-tooltip" data-i18n="contact.linkedin">LinkedIn</span>
                         </a>
-                        <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fab fa-github"></i>
-                            <span data-i18n="contact.github"></span>
+                        <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="social-icon github-icon">
+                            <span class="icon-tooltip" data-i18n="contact.github">GitHub</span>
+                        </a>
+                        <a href="https://gis.stackexchange.com/users/147844/sytze" target="_blank" rel="noopener noreferrer" class="social-icon stack-icon">
+                            <span class="icon-tooltip">GIS Stack</span>
                         </a>
                     </div>
-                    <p class="kvk-number text-sm text-gray-400" data-i18n="contact.kvk"></p>
+                    <p class="kvk-number text-sm text-gray-400 mt-8 text-center" data-i18n="contact.kvk">KVK: 85266256</p>
                 </div>
             </div>
         </div>
@@ -88,9 +97,16 @@
                 const keys = key.split('.');
                 let value = translations[currentLang];
                 for (const k of keys) {
-                    value = value[k];
+                    if (value && k in value) {
+                        value = value[k];
+                    } else {
+                        // If translation key doesn't exist, don't change the content
+                        return;
+                    }
                 }
-                element.innerHTML = value;
+                if (typeof value === 'string') {
+                    element.innerHTML = value;
+                }
             });
         }
 

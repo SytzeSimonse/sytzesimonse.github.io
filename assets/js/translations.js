@@ -1,21 +1,17 @@
 const translations = {
     en: {
-        title: "Sytze Simonse | Tech & AI Specialist",
+        title: "Sytze Simonse | GIS & Technology Specialist",
         nav: {
             presentations: "Presentations"
         },
         bio: {
-            intro: "Hi! I'm Sytze Simonse, a tech specialist with a passion for education.",
-            background: "With a background in Geo-Information Sciences (GIS) and experience in digital transformation, I specialize in making complex technical concepts clear and accessible for everyone.",
-            aiLab: "Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Kamiel Verhelst</a>, I founded the <a href='ai-learning-lab.html' class='text-primary-color font-bold hover:text-secondary-color transition-colors'>AI Learning Lab</a>, where we guide and support organizations in implementing AI responsibly and effectively."
+            intro: "Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.",
+            background: "With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication."
         },
-        projects: {
-            enoki: {
-                title: "Enoki",
-                description: "Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Kamiel Verhelst</a>, I started <a href='https://bons-ai.nl' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Enoki</a>, a project where we help value-driven organizations with responsible AI adoption."
-            }
+        mission: "My ambition is to make technological innovation accessible to everyone while creating positive social impact.",
+        languages: {
+            passion: "I'm passionate about learning languages because they open windows into different worldviews and cultural perspectives. Each new language reveals unique ways of understanding life and connecting with people across cultural boundaries."
         },
-        mission: "My ambition is to make technological innovation accessible to everyone through education, ensuring it serves both people and planet.",
         contact: {
             location: "📍 Rotterdam, Netherlands",
             email: "Email",
@@ -26,22 +22,18 @@ const translations = {
         langToggle: "EN | NL"
     },
     nl: {
-        title: "Sytze Simonse | Tech & AI Specialist",
+        title: "Sytze Simonse | GIS & Technologie Specialist",
         nav: {
             presentations: "Presentaties"
         },
         bio: {
-            intro: "Hi! Ik ben Sytze Simonse, een techneut met een passie voor onderwijs.",
-            background: "Met een achtergrond in Geo-Information Sciences (GIS) en ervaring in digitale transformatie, ben ik gespecialiseerd in het helder en toegankelijk maken van complexe technische concepten.",
-            aiLab: "Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Kamiel Verhelst</a> heb ik het <a href='ai-learning-lab.html' class='text-primary-color font-bold hover:text-secondary-color transition-colors'>AI Learning Lab</a> opgericht, waar we organisaties begeleiden bij het verantwoord en effectief implementeren van AI."
+            intro: "Hey! Ik ben Sytze, een techneut met een passie voor het toegankelijk maken van complexe concepten.",
+            background: "Met een achtergrond in Geo-informatiewetenschappen (GIS) en Informatiekunde, verbind ik technische en sociale werelden. Ik vereenvoudig complexe technologie naar begrijpelijke taal en verbind verschillende disciplines door heldere communicatie."
         },
-        projects: {
-            enoki: {
-                title: "Enoki",
-                description: "Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Kamiel Verhelst</a> ben ik <a href='https://bons-ai.nl' target='_blank' rel='noopener noreferrer' class='text-primary-color hover:text-secondary-color transition-colors font-semibold'>Enoki</a> gestart, een project waarmee wij waardegedreven organisaties helpen met verantwoorde AI-adoptie."
-            }
+        mission: "Mijn ambitie is om technologische innovatie toegankelijk te maken voor iedereen met oog voor maatschappelijke impact.",
+        languages: {
+            passion: "Ik ben gepassioneerd over het leren van talen omdat ze deuren openen naar verschillende wereldbeelden en culturele perspectieven. Elke nieuwe taal onthult unieke manieren om het leven te begrijpen en verbinding te maken met mensen over culturele grenzen heen."
         },
-        mission: "Mijn ambitie is om technologische innovatie toegankelijk te maken voor iedereen, door middel van educatie, met oog voor duurzaamheid en maatschappelijke impact.",
         contact: {
             location: "📍 Rotterdam",
             email: "E-mail",
