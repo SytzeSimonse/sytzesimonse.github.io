@@ -3,111 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sytze Simonse | GIS & Technology Specialist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Added font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/orb.js" defer></script>
 </head>
 <body>
-    <canvas id="orbCanvas"></canvas>
-    <div class="gradient-bg"></div>
+    <!-- Architectural Grid Background -->
+    <div class="architectural-grid"></div>
     
-    <div class="w-full text-center py-2 sm:hidden">
-        <button id="langToggle" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors text-sm" data-i18n="langToggle">
-            EN | NL
-        </button>
+    <!-- Floating Geometric Elements -->
+    <div class="geometric-float geo-rect" style="top: 20%; left: 10%;"></div>
+    <div class="geometric-float geo-circle" style="top: 60%; right: 15%;"></div>
+    <div class="geometric-float geo-triangle" style="top: 80%; left: 20%;"></div>
+    <div class="geometric-float geo-rect" style="top: 40%; right: 25%;"></div>
+    <div class="geometric-float geo-circle" style="top: 15%; left: 60%;"></div>
+
+    <!-- Language Toggle -->
+    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN | NL</button>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Header Section -->
+        <header class="header-section">
+            <div class="organic-shape shape-1"></div>
+            <div class="organic-shape shape-2"></div>
+            
+            <h1 class="name-title" data-i18n="name">Sytze Simonse</h1>
+            <p class="subtitle" data-i18n="title">GIS & Technology Specialist</p>
+            
+            <p class="text-lg leading-relaxed" data-i18n="intro">
+                Tech specialist with a passion for making complex concepts accessible. Bridging technical and social worlds through clear communication and geo-informatics expertise.
+            </p>
+            
+            <!-- Interactive Journey Map -->
+            <div id="map" class="journey-map"></div>
+        </header>
+
+        <!-- Expertise Section -->
+        <section class="content-card">
+            <h2 class="text-xl font-semibold mb-4" style="color: var(--steel-blue);" data-i18n="expertise.title">
+                Expertise & Passions
+            </h2>
+            <div class="flex flex-wrap justify-center">
+                <span class="skill-tag">GIS & Geo-Data</span>
+                <span class="skill-tag">FOSS Tools</span>
+                <span class="skill-tag">Technical Education</span>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="content-card">
+            <h2 class="text-xl font-semibold mb-4" style="color: var(--steel-blue);" data-i18n="languages.title">
+                Languages
+            </h2>
+            <div class="flex flex-wrap justify-center">
+                <span class="skill-tag">🇳🇱 Dutch (Native)</span>
+                <span class="skill-tag">🇬🇧 English (C2)</span>
+                <span class="skill-tag">🇵🇹 Portuguese (C1)</span>
+                <span class="skill-tag">🇷🇺 Russian (B1)</span>
+                <span class="skill-tag">🇩🇪 German (B1)</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-card text-center">
+            <p class="mb-4" data-i18n="contact.location">📍 Rotterdam, Netherlands</p>
+            
+            <div class="social-container">
+                <a href="mailto:sytze.simonse@proton.me" class="social-link" title="Email">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 14H6V8l6 4 6-4v10zm-6-6L4 6h16l-8 6z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" class="social-link" title="LinkedIn" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/SytzeSimonse" class="social-link" title="GitHub" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                    </svg>
+                </a>
+                <a href="https://gis.stackexchange.com/users/147844/sytze" class="social-link" title="GIS Stack Exchange" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.36,20.2V14.82h1.79V22H3V14.82H4.8V20.2H17.36M6.77,14.32l0.37-1.76,8.79,1.85-0.37,1.76L6.77,14.32m1.16-4.21L8.69,8.5l8.14,3.78-0.76,1.62L7.93,10.11M10.86,5.56l1.15-1.38l6.9,5.76-1.15,1.38L10.86,5.56m4.5-2.94l6.02,8.05-1.43,1.07l-6.02-8.05L15.36,2.62m-8.67,14h9v1.79h-9V16.62z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="text-sm mt-6" style="color: var(--concrete-grey);" data-i18n="contact.kvk">
+                KVK: 85266256
+            </p>
+        </section>
     </div>
 
-    <nav class="fixed top-0 right-0 p-4 hidden sm:block">
-        <button id="langToggle-desktop" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors" data-i18n="langToggle">
-            EN | NL
-        </button>
-    </nav>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 
-    <nav class="fixed top-0 left-0 p-4 hidden sm:block">
-        <a href="presentations/index.html" class="bg-transparent border border-primary-color text-primary-color px-4 py-2 rounded hover:bg-primary-color hover:text-background-color transition-colors inline-flex items-center gap-2">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <span data-i18n="nav.presentations">Presentations</span>
-        </a>
-    </nav>
-
-    <div class="container max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex items-center mt-8 sm:mt-16">
-        <div class="flex flex-col md:flex-row items-center gap-8 fade-in">
-            <div class="profile-section md:w-1/2">
-                <div class="flex justify-center md:justify-start w-full">
-                    <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
-                </div>
-            </div>
-            <div class="content-section md:w-1/2">
-                <div class="text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center md:text-left px-2 sm:px-4" id="bio">
-                    <p data-i18n="bio.intro"></p>
-                    <p data-i18n="bio.background"></p>
-                    <!-- <p><span data-i18n="bio.aiLab"></span></p> -->
-                </div>
-
-                <div class="project-section text-sm sm:text-base md:text-lg space-y-3 sm:space-y-4 max-w-3xl text-center md:text-left px-2 sm:px-4 mt-6">
-                    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3" data-i18n="projects.bonsai.title">Bonsai</h2>
-                    <p data-i18n="projects.bonsai.description"></p>
-                </div>
-
-                <div class="contact-box p-4 sm:p-1">
-                    <p id="location" class="mb-4" data-i18n="contact.location"></p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-6">
-                        <a href="mailto:sytze.simonse@proton.me" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fas fa-envelope"></i>
-                            <span data-i18n="contact.email"></span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fab fa-linkedin"></i>
-                            <span data-i18n="contact.linkedin"></span>
-                        </a>
-                        <a href="https://github.com/SytzeSimonse" target="_blank" rel="noopener noreferrer" class="link-button px-6 py-3 text-primary-color">
-                            <i class="fab fa-github"></i>
-                            <span data-i18n="contact.github"></span>
-                        </a>
-                    </div>
-                    <p class="kvk-number text-sm text-gray-400" data-i18n="contact.kvk"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let currentLang = 'en';
-
-        function updateContent() {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                const keys = key.split('.');
-                let value = translations[currentLang];
-                for (const k of keys) {
-                    value = value[k];
-                }
-                element.innerHTML = value;
-            });
-        }
-
-        // Handle language toggle for both mobile and desktop buttons
-        document.querySelectorAll('#langToggle, #langToggle-desktop').forEach(button => {
-            button.addEventListener('click', () => {
-                currentLang = currentLang === 'en' ? 'nl' : 'en';
-                document.documentElement.lang = currentLang;
-                updateContent();
-            });
-        });
-
-        // Initialize content when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            document.documentElement.lang = currentLang;
-            updateContent();
-        });
-    </script>
+    
+    <script src="assets/js/map_debug.js"></script>
 </body>
 </html>
