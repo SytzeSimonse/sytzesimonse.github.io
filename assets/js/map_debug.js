@@ -43,7 +43,7 @@ function initJourneyMap() {
         {
             name: 'Bangkok',
             coords: [13.7563, 100.5018],
-            description: 'Bachelor Exchange • Chulalongkorn University',
+            description: 'Bachelor Exchange • Mahidol University',
             order: 3
         },
         {
@@ -131,7 +131,7 @@ function initJourneyMap() {
             className: 'journey-popup'
         });
 
-        // Add coordinates to path array
+        // Add coordinates to path array (for potential future use)
         pathCoordinates.push(location.coords);
         markers.push(marker);
 
@@ -146,48 +146,66 @@ function initJourneyMap() {
         });
     });
 
-    // Create the static journey path
-    const journeyPath = L.polyline(pathCoordinates, {
-        color: '#B8860B',
-        weight: 3,
-        opacity: 0.7,
-        smoothFactor: 1,
-        dashArray: '8, 12'
-    }).addTo(map);
-
     // Track current location for click-through functionality
     let currentLocationIndex = 0;
+    let currentMapCenter = [52.0889, 5.2317]; // Start at Zeist
 
-    // Function to show detailed location information with map movement
+    // Function to calculate animation duration based on distance
+    function calculateAnimationDuration(fromCoords, toCoords) {
+        // Calculate distance in kilometers using Leaflet's built-in method
+        const from = L.latLng(fromCoords[0], fromCoords[1]);
+        const to = L.latLng(toCoords[0], toCoords[1]);
+        const distance = from.distanceTo(to) / 1000; // Convert to kilometers
+        
+        // Base duration: 1.5 seconds for short distances
+        // Scale factor: add 0.3 seconds per 1000km
+        const baseDuration = 1.5;
+        const scaleFactor = 0.0003; // 0.3 seconds per 1000km
+        const duration = Math.max(baseDuration, baseDuration + (distance * scaleFactor));
+        
+        // Cap maximum duration at 5 seconds for very long distances
+        return Math.min(duration, 5.0);
+    }
+
+    // Function to show detailed location information with distance-based animation
     function showLocationDetails(location, index) {
         // Close all other popups first
         markers.forEach(marker => marker.closePopup());
+        
+        // Calculate animation duration based on distance from current position
+        const animationDuration = calculateAnimationDuration(currentMapCenter, location.coords);
         
         // Determine appropriate zoom level based on location
         let zoomLevel = 8; // Default for Dutch cities
         if (location.name === 'Bangkok') {
             zoomLevel = 7; // Slightly wider view for international locations
+        } else if (location.name === 'Zeist') {
+            zoomLevel = 12; // Closer for smaller cities
         } else if (location.name === 'Terceira, Azores') {
             zoomLevel = 9; // Closer for small island
         }
         
-        // Move map to location with smooth animation
+        // Move map to location with smooth, distance-proportional animation
         map.setView(location.coords, zoomLevel, {
             animate: true,
-            duration: 1.2,
-            easeLinearity: 0.5
+            duration: animationDuration,
+            easeLinearity: 0.3
         });
         
-        // Open popup after map has moved (slight delay)
+        // Update current map center for next calculation
+        currentMapCenter = location.coords;
+        
+        // Open popup after map has moved (proportional delay)
+        const popupDelay = animationDuration * 0.6; // Show popup at 60% of animation completion
         setTimeout(() => {
             markers[index].openPopup();
-        }, 600);
+        }, popupDelay * 1000);
         
         // Update current location index
         currentLocationIndex = index;
         
         // Optional: Log for potential future integrations
-        console.log(`Journey location selected: ${location.name} (zoom: ${zoomLevel})`);
+        console.log(`Journey to ${location.name}: ${animationDuration.toFixed(1)}s (distance-based)`);
     }
 
     // Add click-through functionality - cycle through locations on map click
