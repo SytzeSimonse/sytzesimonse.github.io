@@ -191,7 +191,6 @@
 
 /* Positive List */
 .reveal ul li::before {
-  content: '✓';
   position: absolute;
   left: 0;
   top: 0.1em;
@@ -442,4 +441,17 @@
     --r-main-color: #0f0f0f !important;
     --neutral: #e8e8e8 !important;
   }
+}
+
+.image-attribution {
+    font-size: 0.6em;
+    color: #666;
+    margin-top: 0.5em;
+    text-align: center;
+    font-style: italic;
+}
+
+.image-attribution a {
+    color: #4A6FA5;
+    text-decoration: none;
 }
