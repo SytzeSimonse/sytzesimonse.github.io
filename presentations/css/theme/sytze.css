@@ -1,0 +1,445 @@
+/**
+ * Sytze Simonse Reveal.js Theme - Updated
+ * Based on actual presentation patterns
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+:root {
+  /* Forest Theme Colors (matching website) */
+  --r-background-color: #fefefe;
+  --r-main-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --r-main-font-size: 36px;
+  --r-main-color: #0f0f0f;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: 'IBM Plex Sans', sans-serif;
+  --r-heading-color: #1a3329;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: -0.02em;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.8em;
+  --r-heading3-size: 1.3em;
+  --r-code-font: 'IBM Plex Mono', 'Courier New', monospace;
+  --r-link-color: #1a3329;
+  --r-link-color-hover: #7fb3d5;
+  --r-selection-background-color: #7fb3d5;
+  --r-selection-color: #fff;
+  
+  /* Custom variables */
+  --primary: #1a3329;
+  --secondary: #2a5242;
+  --accent: #7fb3d5;
+  --neutral: #e8e8e8;
+  --gray: #666;
+  --border-width: 2px;
+  
+  /* Force light mode */
+  color-scheme: light;
+}
+
+.reveal-viewport {
+  background: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: normal;
+  color: var(--r-main-color);
+}
+
+/* SLIDE LAYOUTS FROM YOUR PRESENTATION */
+
+/* Title Slide */
+.reveal .slides section.title-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px;
+}
+
+.reveal .title-slide h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.reveal .title-slide .subtitle {
+  font-size: 1.5em;
+  color: var(--gray);
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* Two Column Layout */
+.reveal .two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Three Column Layout */
+.reveal .three-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+/* Large Emoji */
+.reveal .large-emoji {
+  font-size: 4em;
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Example Cards */
+.reveal .example-card {
+  background: var(--neutral);
+  border: var(--border-width) solid transparent;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.reveal .example-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 12px 12px 0 0;
+}
+
+.reveal .example-card:hover {
+  border-color: var(--primary);
+  background: var(--r-background-color);
+}
+
+.reveal .example-card .emoji {
+  font-size: 3em;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.reveal .example-card h4 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.reveal .example-card .arrow {
+  font-weight: 500;
+  color: var(--gray);
+  margin: 15px 0;
+}
+
+.reveal .example-card .description {
+  font-style: italic;
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
+/* Workshop Section */
+.reveal .workshop {
+  background: var(--neutral);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 6px solid var(--primary);
+}
+
+.reveal .workshop h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.reveal .workshop h3 {
+  color: var(--accent);
+  font-size: 2em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Negative List (for contrasts) */
+.reveal .negative {
+  color: #d32f2f;
+}
+
+.reveal .negative li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.reveal .negative li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Positive List */
+.reveal ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Checklist */
+.reveal .checklist li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.reveal .checklist li::before {
+  content: '□';
+  color: var(--primary);
+  font-size: 1.2em;
+}
+
+/* Dating Demo Specific */
+.reveal .dating-demo {
+  text-align: center;
+  padding: 40px;
+  background: var(--neutral);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.reveal .swipe-icons {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.reveal .flow {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/* Highlight Text */
+.reveal .highlight {
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Citations */
+.reveal .citations {
+  font-size: 0.8em;
+  color: var(--gray);
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--neutral);
+}
+
+/* Image Slides */
+.reveal .image-slide h1 {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.5);
+  padding: 2rem;
+  border-radius: 16px;
+}
+
+/* Standard Elements */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+
+.reveal h1 { font-size: var(--r-heading1-size); }
+.reveal h2 { font-size: var(--r-heading2-size); }
+.reveal h3 { font-size: var(--r-heading3-size); }
+
+.reveal h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto 0;
+}
+
+.reveal .slides section {
+  text-align: left;
+  font-weight: inherit;
+  padding: 40px;
+}
+
+.reveal .slides section.center {
+  text-align: center;
+}
+
+/* Links */
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  border-bottom-color: var(--r-link-color-hover);
+}
+
+/* Lists */
+.reveal ul {
+  list-style-type: none;
+}
+
+.reveal ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.reveal ol li {
+  margin-bottom: 10px;
+}
+
+/* Code */
+.reveal pre {
+  background: var(--neutral);
+  border: var(--border-width) solid #ddd;
+  padding: 20px;
+  font-family: var(--r-code-font);
+  border-radius: 8px;
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  background: var(--neutral);
+  padding: 2px 6px;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+/* Blockquotes */
+.reveal blockquote {
+  background: var(--neutral);
+  border-left: 6px solid var(--primary);
+  margin: 20px 0;
+  padding: 20px;
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Images */
+.reveal section img {
+  border: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Tables */
+.reveal table th {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  font-weight: 500;
+}
+
+.reveal table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--neutral);
+}
+
+/* Utility Classes */
+.reveal .text-center { text-align: center; }
+.reveal .text-left { text-align: left; }
+.reveal .text-right { text-align: right; }
+.reveal .text-primary { color: var(--primary); }
+.reveal .text-gray { color: var(--gray); }
+.reveal .text-large { font-size: 1.3em; }
+.reveal .text-small { font-size: 0.8em; }
+
+/* Sustainability badge */
+.reveal .sustainability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.7em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+/* Navigation controls styling */
+.reveal .controls {
+  color: var(--primary);
+}
+
+.reveal .progress {
+  color: var(--primary);
+}
+
+.reveal .slide-number {
+  color: var(--primary);
+  background-color: var(--neutral);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .reveal .two-cols,
+  .reveal .three-cols {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .reveal .large-emoji {
+    font-size: 3em;
+  }
+  
+  .reveal .example-card .emoji {
+    font-size: 2em;
+  }
+}
+
+/* Force light mode always */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --r-background-color: #fefefe !important;
+    --r-main-color: #0f0f0f !important;
+    --neutral: #e8e8e8 !important;
+  }
+}

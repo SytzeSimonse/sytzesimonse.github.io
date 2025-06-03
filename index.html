@@ -3,109 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sytze Simonse | GIS & Technology Specialist</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        #map { height: 500px }
-        </style>
+    <title>Sytze Simonse - GIS & Technology Specialist</title>
+    <meta name="description" content="Tech specialist with a passion for making complex concepts accessible. With a background in Geo-Information Sciences and Information Sciences, I bridge technical and social worlds.">
+    <meta name="color-scheme" content="light">
+    
+    <!-- Optimized font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="assets/js/map_debug.js"></script>
-
-    <!-- Architectural Grid Background -->
-    <div class="architectural-grid"></div>
-    
-    <!-- Floating Geometric Elements -->
-    <div class="geometric-float geo-rect" style="top: 20%; left: 10%;"></div>
-    <div class="geometric-float geo-circle" style="top: 60%; right: 15%;"></div>
-    <div class="geometric-float geo-triangle" style="top: 80%; left: 20%;"></div>
-    <div class="geometric-float geo-rect" style="top: 40%; right: 25%;"></div>
-    <div class="geometric-float geo-circle" style="top: 15%; left: 60%;"></div>
-
-    <!-- Language Toggle -->
-    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">EN | NL</button>
-
-    <!-- Main Content -->
-    <div class="content-wrapper">
-        <!-- Header Section -->
-        <header class="header-section">
-            <div class="organic-shape shape-1"></div>
-            <div class="organic-shape shape-2"></div>
-            
-            <h1 class="name-title" data-i18n="name">Sytze Simonse</h1>
-            <p class="subtitle" data-i18n="title">GIS & Technology Specialist</p>
-            
-            <p class="text-lg leading-relaxed" data-i18n="intro">
-                Tech specialist with a passion for making complex concepts accessible. Bridging technical and social worlds through clear communication and geo-informatics expertise.
-            </p>
-            
-            <!-- Interactive Journey Map -->
-            <div id="map" class="journey-map"></div>
+    <div class="container">
+        <header class="header">
+            <h1>Sytze Simonse</h1>
+            <p class="intro">Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.</p>
+            <p class="tagline">With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.</p>
         </header>
 
-        <!-- Expertise Section -->
-        <section class="content-card">
-            <h2 class="text-xl font-semibold mb-4" style="color: var(--steel-blue);" data-i18n="expertise.title">
-                Expertise & Passions
-            </h2>
-            <div class="flex flex-wrap justify-center">
-                <span class="skill-tag">GIS & Geo-Data</span>
-                <span class="skill-tag">FOSS Tools</span>
-                <span class="skill-tag">Technical Education</span>
-            </div>
-        </section>
+        <main class="content">
+            <!-- Expertise Section -->
+            <section class="content-card">
+                <h2>Expertise & Passions</h2>
+                <div class="skill-container">
+                    <span class="skill-tag">GIS & Geo-Data</span>
+                    <span class="skill-tag">FOSS Tools</span>
+                    <span class="skill-tag">Technical Education</span>
+                </div>
+            </section>
 
-        <!-- Languages Section -->
-        <section class="content-card">
-            <h2 class="text-xl font-semibold mb-4" style="color: var(--steel-blue);" data-i18n="languages.title">
-                Languages
-            </h2>
-            <div class="flex flex-wrap justify-center">
-                <span class="skill-tag">🇳🇱 Dutch (Native)</span>
-                <span class="skill-tag">🇬🇧 English (C2)</span>
-                <span class="skill-tag">🇵🇹 Portuguese (C1)</span>
-                <span class="skill-tag">🇷🇺 Russian (B1)</span>
-                <span class="skill-tag">🇩🇪 German (B1)</span>
-            </div>
-        </section>
+            <!-- Languages Section -->
+            <section class="content-card">
+                <h2>Languages</h2>
+                <div class="skill-container">
+                    <span class="skill-tag">🇳🇱 Dutch (Native)</span>
+                    <span class="skill-tag">🇬🇧 English (C2)</span>
+                    <span class="skill-tag">🇵🇹 Portuguese (C1)</span>
+                    <span class="skill-tag">🇷🇺 Russian (B1)</span>
+                    <span class="skill-tag">🇩🇪 German (B1)</span>
+                </div>
+            </section>
 
-        <!-- Contact Section -->
-        <section class="content-card text-center">
-            <p class="mb-4" data-i18n="contact.location">📍 Rotterdam, Netherlands</p>
-            
-            <div class="social-container">
-                <a href="mailto:sytze.simonse@proton.me" class="social-link" title="Email">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 14H6V8l6 4 6-4v10zm-6-6L4 6h16l-8 6z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" class="social-link" title="LinkedIn" target="_blank">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/SytzeSimonse" class="social-link" title="GitHub" target="_blank">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
-                </a>
-                <a href="https://gis.stackexchange.com/users/147844/sytze" class="social-link" title="GIS Stack Exchange" target="_blank">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M17.36,20.2V14.82h1.79V22H3V14.82H4.8V20.2H17.36M6.77,14.32l0.37-1.76,8.79,1.85-0.37,1.76L6.77,14.32m1.16-4.21L8.69,8.5l8.14,3.78-0.76,1.62L7.93,10.11M10.86,5.56l1.15-1.38l6.9,5.76-1.15,1.38L10.86,5.56m4.5-2.94l6.02,8.05-1.43,1.07l-6.02-8.05L15.36,2.62m-8.67,14h9v1.79h-9V16.62z"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <p class="text-sm mt-6" style="color: var(--concrete-grey);" data-i18n="contact.kvk">
-                KVK: 85266256
-            </p>
-        </section>
+            <!-- Contact Section -->
+            <section class="content-card contact-section">
+                <p class="location">📍 Rotterdam, Netherlands</p>
+                
+                <div class="social-container">
+                    <a href="mailto:sytze.simonse@proton.me" class="social-link" title="Email">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 14H6V8l6 4 6-4v10zm-6-6L4 6h16l-8 6z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" class="social-link" title="LinkedIn" target="_blank">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/SytzeSimonse" class="social-link" title="GitHub" target="_blank">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://gis.stackexchange.com/users/147844/sytze" class="social-link" title="GIS Stack Exchange" target="_blank">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.36,20.2V14.82h1.79V22H3V14.82H4.8V20.2H17.36M6.77,14.32l0.37-1.76,8.79,1.85-0.37,1.76L6.77,14.32m1.16-4.21L8.69,8.5l8.14,3.78-0.76,1.62L7.93,10.11M10.86,5.56l1.15-1.38l6.9,5.76-1.15,1.38L10.86,5.56m4.5-2.94l6.02,8.05-1.43,1.07l-6.02-8.05L15.36,2.62m-8.67,14h9v1.79h-9V16.62z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <p class="kvk">KVK: 85266256</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div id="wcb" class="carbonbadge wcb-d"></div>
+            <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+        </footer>
     </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
