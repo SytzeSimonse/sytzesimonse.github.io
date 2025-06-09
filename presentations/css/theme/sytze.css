@@ -4,11 +4,12 @@
  */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap"');
 
 :root {
   /* Forest Theme Colors (matching website) */
   --r-background-color: #fefefe;
-  --r-main-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --r-main-font: 'Righteous', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --r-main-font-size: 36px;
   --r-main-color: #0f0f0f;
   --r-block-margin: 20px;
@@ -64,14 +65,15 @@
   padding: 60px;
 }
 
-.reveal .title-slide h1 {
+.reveal .title-slide .title {
+  font-family: var(--r-main-font);
   font-size: 3em;
   margin-bottom: 30px;
   color: var(--primary);
 }
 
 .reveal .title-slide .subtitle {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: var(--gray);
   font-weight: 300;
   margin-bottom: 40px;
