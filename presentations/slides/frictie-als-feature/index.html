@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frictie als Feature | Sytze Simonse</title>
-    
+
     <!-- Reveal.js 5.x CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-    
+
     <!-- Your custom theme -->
     <link rel="stylesheet" href="../../css/theme/sytze.css">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Return to presentations overview -->
     <div style="position: fixed; top: 1rem; left: 1rem; z-index: 1000;">
-        <a href="../../index.html" 
-           style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background-color: rgba(255, 255, 255, 0.9); border: 1px solid #4A6FA5; border-radius: 50%; color: #4A6FA5; transition: all 0.3s ease; text-decoration: none;" 
-           title="Return to presentations overview">
+        <a href="../../index.html"
+            style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background-color: rgba(255, 255, 255, 0.9); border: 1px solid #4A6FA5; border-radius: 50%; color: #4A6FA5; transition: all 0.3s ease; text-decoration: none;"
+            title="Return to presentations overview">
             <i class="fas fa-arrow-left"></i>
         </a>
     </div>
 
     <div class="reveal">
         <div class="slides">
+
             <!-- Title Slide -->
             <section class="title-slide">
-                <h1>Frictie als Feature</h1>
-                <p class="subtitle">Het verhaal van de verdwenen koffiejuffrouw</p>
-                <br>
-                <p><small>Hogeschool Rotterdam - ADS&AI<br>Sytze Simonse</small></p>
+                <h1 class="title">Frictie als Feature</h1>
+                <h2 class="subtitle">Het verhaal van de verdwenen koffiejuffrouw</h2>
+
+                <h3 class="organisation">Hogeschool Rotterdam</h3>
+                <h3 class="course">Applied Data Science & Artificial Intelligence</h3>
+
+                <h4 class="presenter">Sytze Simonse</h4>
+                <h5 class="date">
+
+                    <script type="text/javascript">
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        document.write(new Date().toLocaleDateString('nl-NL', options));
+                    </script>
+
+                </h5>
             </section>
 
             <!-- Van Nelle intro -->
@@ -49,49 +64,203 @@
     </p>
                     </div>
                 </div>
+
+                <aside class="notes">
+                    Kortgeleden was ik in de Van Nelle Fabriek in Rotterdam.
+                    Dit is een UNESCO Werelderfgoedlocatie, beroemd om zijn moderne architectuur (in die tijd).
+                    De fabriek is een icoon van de industriële revolutie en de opkomst van de moderne werkplek.
+                    Op een gegeven moment, benoemde de rondleider (oud-werknemer van de fabriek), terloops dat er
+                    vroeger een koffiejuffrouw was.
+                    Dit deed me denken aan in hoeverre
+
+
+                </aside>
             </section>
 
-            <!-- Efficiency vs Humanity -->
+            <!-- Moderne foto koffiejuffrouw -->
             <section>
-                <div class="two-cols">
+                <section>
+                    <div class="two-cols">
+                        <div>
+                            <img src="https://images.nrc.nl/jzQISPipD2IKa3j5LRMbPG7UET0=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                                alt="Moderne koffiejuffrouw" style="border-radius: 12px; width: 100%;">
+                        </div>
+                        <div class="quote">
+                            <p><em>Door luxe koffieautomaten, emancipatie en zucht naar efficiëntie is de koffiejuffrouw
+                                    aan
+                                    het verdwijnen. Maar op enkele kantoren loopt ze nog steeds rond. „Ik zorg goed voor
+                                    hen, maar zij zeker ook voor mij.”</em></p>
+                            <p class="author">- NRC, 2023</p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Het beroep 'koffiedame' (of minder seksistisch: 'koffieschenker) is een oudstervend beroep.
+                        Vroeger was het gebruikelijk dat er een koffiejuffrouw rondliep op kantoor, die zorgde voor de
+                        koffie en thee.
+                    </aside>
+                </section>
+
+                <section class="image-grid">
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
+                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
+                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
+                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
+                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
+                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
+                    </div>
+                    <div class="grid-item">
+                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
+                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-auto-animate>
+                <div class="one-col">
                     <div>
-                        <h3>Efficiency</h3>
+                        <h3>Efficiëntie</h3>
                         <ul>
                             <li>Sneller</li>
                             <li>Goedkoper</li>
                             <li>24/7 beschikbaar</li>
-                            <li>Geen menselijke fouten</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Humanity</h3>
-                        <ul class="negative">
-                            <li>Geen gesprekjes</li>
-                            <li>Geen persoonlijke aandacht</li>
-                            <li>Verlies van zwakke sociale banden</li>
-                            <li>Minder menselijke warmte</li>
+                            <li>Geen menselijke 'fouten'</li>
                         </ul>
                     </div>
                 </div>
+            </section>
+
+            <section data-auto-animate>
+                <div class="two-cols">
+                    <div>
+                        <h3>Efficiëntie</h3>
+                        <ul>
+                            <li>Sneller</li>
+                            <li>Goedkoper</li>
+                            <li>24/7 beschikbaar</li>
+                            <li>Geen menselijke 'fouten'</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Menselijkheid</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section data-auto-animate>
+                <div class="two-cols">
+                    <div>
+                        <h3>Efficiëntie</h3>
+                        <ul>
+                            <li>Sneller</li>
+                            <li>Goedkoper</li>
+                            <li>24/7 beschikbaar</li>
+                            <li>Geen menselijke 'fouten'</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Menselijkheid</h3>
+                        <ul>
+                            <li>Geen 'iced americano latte met een scheutje havermelk en een snufje kaneel, je weet wel,
+                                zoals ik het altijd drink'</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+               Frictie verwijderen...
+            </section>
             </section>
 
             <!-- Definition -->
             <section>
-                <h2>Sociale Frictie</h2>
-                <h3><em>De bewuste vertraging in menselijke interacties</em></h3>
-                <br><br>
-                <blockquote>
-                    "Friction is often necessary for human development and meaningful engagement"
-                </blockquote>
-                <div class="citations">
-                    <strong>Bron:</strong> Nature Communications, 2024
-                </div>
+                <section>
+                    <h2>Wat is Frictie?</h2>
+                    <p>
+                        "Friction is resistance. It derives from physical interaction between humans, and humans and
+                        things – its reach is holistic. All senses, elements and emotions play a role: sight, sound,
+                        smell, taste, touch, air, earth, temperature, agitation, passion, joy, sadness...
+                    </p>
+                    <p>
+                        With movement comes friction. The more we move and act, the more friction we encounter. The more
+                        friction
+                        there is, the more we engage and care. Friction drives our engagement. Friction, in this
+                        context, is not synonymous with either anger or conflict, nor is it malfunctioning technology.
+                    </p>
+                    <p>
+                        Friction is an essential ingredient that makes up our humanness and sparks human connection.
+                        Friction is a lively, intrinsic experience."
+                    </p>
+                    <p class="author">Luna Maurer and Roel Wouters</p>
+                </section>
+
+                <section>
+                    <h2>Maakt frictie ons menselijker?</h2>
+                </section>
+
+                 <section>
+                Types frictie:
+                <ul>
+                    <li>Culturele frictie</li>
+                    <li>Cognitieve frictie</li>
+                    <li>Interpersoonlijke frictie</li>
+                    <li>Technologische frictie</li>
+                </ul>
+                <aside class="notes">
+                    Frictie kan verschillende vormen aannemen, afhankelijk van de context.
+                    Culturele frictie: waardeverschil, cultuurafstand, etc.
+                    Cognitieve frictie: ideeën die botsen, miscommunicatie, etc.
+                    Interpersoonlijke frictie: stress, misverstanden, etc.
+                    Technologische frictie: interfaceproblemen, bugs, lag, etc.
+                </aside>
+            </section>
+
+                <section>
+                    <blockquote>
+                        "Friction is often necessary for human development and meaningful engagement"
+                    </blockquote>
+                    <div class="citations">
+                        <strong>Bron:</strong> Nature Communications, 2024
+                    </div>
+                </section>
             </section>
 
             <!-- Spectrum slide with background image -->
-            <section class="image-slide" data-background="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1920&q=80" data-background-opacity="0.3">
-                <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 16px;">
-                    Het Spectrum:<br>Van Menselijk naar Automatisch
+            <section class="image-slide" data-background-opacity="0.3">
+                <h1
+                    style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 16px;">
+                    van mens naar machine
                 </h1>
             </section>
 
@@ -100,24 +269,26 @@
                 <h2>Frictieloos</h2>
                 <div class="three-cols">
                     <div class="example-card">
-                        <span class="emoji">☕</span>
                         <h4>Koffiejuffrouw</h4>
                         <p class="arrow">→ Koffieautomaat</p>
-                        <p class="description">Gesprekjes verdwijnen</p>
                     </div>
                     <div class="example-card">
-                        <span class="emoji">🛒</span>
                         <h4>Kassier</h4>
                         <p class="arrow">→ Zelfscankassa</p>
-                        <p class="description">Sociale interactie weg</p>
                     </div>
                     <div class="example-card">
-                        <span class="emoji">💕</span>
-                        <h4>Natuurlijk ontmoeten</h4>
-                        <p class="arrow">→ Dating apps</p>
-                        <p class="description">Afwijzing verdwijnt</p>
+                        <h4>Verkoper</h4>
+                        <p class="arrow">→ Webshop</p>
                     </div>
                 </div>
+                <aside class="notes">
+                    Voorbeelden van frictie die we willen vermijden.
+                    <ul>
+                        <li>Wachten in de rij (geduld)</li>
+                        <li>Onzekerheid over de ander</li>
+                        <li>Afwijzing</li>
+                    </ul>
+                </aside>
             </section>
 
          <!-- Replace or add after your dating apps slide -->
@@ -159,18 +330,106 @@
                 <div class="workshop">
                     <h2>Workshop</h2>
                     <h3>15 minuten</h3>
+            <!-- Dating apps -->
+            <section>
+                <section>
+                    <h2>Dating- of kennismakingsapps</h2>
+                    <h3>Het ultieme frictieloze design?</h3>
                     <br>
-                    <p><strong>Ontwerp een dating app die sociale frictie behoudt</strong></p>
+                    <div class="dating-demo">
+                        <div class="swipe-icons">👈 👉</div>
+                        <div class="flow">Swipe → Match → (Chat)</div>
+                        <p><em>Geen awkward momenten, geen afwijzing...</em></p>
+                    </div>
+                    <aside class="notes">
+                        Dating apps zijn ontworpen om het proces van daten zo soepel mogelijk te maken.
+                        Maar wat gebeurt er met de sociale frictie die normaal gesproken deel uitmaakt van het ontmoeten
+                        van nieuwe mensen?
+                        In deze sectie gaan we onderzoeken hoe dating apps sociale frictie verminderen en wat de
+                        gevolgen daarvan zijn.
+                    </aside>
+                </section>
+
+                <section>
+                    <!-- Insert GIF of slap in the face -->
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.com%2FeLo_iYFXX2QAAAAC%2Fslap-face-slap.gif&f=1&nofb=1&ipt=a4d9f00e9ba239b4a3a3f58e58250c3ffdd2c9b968bb56a1117bc5910fb209f6"
+                        alt="Slap in the face GIF" style="width: 100%; max-width: 600px; border-radius: 12px;">
                     <br>
-                    <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-                        <p><strong>Duo-opdracht:</strong> Hoe zou jij een datingapplicatie of -tool ontwerpen dat:</p>
+                </section>
+
+                <section>
+                    <div style="max-width: 600px; margin: 0 auto; text-align: left;">
                         <ul>
-                            <li>Mensen helpt verbinden</li>
-                            <li>Sociale frictie behoudt</li>
+                            <li>Moed ontwikkelen</li>
+                            <li>Leren geduld te hebben</li>
+                            <li>Weerbaarheid bouwen</li>
+                            <li>Alternatieven zoeken</li>
                         </ul>
                     </div>
-                    <br>
-                    <p><small>💡 Denk aan: Welke "vertragingen" wil je bewust inbouwen?</small></p>
+                    <aside class="notes">
+                        Er zijn pluspunten aan afwijzing.
+                    </aside>
+                </section>
+
+                <!-- Plus: Is het belang van Tinder hetzelfde als haar gebruiker? -->
+                <section>
+                    <h3>Plus: Is het belang van Tinder hetzelfde als haar gebruiker?</h3>
+                    <img
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fa.storyblok.com%2Ff%2F149299%2F1000x783%2Fec3e878829%2Ftinder-subscriptions.png&f=1&nofb=1&ipt=c558eb5b9e6b8a2f0ab0b0a71a38f1df8a36b5d1bcc0ae19a16a5e0a716780ae" />
+                    <aside class="notes">
+                        Tinder is een bedrijf dat winst wil maken.
+                        Het is niet per se in het belang van de gebruiker om de beste match te vinden.
+                        Het belang van Tinder is om gebruikers zo lang mogelijk op de app te houden.
+                    </aside>
+                </section>
+            </section>
+
+            <!-- Friction by Design -->
+            <section>
+                <section>
+                    <h2>Frictie door Design</h2>
+                    <p>
+                        Frictie is niet altijd een bug, soms is het een feature.
+                        In deze sectie onderzoeken we hoe frictie bewust kan worden ingezet om de gebruikerservaring te
+                        verbeteren.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Discomfort</h2>
+                </section>
+
+                <section>
+                    <h2>Verlangzaming</h2>
+                </section>
+
+                <section>
+                    <h2>Engaging the body</h2>
+                </section>
+
+                <section>
+                    <h2>Focus on the 'non-positive'</h2>
+                </section>
+
+            </section>
+
+            </section>
+            <!-- Exercise -->
+            <section>
+                <div class="workshop">
+                    <h2 class="exercise_title">Oefening</h2>
+                    <h3 class="exercise_time">15 minuten</h3>
+
+                    <p class="exercise_description">
+                        In duo's, ontwerp een kennismakingsapp die bewust sociale frictie inbouwt.
+                        Het doel van de app is om mensen te helpen verbinden.
+                        Licht toe waarom je hebt gekozen voor deze vorm van frictie en hoe het de gebruikerservaring
+                        bevordert.
+                    </p>
+
+                    <p class="exercise_goal">
+                        Het doel is om een gebruikerservaring te creëren die zowel verbindend als uitdagend is.
+                    </p>
                 </div>
             </section>
 
@@ -218,21 +477,26 @@
             </section>
 
             <!-- Thank you -->
-            <section class="title-slide">
-                <h1>Dank je wel!</h1>
-                <h2>Vragen?</h2>
-                <br>
-                <div class="citations">
-                    <strong>Bronnen:</strong><br>
-                    • <em>Mechanical modeling of friction phenomena in social systems</em> (Nature, 2024)<br>
-                    • <em>Social Relations and Technology</em> (PMC, 2024)<br>
-                    • <em>Technologies for Enhancing Collocated Social Interaction</em> (CSCW, 2019)
-                </div>
-                <br>
-                <p>
+            <section class="end-slide">
+
+                <h2 class="title">Frictie als Feature</h2>
+                <h3 class="subtitle">Het verhaal van de verdwenen koffiejuffrouw</h3>
+
+                <p class="contact">
                     <a href="https://sytzesimonse.nl">sytzesimonse.nl</a><br>
                     <a href="mailto:sytze.simonse@proton.me">sytze.simonse@proton.me</a>
                 </p>
+            </section>
+
+            <!-- Citations slide -->
+            <section class="citations-slide">
+                <h2>Citaties</h2>
+                <ul>
+                    <li><em>Mechanical modeling of friction phenomena in social systems</em> - Nature Communications,
+                        2024</li>
+                    <li><em>Social Relations and Technology</em> - PMC, 2024</li>
+                    <li><em>Technologies for Enhancing Collocated Social Interaction</em> - CSCW, 2019</li>
+                </ul>
             </section>
         </div>
     </div>
@@ -252,17 +516,17 @@
             center: true,
             transition: 'slide',
             backgroundTransition: 'fade',
-            
+
             // Enable plugins
             plugins: [RevealNotes, RevealHighlight],
-            
+
             // Custom navigation
             keyboard: {
                 32: 'next', // Space bar
                 37: 'prev', // Left arrow
                 39: 'next', // Right arrow
             },
-            
+
             // Reveal.js 5.x specific configurations
             disableLayout: false,
             touch: true,
@@ -271,4 +535,5 @@
         });
     </script>
 </body>
+
 </html>
