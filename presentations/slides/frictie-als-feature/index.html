@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="nl">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +15,9 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
 </head>
 
 <body>
@@ -33,471 +33,786 @@
     <div class="reveal">
         <div class="slides">
 
-            <!-- Title Slide -->
+            <!-- 1. INTRO SLIDE -->
+            <!-- Title slide with course information -->
             <section class="title-slide">
                 <h1 class="title">Frictie als Feature</h1>
-                <h2 class="subtitle">Het verhaal van de verdwenen koffiejuffrouw</h2>
+                <h2 class="subtitle">Wanneer weerstand waardevol wordt in technologie</h2>
 
-                <h3 class="organisation">Hogeschool Rotterdam</h3>
-                <h3 class="course">Applied Data Science & Artificial Intelligence</h3>
-
-                <h4 class="presenter">Sytze Simonse</h4>
-                <h5 class="date">
-
-                    <script type="text/javascript">
-                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                        document.write(new Date().toLocaleDateString('nl-NL', options));
-                    </script>
-
-                </h5>
-            </section>
-
-            <!-- Van Nelle intro -->
-            <section>
-                <div class="one-col">
-                    <div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Rotterdam_van_nelle_fabriek.jpg" 
-         alt="Van Nelle Factory Rotterdam" 
-         style="border-radius: 12px; width: 100%;">
-    <p class="image-attribution">
-        <small>Photo: F.Eveleens (2001) | CC BY 3.0 | <a href="https://commons.wikimedia.org/wiki/File:Rotterdam_van_nelle_fabriek.jpg">Wikimedia Commons</a></small>
-    </p>
-                    </div>
+                <div class="course-info">
+                    <h3 class="organisation">Hogeschool Rotterdam</h3>
+                    <h3 class="course">Applied Data Analytics & AI</h3>
+                    <h4 class="presenter">Sytze Simonse</h4>
+                    <h5 class="date">
+                        <script type="text/javascript">
+                            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                            document.write(new Date().toLocaleDateString('nl-NL', options));
+                        </script>
+                    </h5>
                 </div>
 
                 <aside class="notes">
-                    Kortgeleden was ik in de Van Nelle Fabriek in Rotterdam.
-                    Dit is een UNESCO Werelderfgoedlocatie, beroemd om zijn moderne architectuur (in die tijd).
-                    De fabriek is een icoon van de industriële revolutie en de opkomst van de moderne werkplek.
-                    Op een gegeven moment, benoemde de rondleider (oud-werknemer van de fabriek), terloops dat er
-                    vroeger een koffiejuffrouw was.
-                    Dit deed me denken aan in hoeverre
-
-
+                    Welkom bij dit college over frictie als feature. We gaan onderzoeken hoe bewuste weerstand in technologie waardevol kan zijn, met een focus op dating algoritmes als concrete case study.
                 </aside>
             </section>
 
-            <!-- Moderne foto koffiejuffrouw -->
+            <!-- 2. VAN NELLE FABRIEK -->
+            <!-- Anecdote about Van Nelle factory and the disappearing coffee lady -->
             <section>
-                <section>
-                    <div class="two-cols">
-                        <div>
-                            <img src="https://images.nrc.nl/jzQISPipD2IKa3j5LRMbPG7UET0=/1920x/filters:no_upscale():format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                                alt="Moderne koffiejuffrouw" style="border-radius: 12px; width: 100%;">
-                        </div>
-                        <div class="quote">
-                            <p><em>Door luxe koffieautomaten, emancipatie en zucht naar efficiëntie is de koffiejuffrouw
-                                    aan
-                                    het verdwijnen. Maar op enkele kantoren loopt ze nog steeds rond. „Ik zorg goed voor
-                                    hen, maar zij zeker ook voor mij.”</em></p>
-                            <p class="author">- NRC, 2023</p>
-                        </div>
-                    </div>
-
-                    <aside class="notes">
-                        Het beroep 'koffiedame' (of minder seksistisch: 'koffieschenker) is een oudstervend beroep.
-                        Vroeger was het gebruikelijk dat er een koffiejuffrouw rondliep op kantoor, die zorgde voor de
-                        koffie en thee.
-                    </aside>
-                </section>
-
-                <section class="image-grid">
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
-                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
-                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
-                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
-                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/1b2d9c4f8e0a3f5b6c7d8e9f0a1b2c3d/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames.jpg"
-                            alt="Koffiejuffrouw 1" style="border-radius: 12px;">
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://images.nrc.nl/4e5f6a7b8c9d0e1f2g3h4i5j6k7l8m9n/filters:format(webp)/s3/static.nrc.nl/bvhw/files/2023/09/web-2209zatecokoffiedames2.jpg"
-                            alt="Koffiejuffrouw 2" style="border-radius: 12px;">
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section data-auto-animate>
-                <div class="one-col">
-                    <div>
-                        <h3>Efficiëntie</h3>
-                        <ul>
-                            <li>Sneller</li>
-                            <li>Goedkoper</li>
-                            <li>24/7 beschikbaar</li>
-                            <li>Geen menselijke 'fouten'</li>
-                        </ul>
-                    </div>
+                <div class="image-slide">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Rotterdam_van_nelle_fabriek.jpg" 
+                         alt="Van Nelle Factory Rotterdam" 
+                         style="border-radius: 12px; width: 100%;">
+                    <p class="image-attribution">
+                        <small>Photo: F.Eveleens (2001) | CC BY 3.0 | <a href="https://commons.wikimedia.org/wiki/File:Rotterdam_van_nelle_fabriek.jpg">Wikimedia Commons</a></small>
+                    </p>
                 </div>
-            </section>
 
-            <section data-auto-animate>
-                <div class="two-cols">
-                    <div>
-                        <h3>Efficiëntie</h3>
-                        <ul>
-                            <li>Sneller</li>
-                            <li>Goedkoper</li>
-                            <li>24/7 beschikbaar</li>
-                            <li>Geen menselijke 'fouten'</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Menselijkheid</h3>
-                    </div>
+                <div class="van-nelle-story">
+                    <h2>De Van Nelle Fabriek</h2>
+                    <blockquote>
+                        "Kortgeleden bezocht ik de Van Nelle fabriek. De rondleider vertelde terloops dat er vroeger een 'koffiedame' rondliep..."
+                    </blockquote>
+                    <div class="large-emoji">☕ → 🤖</div>
+                    <p><em>Van menselijke interactie naar geautomatiseerde efficiëntie</em></p>
                 </div>
+
+                <aside class="notes">
+                    Begin met het Van Nelle verhaal. Leg uit hoe de koffiedame vervangen werd door automaten - een perfect voorbeeld van het wegwerken van 'frictie' ten gunste van efficiëntie. Maar wat verliezen we daarbij?
+                </aside>
             </section>
 
-            <section data-auto-animate>
-                <div class="two-cols">
-                    <div>
-                        <h3>Efficiëntie</h3>
-                        <ul>
-                            <li>Sneller</li>
-                            <li>Goedkoper</li>
-                            <li>24/7 beschikbaar</li>
-                            <li>Geen menselijke 'fouten'</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Menselijkheid</h3>
-                        <ul>
-                            <li>Geen 'iced americano latte met een scheutje havermelk en een snufje kaneel, je weet wel,
-                                zoals ik het altijd drink'</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-               Frictie verwijderen...
-            </section>
-            </section>
-
-            <!-- Definition -->
+            <!-- 3. DEFINITIE VAN FRICTIE -->
+            <!-- Simple and extended definition of friction -->
             <section>
                 <section>
                     <h2>Wat is Frictie?</h2>
-                    <p>
-                        "Friction is resistance. It derives from physical interaction between humans, and humans and
-                        things – its reach is holistic. All senses, elements and emotions play a role: sight, sound,
-                        smell, taste, touch, air, earth, temperature, agitation, passion, joy, sadness...
-                    </p>
-                    <p>
-                        With movement comes friction. The more we move and act, the more friction we encounter. The more
-                        friction
-                        there is, the more we engage and care. Friction drives our engagement. Friction, in this
-                        context, is not synonymous with either anger or conflict, nor is it malfunctioning technology.
-                    </p>
-                    <p>
-                        Friction is an essential ingredient that makes up our humanness and sparks human connection.
-                        Friction is a lively, intrinsic experience."
-                    </p>
-                    <p class="author">Luna Maurer and Roel Wouters</p>
-                </section>
-
-                <section>
-                    <h2>Maakt frictie ons menselijker?</h2>
-                </section>
-
-                 <section>
-                Types frictie:
-                <ul>
-                    <li>Culturele frictie</li>
-                    <li>Cognitieve frictie</li>
-                    <li>Interpersoonlijke frictie</li>
-                    <li>Technologische frictie</li>
-                </ul>
-                <aside class="notes">
-                    Frictie kan verschillende vormen aannemen, afhankelijk van de context.
-                    Culturele frictie: waardeverschil, cultuurafstand, etc.
-                    Cognitieve frictie: ideeën die botsen, miscommunicatie, etc.
-                    Interpersoonlijke frictie: stress, misverstanden, etc.
-                    Technologische frictie: interfaceproblemen, bugs, lag, etc.
-                </aside>
-            </section>
-
-                <section>
-                    <blockquote>
-                        "Friction is often necessary for human development and meaningful engagement"
-                    </blockquote>
-                    <div class="citations">
-                        <strong>Bron:</strong> Nature Communications, 2024
+                    
+                    <div class="definition-simple">
+                        <h3>Eenvoudige definitie:</h3>
+                        <blockquote>
+                            "Het verschijnsel waarbij een weerstandskracht kan ontstaan wanneer twee oppervlakken langs elkaar schuiven, terwijl ze tegen elkaar aan gedrukt worden"
+                        </blockquote>
+                        <p class="source">- Nederlandstalig WikiWoordenboek</p>
                     </div>
-                </section>
-            </section>
 
-            <!-- Spectrum slide with background image -->
-            <section class="image-slide" data-background-opacity="0.3">
-                <h1
-                    style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 16px;">
-                    van mens naar machine
-                </h1>
-            </section>
-
-            <!-- Three examples -->
-            <section>
-                <h2>Frictieloos</h2>
-                <div class="three-cols">
-                    <div class="example-card">
-                        <h4>Koffiejuffrouw</h4>
-                        <p class="arrow">→ Koffieautomaat</p>
-                    </div>
-                    <div class="example-card">
-                        <h4>Kassier</h4>
-                        <p class="arrow">→ Zelfscankassa</p>
-                    </div>
-                    <div class="example-card">
-                        <h4>Verkoper</h4>
-                        <p class="arrow">→ Webshop</p>
-                    </div>
-                </div>
-                <aside class="notes">
-                    Voorbeelden van frictie die we willen vermijden.
-                    <ul>
-                        <li>Wachten in de rij (geduld)</li>
-                        <li>Onzekerheid over de ander</li>
-                        <li>Afwijzing</li>
-                    </ul>
-                </aside>
-            </section>
-
-         <!-- Replace or add after your dating apps slide -->
-<section>
-    <h2>Natuurlijk Ontmoeten</h2>
-    
-    <div class="video-container">
-        <iframe width="400" height="225" 
-                    src="https://www.youtube.com/embed/kxBu82Dte10?start=10&end=45&autoplay=1" 
-                    title="Notting Hill - Meeting Scene"
-                    frameborder="0" 
-                    allowfullscreen>
-            </iframe>
-    </div>
-    
-    <p class="video-attribution">
-        <small>Fragment: Notting Hill (1999) | Universal Pictures | YouTube</small>
-    </p>
-    
-    <p><em>Awkward, ongemakkelijk... maar echt</em></p>
-</section>
-
-            <!-- What we lose -->
-            <section>
-                <h3>Wat verliezen we als afwijzing verdwijnt?</h3>
-                <br>
-                <div style="max-width: 600px; margin: 0 auto; text-align: left;">
-                    <ul>
-                        <li>🎯 <strong>Moed ontwikkelen</strong></li>
-                        <li>💪 <strong>Weerbaarheid bouwen</strong></li>
-                        <li>🎭 <strong>Sociale vaardigheden</strong></li>
-                        <li>❤️ <strong>Echte waardering</strong></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Workshop -->
-            <section>
-                <div class="workshop">
-                    <h2>Workshop</h2>
-                    <h3>15 minuten</h3>
-            <!-- Dating apps -->
-            <section>
-                <section>
-                    <h2>Dating- of kennismakingsapps</h2>
-                    <h3>Het ultieme frictieloze design?</h3>
-                    <br>
-                    <div class="dating-demo">
-                        <div class="swipe-icons">👈 👉</div>
-                        <div class="flow">Swipe → Match → (Chat)</div>
-                        <p><em>Geen awkward momenten, geen afwijzing...</em></p>
-                    </div>
                     <aside class="notes">
-                        Dating apps zijn ontworpen om het proces van daten zo soepel mogelijk te maken.
-                        Maar wat gebeurt er met de sociale frictie die normaal gesproken deel uitmaakt van het ontmoeten
-                        van nieuwe mensen?
-                        In deze sectie gaan we onderzoeken hoe dating apps sociale frictie verminderen en wat de
-                        gevolgen daarvan zijn.
+                        Start met de simpele definitie die iedereen kent - fysieke wrijving.
                     </aside>
                 </section>
 
                 <section>
-                    <!-- Insert GIF of slap in the face -->
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.com%2FeLo_iYFXX2QAAAAC%2Fslap-face-slap.gif&f=1&nofb=1&ipt=a4d9f00e9ba239b4a3a3f58e58250c3ffdd2c9b968bb56a1117bc5910fb209f6"
-                        alt="Slap in the face GIF" style="width: 100%; max-width: 600px; border-radius: 12px;">
-                    <br>
-                </section>
-
-                <section>
-                    <div style="max-width: 600px; margin: 0 auto; text-align: left;">
-                        <ul>
-                            <li>Moed ontwikkelen</li>
-                            <li>Leren geduld te hebben</li>
-                            <li>Weerbaarheid bouwen</li>
-                            <li>Alternatieven zoeken</li>
-                        </ul>
+                    <h2>Uitgebreide Definitie</h2>
+                    
+                    <div class="definition-extended">
+                        <blockquote>
+                            "Friction is resistance. It derives from physical interaction between humans, and humans and things – its reach is holistic. All senses, elements and emotions play a role: sight, sound, smell, taste, touch, air, earth, temperature, agitation, passion, joy, sadness... 
+                            <br><br>
+                            With movement comes friction. The more we move and act, the more friction we encounter. The more friction there is, the more we engage and care. Friction drives our engagement. Friction, in this context, is not synonymous with either anger or conflict, nor is it malfunctioning technology. 
+                            <br><br>
+                            <strong>Friction is an essential ingredient that makes up our humanness and sparks human connection. Friction is a lively, intrinsic experience.</strong>"
+                        </blockquote>
+                        <p class="source">- Luna Maurer & Roel Wouters, Designing Friction</p>
                     </div>
-                    <aside class="notes">
-                        Er zijn pluspunten aan afwijzing.
-                    </aside>
-                </section>
 
-                <!-- Plus: Is het belang van Tinder hetzelfde als haar gebruiker? -->
-                <section>
-                    <h3>Plus: Is het belang van Tinder hetzelfde als haar gebruiker?</h3>
-                    <img
-                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fa.storyblok.com%2Ff%2F149299%2F1000x783%2Fec3e878829%2Ftinder-subscriptions.png&f=1&nofb=1&ipt=c558eb5b9e6b8a2f0ab0b0a71a38f1df8a36b5d1bcc0ae19a16a5e0a716780ae" />
                     <aside class="notes">
-                        Tinder is een bedrijf dat winst wil maken.
-                        Het is niet per se in het belang van de gebruiker om de beste match te vinden.
-                        Het belang van Tinder is om gebruikers zo lang mogelijk op de app te houden.
+                        Dit is de meer filosofische definitie van frictie die we in dit college gebruiken. Frictie als iets dat ons menselijker maakt.
                     </aside>
                 </section>
             </section>
 
-            <!-- Friction by Design -->
+            <!-- 4. TYPEN FRICTIE -->
+            <!-- Types of friction with examples -->
             <section>
-                <section>
-                    <h2>Frictie door Design</h2>
-                    <p>
-                        Frictie is niet altijd een bug, soms is het een feature.
-                        In deze sectie onderzoeken we hoe frictie bewust kan worden ingezet om de gebruikerservaring te
-                        verbeteren.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Discomfort</h2>
-                </section>
-
-                <section>
-                    <h2>Verlangzaming</h2>
-                </section>
-
-                <section>
-                    <h2>Engaging the body</h2>
-                </section>
-
-                <section>
-                    <h2>Focus on the 'non-positive'</h2>
-                </section>
-
-            </section>
-
-            </section>
-            <!-- Exercise -->
-            <section>
-                <div class="workshop">
-                    <h2 class="exercise_title">Oefening</h2>
-                    <h3 class="exercise_time">15 minuten</h3>
-
-                    <p class="exercise_description">
-                        In duo's, ontwerp een kennismakingsapp die bewust sociale frictie inbouwt.
-                        Het doel van de app is om mensen te helpen verbinden.
-                        Licht toe waarom je hebt gekozen voor deze vorm van frictie en hoe het de gebruikerservaring
-                        bevordert.
-                    </p>
-
-                    <p class="exercise_goal">
-                        Het doel is om een gebruikerservaring te creëren die zowel verbindend als uitdagend is.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Feedback -->
-            <section>
-                <div class="large-emoji">🗣️</div>
-                <h2>Terugkoppeling</h2>
-                <h3>Wat hebben jullie bedacht?</h3>
-            </section>
-
-            <!-- The responsible choice -->
-            <section>
-                <h2>De Verantwoordelijke Keuze</h2>
-                <br>
-                <p style="font-size: 1.2em;">Als <span class="highlight">Responsible Data Professional</span>:</p>
-                <br>
-                <blockquote style="font-size: 1.1em; text-align: center;">
-                    <em>"Hoe herken je wanneer frictie een <strong>feature</strong> is, geen bug?"</em>
-                </blockquote>
-            </section>
-
-            <!-- Checklist -->
-            <section>
-                <div class="two-cols">
-                    <div>
-                        <h3>Checklist: Is Frictie een Feature?</h3>
-                        <br>
-                        <ul class="checklist">
-                            <li><strong>Bevordert het echte verbinding?</strong></li>
-                            <li><strong>Helpt het mensen groeien?</strong></li>
-                            <li><strong>Voorkomt het schade?</strong></li>
-                            <li><strong>Moedigt het bewuste keuzes aan?</strong></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <br><br>
-                        <h3>Responsible Technology</h3>
-                        <p><em>"Niet voor de eerste de beste oplossing"</em></p>
-                        <br>
-                        <div class="citations">
-                            Hogeschool Rotterdam - Waarde: Zorgvuldigheid
+                <h2>Soorten Frictie</h2>
+                
+                <div class="friction-types">
+                    <div class="two-cols">
+                        <div>
+                            <h3>Impliciete Frictie</h3>
+                            <p><em>De onderliggende oorzaken</em></p>
+                            <ul>
+                                <li><strong>Culturele frictie</strong>: Verschillende waarden, tradities</li>
+                                <li><strong>Cognitieve frictie</strong>: Mentale inspanning om te begrijpen</li>
+                                <li><strong>Interpersoonlijke frictie</strong>: Spanningen tussen mensen</li>
+                                <li><strong>Technologische frictie</strong>: Weerstand van technologie</li>
+                                <li><strong>Informatie frictie</strong>: Problemen met informatie-uitwisseling</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Expliciete Frictie</h3>
+                            <p><em>De zichtbare uitingen</em></p>
+                            <ul>
+                                <li><strong>Institutionele frictie</strong>: Regels en systemen die botsen</li>
+                                <li><strong>Economische frictie</strong>: Financiële belangenconflicten</li>
+                                <li><strong>Gedragsfrictie</strong>: Conflicterende handelingen</li>
+                                <li><strong>Migratie frictie</strong>: Problemen met verhuizen/bewegen</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <aside class="notes">
+                    Gebruik de wetenschappelijke indeling uit het artikel van Wang et al. (2024). Leg uit dat impliciete frictie vaak leidt tot expliciete frictie.
+                </aside>
             </section>
 
-            <!-- Thank you -->
+            <!-- 5. VRAAG AAN STUDENTEN -->
+            <!-- Interactive question for students -->
+            <section>
+                <div class="interactive-question">
+                    <h2>Vraag aan jullie</h2>
+                    <h3>Welke van deze soorten frictie herkennen jullie uit jullie eigen leven?</h3>
+                    <p class="instruction">Denk aan de afgelopen week...</p>
+                    
+                    <div class="examples-prompt">
+                        <p><em>Bijvoorbeeld:</em></p>
+                        <ul>
+                            <li>Technologische frictie: wachtwoorden, captcha's, updates</li>
+                            <li>Interpersoonlijke frictie: miscommunicatie, sociale verlegenheid</li>
+                            <li>Cognitieve frictie: moeilijke keuzes, informatie overload</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    Laat een paar studenten antwoorden. Vooral technologische en interpersoonlijke frictie zullen herkenbaar zijn. Dit maakt het concept concreet.
+                </aside>
+            </section>
+
+            <!-- 6. CASE STUDY: DATING ALGORITMES -->
+            <!-- Main section about dating algorithms -->
+            <section>
+                <section>
+                    <h2>Case Study: Dating Algoritmes</h2>
+                    
+                    <div class="case-intro">
+                        <p>Een van de meest sprekende voorbeelden van frictieloze technologie</p>
+                        
+                        <div class="dating-flow">
+                            <h3>Van spontane ontmoeting...</h3>
+                            <div class="notting-hill">
+                                <p><em>"Je kent het gevoel wel uit films zoals Notting Hill: je botst tegen iemand aan in een boekwinkel, je boeken vallen op de grond, jullie ogen ontmoeten elkaar..."</em></p>
+                            </div>
+                            
+                            <h3>...naar algoritme-gemedieerde matches</h3>
+                            <div class="swipe-icons">👈 👉</div>
+                            <p>Het algoritme heeft al bepaald wat wel en niet gebeurt</p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Introduceer de case study. Dating apps zijn perfect voor deze doelgroep - dit is hun leefwereld. Begin met het contrast tussen spontane ontmoetingen en algorithmic matching.
+                    </aside>
+                </section>
+
+                <!-- NOTTING HILL VIDEO -->
+                <section>
+                    <h3>Natuurlijk Ontmoeten</h3>
+                    
+                    <div class="video-container">
+                        <iframe width="560" height="315" 
+                                src="https://www.youtube.com/embed/kxBu82Dte10?start=0&end=20&autoplay=0" 
+                                title="Notting Hill - Meeting Scene"
+                                frameborder="0" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <p class="video-attribution">
+                        <small>Fragment: Notting Hill (1999) | Universal Pictures | YouTube</small>
+                    </p>
+                    
+                    <p><em>Awkward, ongemakkelijk... maar echt</em></p>
+
+                    <aside class="notes">
+                        Laat het fragment zien van 0:00-0:20. Dit illustreert perfect hoe een spontane ontmoeting werkt - vol frictie, maar authentiek.
+                    </aside>
+                </section>
+
+                <!-- ALGORITME 1: COLLABORATIVE FILTERING -->
+                <section>
+                    <h3>Algoritme 1: Collaborative Filtering</h3>
+                    
+                    <div class="algorithm-explanation">
+                        <div class="concept">
+                            <h4>Het concept: "Mensen zoals jij vinden ook leuk..."</h4>
+                            <p>Dit kennen jullie van:</p>
+                            <ul>
+                                <li><strong>Netflix</strong>: "Omdat je Stranger Things leuk vond, misschien vind je Dark ook leuk"</li>
+                                <li><strong>Spotify</strong>: "Gebruikers die naar Taylor Swift luisteren, luisteren ook naar Olivia Rodrigo"</li>
+                                <li><strong>Amazon</strong>: "Klanten die dit kochten, kochten ook..."</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="dating-application">
+                            <h4>Op dating apps:</h4>
+                            <p>Als Alice Bob leuk vindt, en andere mensen die Bob leuk vinden ook Charlie leuk vinden, dan wordt Charlie aan Alice voorgesteld.</p>
+                            
+                            <div class="important-note">
+                                <p><strong>Verschil:</strong> Bij dating apps moet de 'like' van twee kanten komen!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Leg uit hoe collaborative filtering werkt door bekende voorbeelden te gebruiken. Benadruk het verschil met andere platforms - bij dating moet het wederzijds zijn.
+                    </aside>
+                </section>
+
+                <!-- VRAAG & THINK-PAIR-SHARE -->
+                <section>
+                    <div class="discussion-slide">
+                        <h3>Vraag & Think-Pair-Share</h3>
+                        
+                        <div class="question">
+                            <h4>Vraag: Wat zou een gevaar kunnen zijn van dit type algoritme bij online dating?</h4>
+                        </div>
+                        
+                        <div class="think-pair-share">
+                            <h4>Think-Pair-Share (3 minuten):</h4>
+                            <ol>
+                                <li><strong>Think (30 sec):</strong> Denk individueel na over mogelijke gevaren</li>
+                                <li><strong>Pair (1 min):</strong> Bespreek met je buurpersoon je ideeën</li>
+                                <li><strong>Share (1,5 min):</strong> Enkele duo's delen hun bevindingen</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="answer-reveal fragment">
+                            <p><strong>Wetenschappelijk antwoord:</strong> Er kan gender- en raciale bias insluipen. Het algoritme kan vooroordelen uit de samenleving versterken.</p>
+                            <p><em>Bronnen: Hutson et al. (2018), Zhang & Yasseri (2016)</em></p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Think-Pair-Share zorgt voor actieve verwerking. Laat eerst denken, dan overleggen, dan delen met de klas. Geef daarna het wetenschappelijke antwoord.
+                    </aside>
+                </section>
+
+                <!-- ALGORITME 2: ELO-SYSTEEM -->
+                <section>
+                    <h3>Algoritme 2: ELO-systeem (Tinder)</h3>
+                    
+                    <div class="elo-explanation">
+                        <div class="concept">
+                            <h4>Het concept: "Attractiviteit-ranking"</h4>
+                            <p>Je krijgt een 'score' gebaseerd op wie jou leuk vindt</p>
+                        </div>
+                        
+                        <div class="analogy">
+                            <h4>Net zoals in schaken:</h4>
+                            <ul>
+                                <li>Winnen van een grootmeester telt zwaarder dan winnen van een beginner</li>
+                                <li>Een 'swipe right' van iemand met hoge score verhoogt jouw score meer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="examples">
+                            <h4>Dit kennen jullie van:</h4>
+                            <ul>
+                                <li><strong>Gaming</strong>: Rankings in League of Legends, FIFA, chess.com</li>
+                                <li><strong>Sport</strong>: Wereldranglijsten in tennis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tinder-note">
+                            <p><em>Tinder beweert dit systeem niet meer te gebruiken, maar geeft weinig details over het nieuwe systeem...</em></p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Leg uit hoe ELO werkt door de schaakanalogie. De gaming voorbeelden zullen herkenbaar zijn voor deze doelgroep.
+                    </aside>
+                </section>
+
+                <!-- VRAAG OVER ELO-SCORE -->
+                <section>
+                    <div class="interactive-question">
+                        <h3>Vraag aan jullie</h3>
+                        <h4>Wie zou zijn/haar ELO-score op een dating app willen weten?</h4>
+                        
+                        <div class="follow-up fragment">
+                            <p>Waarom wel/niet? Wat zou het met je doen?</p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Dit is een leuke interactieve vraag. Waarschijnlijk zullen de meningen verdeeld zijn. Vraag door naar de psychologische impact van zo'n score.
+                    </aside>
+                </section>
+
+                <!-- ALGORITME 3: GALE-SHAPLEY -->
+                <section>
+                    <h3>Algoritme 3: Gale-Shapley (Hinge)</h3>
+                    
+                    <div class="gale-shapley-intro">
+                        <div class="concept">
+                            <h4>Het "Stable Marriage Problem"</h4>
+                            <p>Hoe maak je stabiele matches tussen twee groepen?</p>
+                            <p><strong>Nobelprijs winnend algoritme!</strong> (2012)</p>
+                        </div>
+                        
+                        <div class="stability-definition">
+                            <h4>Wat is "stabiel"?</h4>
+                            <p>Een matching is <strong>stabiel</strong> als er geen twee personen zijn die elkaar liever zouden hebben dan hun huidige match.</p>
+                        </div>
+                        
+                        <div class="example-setup">
+                            <h4>Voorbeeld met 3 mannen en 3 vrouwen:</h4>
+                            <p><em>Laten we het stap-voor-stap uitwerken...</em></p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Introduceer het Gale-Shapley algoritme. Benadruk dat dit een Nobelprijs winnend algoritme is - dat maakt indruk. Leg uit wat stabiliteit betekent.
+                    </aside>
+                </section>
+
+                <!-- GALE-SHAPLEY UITWERKING -->
+                <section>
+                    <h3>Gale-Shapley: Stap-voor-stap</h3>
+                    
+                    <div class="algorithm-demo">
+                        <div class="preferences">
+                            <h4>Voorkeuren:</h4>
+                            <div class="two-cols">
+                                <div>
+                                    <h5>Mannen:</h5>
+                                    <pre><code class="language-text">
+Alex:  1. Sara, 2. Lisa, 3. Emma
+Bob:   1. Lisa, 2. Emma, 3. Sara  
+Chris: 1. Emma, 2. Sara, 3. Lisa
+                                    </code></pre>
+                                </div>
+                                <div>
+                                    <h5>Vrouwen:</h5>
+                                    <pre><code class="language-text">
+Sara:  1. Bob, 2. Chris, 3. Alex
+Lisa:  1. Alex, 2. Bob, 3. Chris
+Emma:  1. Chris, 2. Alex, 3. Bob
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-steps">
+                            <h4>Het algoritme:</h4>
+                            <pre><code class="language-text">
+Ronde 1:
+• Alex vraagt Sara → Sara zegt ja (voorlopig)
+• Bob vraagt Lisa → Lisa zegt ja
+• Chris vraagt Emma → Emma zegt ja
+
+Ronde 2:
+• Bob ziet Lisa bezet, vraagt Emma → Emma kiest Chris
+• Bob vraagt Sara → Sara kiest Bob (beter dan Alex)
+• Alex wordt afgewezen, vraagt Lisa → Lisa kiest Alex
+• Chris blijft bij Emma
+
+Eindresultaat:
+Alex ↔ Lisa, Bob ↔ Sara, Chris ↔ Emma
+                            </code></pre>
+                        </div>
+                        
+                        <div class="stability-check">
+                            <p><strong>Stabiliteitscheck:</strong> Niemand wil ruilen! ✓</p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Werk het algoritme stap voor stap uit. Gebruik syntax highlighting voor de code. Laat zien dat het eindresultaat stabiel is.
+                    </aside>
+                </section>
+
+                <!-- STUDENT OEFENING -->
+                <section>
+                    <div class="student-exercise">
+                        <h3>Jullie beurt!</h3>
+                        
+                        <div class="exercise-setup">
+                            <h4>Probeer dit met 4 mannen en 4 vrouwen:</h4>
+                            <div class="preferences-4x4">
+                                <pre><code class="language-text">
+Mannen:                    Vrouwen:
+Alex:  1. Sara, 2. Lisa,   Sara:  1. Bob, 2. Alex,
+       3. Emma, 4. Nina           3. Chris, 4. Dave
+Bob:   1. Lisa, 2. Sara,   Lisa:  1. Alex, 2. Chris,
+       3. Nina, 4. Emma           3. Bob, 4. Dave  
+Chris: 1. Emma, 2. Nina,   Emma:  1. Dave, 2. Chris,
+       3. Sara, 4. Lisa           3. Alex, 4. Bob
+Dave:  1. Nina, 2. Emma,   Nina:  1. Chris, 2. Dave,
+       3. Lisa, 4. Sara           3. Sara, 4. Alex
+                                </code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-instruction">
+                            <p><strong>Werk samen en vind de stabiele matching!</strong></p>
+                            <p><em>(5 minuten - ik loop rond om te helpen)</em></p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Laat studenten zelf het algoritme uitproberen. Loop rond om te helpen. Dit maakt het algoritme concreet en begrijpelijk.
+                    </aside>
+                </section>
+
+                <!-- WERKEN ALGORITMES? -->
+                <section>
+                    <h3>Werken deze algoritmes?</h3>
+                    
+                    <div class="effectiveness-question">
+                        <div class="research-finding">
+                            <h4>Interessant onderzoek van Sharabi (2021):</h4>
+                            <blockquote>
+                                Een <strong>placebo-effect</strong>: mensen hadden betere eerste dates als ze dachten dat het algoritme goed werkte, ongeacht of het daadwerkelijk goed werkte!
+                            </blockquote>
+                        </div>
+                        
+                        <div class="okcupid-experiment">
+                            <h4>OkCupid experiment:</h4>
+                            <ul>
+                                <li>Slechte matches werden verteld dat ze goed waren (30% → 90%)</li>
+                                <li>Goede matches werden verteld dat ze slecht waren (90% → 30%)</li>
+                                <li><strong>Resultaat:</strong> Het suggereren van compatibiliteit werkte net zo goed als echte compatibiliteit!</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="conclusion">
+                            <p><em>Misschien werken algoritmes gewoon omdat we denken dat ze werken...</em></p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Dit is een verrassende bevinding. Het laat zien dat psychologie net zo belangrijk is als technologie. Perfect voor ADS&AI studenten om te begrijpen dat data science niet alleen over algoritmes gaat.
+                    </aside>
+                </section>
+            </section>
+
+            <!-- 7. WORKSHOP/OPDRACHT -->
+            <!-- Combined workshop and assignment after friction by design -->
+            <section>
+                <div class="workshop">
+                    <h2>Workshop: Ontwerp je eigen friction app</h2>
+                    <h3>15 minuten</h3>
+                    
+                    <div class="client-brief">
+                        <h4>Opdracht van Gemeente Rotterdam:</h4>
+                        <blockquote>
+                            "Ontwerp een applicatie die Rotterdammers onderling beter verbindt en polarisatie tegengaat."
+                        </blockquote>
+                    </div>
+                    
+                    <div class="workshop-instructions">
+                        <h4>Wat ga je doen:</h4>
+                        <p>Ontwerp in duo's een kennismakingsapp die bewust <strong>friction by design</strong> gebruikt.</p>
+                        
+                        <h4>Focus op:</h4>
+                        <ul>
+                            <li>Welke vorm van frictie bouw je in? (discomfort/delay/non-positive)</li>
+                            <li>Hoe werkt je matching-algoritme?</li>
+                            <li>Concrete interface-keuzes die frictie creëren</li>
+                            <li>Waarom is dit beter dan een conventionele app?</li>
+                        </ul>
+                        
+                        <h4>Denk bijvoorbeeld aan:</h4>
+                        <ul>
+                            <li>Een app die je dwingt om face-to-face af te spreken voordat je verder kunt chatten</li>
+                            <li>Een systeem dat bewust verschillende politieke meningen bij elkaar brengt</li>
+                            <li>Een platform dat 'slow matching' gebruikt met bewuste vertragingen</li>
+                            <li>Een technologie die ongemakkelijke gespreksstarters gebruikt</li>
+                        </ul>
+                        
+                        <div class="deliverable">
+                            <h4>Deliverable:</h4>
+                            <p><strong>2-minuten pitch straks in de klas</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    Gecombineerde workshop en opdracht. Laat studenten in duo's werken. Loop rond om te helpen en inspiratie te geven. Moedig creativiteit aan.
+                </aside>
+            </section>
+
+            <!-- 8. FRICTION BY DESIGN -->
+            <!-- Design principles for purposeful friction -->
+            <section>
+                <section>
+                    <h2>Friction by Design</h2>
+                    
+                    <div class="design-philosophy">
+                        <blockquote>
+                            "Complete verwijdering van frictie betekent stilstand. Een volledig voorspelbare toekomst is geen toekomst, maar een continu heden."
+                        </blockquote>
+                        <p class="quote-author">- Filosoof Miriam Rasch</p>
+                    </div>
+                    
+                    <div class="principle-intro">
+                        <h3>Als frictie waardevol kan zijn, hoe ontwerpen we dit dan?</h3>
+                        <p>Hier zijn drie principes met concrete voorbeelden voor data science:</p>
+                    </div>
+
+                    <aside class="notes">
+                        Introduceer de drie principes van friction by design. Maak duidelijk dat dit een bewuste designkeuze is.
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>1. Discomfort - Ongemakkelijke situaties omarmen</h3>
+                    
+                    <div class="principle-explanation">
+                        <div class="concept">
+                            <h4>Principe:</h4>
+                            <p>In ongemakkelijke omgevingen ontdekken we de rijkdom van frictie. We leren en ontdekken.</p>
+                        </div>
+                        
+                        <div class="concrete-examples">
+                            <h4>Concrete voorbeelden voor ADS&AI:</h4>
+                            <ul>
+                                <li><strong>Algorithmic Bias Confrontation:</strong> "Dit algoritme heeft 73% mannelijke kandidaten geselecteerd voor technische rollen"</li>
+                                <li><strong>Uncertainty Visualization:</strong> "Ik ben 34% zeker over deze diagnose" in plaats van een definitief antwoord</li>
+                                <li><strong>Error Celebration:</strong> AI-systemen die hun grootste fouten prominent tonen als leermomenten</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Leg uit dat ongemak leidt tot bewustwording. De voorbeelden zijn specifiek voor data science studenten.
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>2. Time Delay - Vertraging als feature</h3>
+                    
+                    <div class="principle-explanation">
+                        <div class="concept">
+                            <h4>Principe:</h4>
+                            <p>De snelste respons is niet altijd de beste. Verveling laat nieuwe interesses ontstaan.</p>
+                        </div>
+                        
+                        <div class="concrete-examples">
+                            <h4>Concrete voorbeelden:</h4>
+                            <ul>
+                                <li><strong>Reflection Time:</strong> Pas na 24 uur mag je een beslissing maken</li>
+                                <li><strong>Cooling-off periode:</strong> Tijd waarin je je beslissing kunt terugdraaien</li>
+                                <li><strong>Mandatory Reflection:</strong> Financial trading met verplichte 15-minuten wachttijd voor grote transacties</li>
+                                <li><strong>Slow Analytics:</strong> Bewuste pauze voordat conclusies getrokken worden</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Benadruk dat snelheid niet altijd beter is. Tijd geeft ruimte voor reflectie en betere beslissingen.
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>3. Non-positive - Het niet-positieve omarmen</h3>
+                    
+                    <div class="principle-explanation">
+                        <div class="concept">
+                            <h4>Principe:</h4>
+                            <p>Huidige technologie jaagt alleen positiviteit na (likes, ratings). Negativiteit en twijfel maken ons menselijk.</p>
+                        </div>
+                        
+                        <div class="concrete-examples">
+                            <h4>Concrete voorbeelden:</h4>
+                            <ul>
+                                <li><strong>Disagreement Features:</strong> Apps die verschillende meningen laten zien, niet alleen bevestiging</li>
+                                <li><strong>Matches op basis van verschillende meningen:</strong> Creer verbindingen tussen mensen met andere standpunten</li>
+                                <li><strong>AI-systeem dat twijfelt:</strong> Laat het algoritme aangeven wanneer het onzeker is</li>
+                                <li><strong>Diversity Injection:</strong> Netflix die bewust films toont die botsen met je smaak</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Leg uit dat constant positieve feedback niet realistisch is. Diversiteit in meningen en ervaringen is belangrijk voor groei.
+                    </aside>
+                </section>
+            </section>
+
+            <!-- 8. UITLEG -->
+            <!-- Students explain their concepts -->
+            <section>
+                <div class="presentation-session">
+                    <h2>Uitleg</h2>
+                    <h3>Wat hebben jullie bedacht?</h3>
+                    
+                    <div class="presentation-format">
+                        <h4>Format per duo:</h4>
+                        <ul>
+                            <li><strong>2 minuten pitch</strong></li>
+                            <li>Naam van jullie app</li>
+                            <li>Welke frictie jullie inbouwen</li>
+                            <li>Waarom dit beter is</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="evaluation-criteria">
+                        <h4>Let op:</h4>
+                        <ul>
+                            <li>Creativiteit in het gebruik van frictie</li>
+                            <li>Praktische toepasbaarheid</li>
+                            <li>Argumentatie waarom dit werkt</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    Laat elk duo hun concept presenteren. Stimuleer applaus en positieve feedback. Maak notities van interessante ideeën.
+                </aside>
+            </section>
+
+            <!-- 9. NABESPREKING -->
+            <!-- Reflection and discussion -->
+            <section>
+                <section>
+                    <h2>Reflectie</h2>
+                    
+                    <div class="reflection-questions">
+                        <h3>De Verantwoordelijke Keuze</h3>
+                        <p>Als <span class="highlight">Responsible Data Professional</span>:</p>
+                        
+                        <div class="key-questions">
+                            <blockquote>
+                                "Hoe herken je wanneer frictie een <strong>feature</strong> is, geen bug?"
+                            </blockquote>
+                            
+                            <h4>Checklist:</h4>
+                            <ul class="checklist">
+                                <li>Bevordert het echte verbinding?</li>
+                                <li>Helpt het mensen groeien?</li>
+                                <li>Voorkomt het schade?</li>
+                                <li>Moedigt het bewuste keuzes aan?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Koppel terug naar de verantwoordelijkheid van data professionals. Benadruk dat ze bewuste keuzes moeten maken.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Verbinding met opleiding</h2>
+                    
+                    <div class="course-connection">
+                        <h3>Applied Data Analytics & AI - Drie kerncompetenties:</h3>
+                        
+                        <div class="competencies">
+                            <div class="competency">
+                                <h4>1. Responsible competentie</h4>
+                                <p>Ethisch bewustzijn in algoritmisch design</p>
+                                <ul>
+                                    <li>Bias herkennen en aanpakken</li>
+                                    <li>Privacy en veiligheid waarborgen</li>
+                                    <li>Maatschappelijke impact overwegen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="competency">
+                                <h4>2. Professional competentie</h4>
+                                <p>Communiceren over complexe technische keuzes</p>
+                                <ul>
+                                    <li>Stakeholders adviseren</li>
+                                    <li>Technische concepten uitleggen</li>
+                                    <li>Presenteren en overtuigen</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="competency">
+                                <h4>3. Technical competentie</h4>
+                                <p>Algoritmes bewust en doelgericht ontwerpen</p>
+                                <ul>
+                                    <li>Matching algoritmes begrijpen</li>
+                                    <li>Data-driven oplossingen bouwen</li>
+                                    <li>Performance en gebruikservaring balanceren</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="connection-summary">
+                            <p><strong>Friction by design</strong> raakt alle drie de competenties en helpt je worden tot een <em>Responsible Data Professional</em>.</p>
+                        </div>
+                    </div>
+
+                    <aside class="notes">
+                        Expliciete koppeling naar de drie kerncompetenties van de opleiding. Laat zien hoe dit college bijdraagt aan hun ontwikkeling.
+                    </aside>
+                </section>
+            </section>
+
+            <!-- 10. EINDSLIDE -->
+            <!-- Thank you and closing -->
             <section class="end-slide">
-
                 <h2 class="title">Frictie als Feature</h2>
-                <h3 class="subtitle">Het verhaal van de verdwenen koffiejuffrouw</h3>
+                <h3 class="subtitle">Wanneer weerstand waardevol wordt in technologie</h3>
+                
+                <div class="contact-info">
+                    <p class="contact">
+                        <strong>Sytze Simonse</strong><br>
+                        <a href="https://sytzesimonse.nl">sytzesimonse.nl</a><br>
+                        <a href="mailto:sytze.simonse@proton.me">sytze.simonse@proton.me</a>
+                    </p>
+                </div>
+                
+                <div class="course-badge">
+                    <p>Hogeschool Rotterdam | Applied Data Analytics & AI</p>
+                </div>
 
-                <p class="contact">
-                    <a href="https://sytzesimonse.nl">sytzesimonse.nl</a><br>
-                    <a href="mailto:sytze.simonse@proton.me">sytze.simonse@proton.me</a>
-                </p>
+                <aside class="notes">
+                    Bedank de studenten voor hun participatie. Verwijs naar je contactgegevens voor vragen.
+                </aside>
             </section>
 
-            <!-- Citations slide -->
-            <section class="citations-slide">
-                <h2>Citaties</h2>
-                <ul>
-                    <li><em>Mechanical modeling of friction phenomena in social systems</em> - Nature Communications,
-                        2024</li>
-                    <li><em>Social Relations and Technology</em> - PMC, 2024</li>
-                    <li><em>Technologies for Enhancing Collocated Social Interaction</em> - CSCW, 2019</li>
-                </ul>
+            <!-- 11. BRONNENREFERENTIELIJST -->
+            <!-- Citations and references -->
+            <section>
+                <section class="citations-slide">
+                    <h2>Bronnenreferentielijst</h2>
+                    
+                    <div class="references">
+                        <h3>Primaire bronnen:</h3>
+                        <ul>
+                            <li>Maurer, L., & Wouters, R. (z.d.). <em>Designing Friction: A call for friction in digital culture</em>. https://designingfriction.com/</li>
+                            <li>Sharabi, L. L. (2022). Finding Love on a First Data: Matching Algorithms in Online Dating. <em>Harvard Data Science Review</em>, 4(1).</li>
+                            <li>Wang, Y., Chen, H., Long, R., & Gu, X. (2024). Mechanical modeling of friction phenomena in social systems based on friction force. <em>Humanities and Social Sciences Communications</em>, 11(904), 1-13.</li>
+                        </ul>
+                    </div>
+
+                    <aside class="notes">
+                        De drie hoofdbronnen die de basis vormen van deze presentatie.
+                    </aside>
+                </section>
+
+                <section class="citations-slide">
+                    <h2>Aanvullende bronnen</h2>
+                    
+                    <div class="references">
+                        <ul>
+                            <li>Sharabi, L. L. (2021). Exploring how beliefs about algorithms shape (offline) success in online dating. <em>Communication Research</em>, 48(7), 931-952.</li>
+                            <li>Vice. How Does the Hinge Algorithm Work? https://www.vice.com/en/article/how-does-the-hinge-algorithm-work/</li>
+                            <li>Gale, D., & Shapley, L. S. (1962). College admissions and the stability of marriage. <em>The American Mathematical Monthly</em>, 69(1), 9-15.</li>
+                            <li>Carter, S. R., & Buckwalter, J. G. (2009). Enhancing mate selection through the Internet. <em>Interpersona</em>, 3(2), 105-125.</li>
+                            <li>Rudder, C. (2014). We experiment on human beings! <em>OkTrends</em>.</li>
+                        </ul>
+                        
+                        <h3>Referenties in de tekst:</h3>
+                        <ul>
+                            <li><strong>Van Nelle fabriek:</strong> Werelderfgoedmonument Rotterdam-West</li>
+                            <li><strong>Notting Hill:</strong> Filmreferentie voor spontane ontmoetingen</li>
+                            <li><strong>MonsterMatch:</strong> Dating app simulatie die bias demonstreert</li>
+                        </ul>
+                    </div>
+
+                    <aside class="notes">
+                        Aanvullende bronnen en referenties die in de presentatie gebruikt zijn.
+                    </aside>
+                </section>
             </section>
+
         </div>
     </div>
 
