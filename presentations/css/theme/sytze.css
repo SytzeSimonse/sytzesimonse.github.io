@@ -390,6 +390,81 @@
   }
 }
 
+/* Video slide: stretches video to natural width, attribution below */
+.reveal .video-slide .video-container {
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 18px auto;
+}
+.reveal .video-slide .video-container iframe {
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16/9;
+  height: auto;
+  border: none;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
+  background: #000;
+  display: block;
+}
+.reveal .video-slide .video-attribution {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+@media (max-width: 1000px) {
+  .reveal .video-slide .video-container iframe {
+    max-width: 100vw;
+  }
+}
+@media (max-width: 600px) {
+  .reveal .video-slide .video-container iframe {
+    max-width: 100vw;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Responsive SVG diagram for algorithm explanation */
+.reveal .svg-diagram-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.reveal .svg-diagram-container svg {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  display: block;
+}
+@media (max-width: 600px) {
+  .reveal .svg-diagram-container {
+    max-width: 98vw;
+  }
+  .reveal .svg-diagram-container svg {
+    max-width: 98vw;
+  }
+}
+
+/* Ensure SVG diagrams in .dating-application fit the container and are responsive */
+.reveal .dating-application svg {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  display: block;
+  margin: 24px auto 0 auto;
+}
+@media (max-width: 700px) {
+  .reveal .dating-application svg {
+    max-width: 98vw;
+  }
+}
+
 /* UTILITY CLASSES */
 
 /* Text styling */
