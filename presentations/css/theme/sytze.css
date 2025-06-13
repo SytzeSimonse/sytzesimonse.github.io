@@ -1,42 +1,49 @@
 /**
- * Sytze Simonse Reveal.js Theme - Updated
- * Based on actual presentation patterns
+ * Bauhaus-inspired Reveal.js Theme for Sytze Simonse
+ * Minimalist, geometric, functional design
  */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap"');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Forest Theme Colors (matching website) */
-  --r-background-color: #fefefe;
-  --r-main-font: 'Righteous', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --r-main-font-size: 36px;
-  --r-main-color: #0f0f0f;
-  --r-block-margin: 20px;
+  /* Bauhaus-inspired color palette */
+  --r-background-color: #ffffff;
+  --r-main-color: #222222;
+  
+  /* Primary colors with black */
+  --primary: #e30613;    /* Bauhaus red */
+  --secondary: #0063a7;  /* Bauhaus blue */
+  --accent: #ffdd00;     /* Bauhaus yellow */
+  --neutral: #ebebeb;
+  --dark: #222222;
+  
+  /* Typography */
+  --r-main-font: 'Work Sans', sans-serif;
+  --r-heading-font: 'Work Sans', sans-serif;
+  --r-code-font: 'Courier New', monospace;
+  
+  /* Text sizes */
+  --r-main-font-size: 28px;
+  --r-heading1-size: 2.4em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  
+  /* Element styling */
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: 'IBM Plex Sans', sans-serif;
-  --r-heading-color: #1a3329;
+  --r-heading-color: var(--dark);
   --r-heading-line-height: 1.2;
-  --r-heading-letter-spacing: -0.02em;
+  --r-heading-letter-spacing: 0;
   --r-heading-text-transform: none;
   --r-heading-text-shadow: none;
   --r-heading-font-weight: 600;
-  --r-heading1-size: 2.5em;
-  --r-heading2-size: 1.8em;
-  --r-heading3-size: 1.3em;
-  --r-code-font: 'IBM Plex Mono', 'Courier New', monospace;
-  --r-link-color: #1a3329;
-  --r-link-color-hover: #7fb3d5;
-  --r-selection-background-color: #7fb3d5;
+  --r-link-color: var(--secondary);
+  --r-link-color-hover: var(--primary);
+  --r-selection-background-color: var(--primary);
   --r-selection-color: #fff;
   
-  /* Custom variables */
-  --primary: #1a3329;
-  --secondary: #2a5242;
-  --accent: #7fb3d5;
-  --neutral: #e8e8e8;
-  --gray: #666;
-  --border-width: 2px;
+  /* Structure */
+  --r-block-margin: 20px;
   
   /* Force light mode */
   color-scheme: light;
@@ -49,220 +56,22 @@
 .reveal {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
-  font-weight: normal;
+  font-weight: 300;
   color: var(--r-main-color);
 }
 
-/* SLIDE LAYOUTS FROM YOUR PRESENTATION */
+/* BASIC ELEMENTS */
 
-/* Title Slide */
-.reveal .slides section.title-slide {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 60px;
-}
-
-.reveal .title-slide .title {
-  font-family: var(--r-main-font);
-  font-size: 3em;
-  margin-bottom: 30px;
-  color: var(--primary);
-}
-
-.reveal .title-slide .subtitle {
-  font-size: 1.2em;
-  color: var(--gray);
-  font-weight: 300;
-  margin-bottom: 40px;
-}
-
-/* Two Column Layout */
-.reveal .two-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* Three Column Layout */
-.reveal .three-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  align-items: start;
-}
-
-/* Large Emoji */
-.reveal .large-emoji {
-  font-size: 4em;
-  text-align: center;
-  margin: 40px 0;
-}
-
-/* Example Cards */
-.reveal .example-card {
-  background: var(--neutral);
-  border: var(--border-width) solid transparent;
-  padding: 30px;
-  text-align: center;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.reveal .example-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--primary);
-  border-radius: 12px 12px 0 0;
-}
-
-.reveal .example-card:hover {
-  border-color: var(--primary);
-  background: var(--r-background-color);
-}
-
-.reveal .example-card .emoji {
-  font-size: 3em;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.reveal .example-card h4 {
-  color: var(--primary);
-  margin-bottom: 15px;
-  font-size: 1.2em;
-}
-
-.reveal .example-card .arrow {
-  font-weight: 500;
-  color: var(--gray);
-  margin: 15px 0;
-}
-
-.reveal .example-card .description {
-  font-style: italic;
-  color: var(--gray);
-  font-size: 0.9em;
-}
-
-/* Workshop Section */
-.reveal .workshop {
-  background: var(--neutral);
+.reveal .slides section {
+  text-align: left;
   padding: 40px;
-  border-radius: 12px;
-  border-left: 6px solid var(--primary);
 }
 
-.reveal .workshop h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-.reveal .workshop h3 {
-  color: var(--accent);
-  font-size: 2em;
+.reveal .slides section.center {
   text-align: center;
-  margin: 20px 0;
 }
 
-/* Negative List (for contrasts) */
-.reveal .negative {
-  color: #d32f2f;
-}
-
-.reveal .negative li {
-  position: relative;
-  padding-left: 30px;
-}
-
-.reveal .negative li::before {
-  content: '✗';
-  position: absolute;
-  left: 0;
-  color: #d32f2f;
-  font-weight: bold;
-}
-
-/* Positive List */
-.reveal ul li::before {
-  position: absolute;
-  left: 0;
-  top: 0.1em;
-  color: var(--primary);
-  font-weight: bold;
-}
-
-/* Checklist */
-.reveal .checklist li {
-  margin-bottom: 15px;
-  font-size: 1.1em;
-}
-
-.reveal .checklist li::before {
-  content: '□';
-  color: var(--primary);
-  font-size: 1.2em;
-}
-
-/* Dating Demo Specific */
-.reveal .dating-demo {
-  text-align: center;
-  padding: 40px;
-  background: var(--neutral);
-  border-radius: 12px;
-  margin: 20px 0;
-}
-
-.reveal .swipe-icons {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-.reveal .flow {
-  font-size: 1.5em;
-  font-weight: 500;
-  color: var(--primary);
-  margin-bottom: 20px;
-}
-
-/* Highlight Text */
-.reveal .highlight {
-  background: var(--accent);
-  color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-}
-
-/* Citations */
-.reveal .citations {
-  font-size: 0.8em;
-  color: var(--gray);
-  font-style: italic;
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid var(--neutral);
-}
-
-/* Image Slides */
-.reveal .image-slide h1 {
-  color: white !important;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-  background: rgba(0,0,0,0.5);
-  padding: 2rem;
-  border-radius: 16px;
-}
-
-/* Standard Elements */
+/* Headings */
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -283,32 +92,29 @@
 .reveal h1 { font-size: var(--r-heading1-size); }
 .reveal h2 { font-size: var(--r-heading2-size); }
 .reveal h3 { font-size: var(--r-heading3-size); }
+.reveal h4 { font-size: var(--r-heading4-size); }
 
+/* Bauhaus-inspired geometric accent for headings */
 .reveal h2::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 40px;
   height: 4px;
   background: var(--primary);
-  margin: 10px auto 0;
+  margin-top: 8px;
 }
 
-.reveal .slides section {
-  text-align: left;
-  font-weight: inherit;
-  padding: 40px;
-}
-
-.reveal .slides section.center {
-  text-align: center;
+.reveal .center h2::after {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Links */
 .reveal a {
   color: var(--r-link-color);
   text-decoration: none;
-  transition: color 0.15s ease;
-  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .reveal a:hover {
@@ -323,103 +129,383 @@
 
 .reveal ul li {
   position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.reveal ul li::before {
+  content: '■';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.7em;
+  top: 0.4em;
 }
 
 .reveal ol li {
-  margin-bottom: 10px;
-}
-
-/* Code */
-.reveal pre {
-  background: var(--neutral);
-  border: var(--border-width) solid #ddd;
-  padding: 20px;
-  font-family: var(--r-code-font);
-  border-radius: 8px;
-}
-
-.reveal code {
-  font-family: var(--r-code-font);
-  background: var(--neutral);
-  padding: 2px 6px;
-  font-size: 0.9em;
-  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
 /* Blockquotes */
 .reveal blockquote {
   background: var(--neutral);
-  border-left: 6px solid var(--primary);
+  border-left: 4px solid var(--primary);
   margin: 20px 0;
-  padding: 20px;
+  padding: 16px 20px;
   font-style: italic;
-  border-radius: 0 8px 8px 0;
+  font-weight: 300;
+}
+
+/* Code */
+.reveal pre {
+  background: var(--neutral);
+  border-left: 4px solid var(--secondary);
+  padding: 16px;
+  font-family: var(--r-code-font);
+  margin: 20px 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  background: var(--neutral);
+  padding: 2px 5px;
+  border-radius: 0;
 }
 
 /* Images */
 .reveal section img {
   border: none;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  box-shadow: none;
+  background: none;
+  margin: 20px 0;
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+/* Merge .image-slide and .slide-image into a single class with enhanced box shadow */
+.reveal .slide-image, .reveal .image-slide img {
+  display: block;
+  margin: 30px auto;
+  max-width: 90%;
+  max-height: 60vh;
+  border: none;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16);
+  background: none;
+}
+
+/* Always horizontally center images on slides */
+.reveal section img,
+.reveal .slide-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* SLIDE LAYOUTS */
+
+/* Title Slide */
+.reveal .slides section.title-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px;
+}
+
+.reveal .title-slide .title {
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--dark);
+}
+
+.reveal .title-slide .subtitle {
+  font-size: 1.2em;
+  color: var(--r-main-color);
+  font-weight: 300;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding-bottom: 6px;
+  /* Remove any extra border or box-shadow */
+  box-shadow: none;
+}
+
+/* Grid Layouts */
+.reveal .two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.reveal .three-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Example Cards - Bauhaus Style */
+.reveal .example-card {
+  background: var(--neutral);
+  border-top: 4px solid var(--primary);
+  padding: 24px;
+  position: relative;
+}
+
+.reveal .example-card:nth-child(2) {
+  border-top-color: var(--secondary);
+}
+
+.reveal .example-card:nth-child(3) {
+  border-top-color: var(--accent);
+}
+
+.reveal .example-card h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.reveal .example-card .emoji {
+  font-size: 2.5em;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* Workshop Section */
+.reveal .workshop {
+  background: var(--neutral);
+  padding: 30px;
+  border-left: 4px solid var(--primary);
+}
+
+.reveal .workshop h2 {
+  margin-top: 0;
 }
 
 /* Tables */
+.reveal table {
+  margin: 20px 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
 .reveal table th {
-  background: var(--primary);
+  background: var(--dark);
   color: white;
-  padding: 15px;
+  padding: 12px;
+  text-align: left;
   font-weight: 500;
 }
 
 .reveal table td {
-  padding: 15px;
+  padding: 12px;
   border-bottom: 1px solid var(--neutral);
 }
 
-/* Utility Classes */
+/* Course info styling for congruent, neat appearance */
+.reveal .course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 32px;
+  margin: 32px auto 0 auto;
+  max-width: 420px;
+}
+
+.reveal .course-info h3.organisation {
+  color: var(--secondary);
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.reveal .course-info h3.course {
+  color: var(--primary);
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.reveal .course-info h4.presenter {
+  color: var(--dark);
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.reveal .course-info h5.date {
+  color: #888;
+  font-size: 0.95em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* Main lesson section: perfectly centered horizontally and vertically */
+.reveal .main-lesson {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  height: 60vh;
+  width: 100vw;
+  text-align: center;
+  padding: 0;
+  position: relative;
+}
+.reveal .main-lesson h3 {
+  font-size: 2.6em;
+  font-weight: 700;
+  color: var(--dark);
+  background: linear-gradient(90deg, var(--neutral) 80%, #fff8e1 100%);
+  padding: 36px 56px;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(34,34,34,0.07);
+  margin: 0 auto;
+  display: inline-block;
+  letter-spacing: 0.01em;
+  transition: box-shadow 0.3s;
+  border-bottom: 4px solid var(--primary);
+  vertical-align: middle;
+}
+.reveal .main-lesson {
+  /* For Reveal.js vertical centering in all slide layouts */
+  flex: 1 1 auto;
+}
+@media (max-width: 600px) {
+  .reveal .main-lesson h3 {
+    font-size: 1.3em;
+    padding: 18px 8vw;
+  }
+  .reveal .main-lesson {
+    min-height: 30vh;
+    height: auto;
+  }
+}
+
+/* UTILITY CLASSES */
+
+/* Text styling */
 .reveal .text-center { text-align: center; }
 .reveal .text-left { text-align: left; }
 .reveal .text-right { text-align: right; }
 .reveal .text-primary { color: var(--primary); }
-.reveal .text-gray { color: var(--gray); }
+.reveal .text-secondary { color: var(--secondary); }
 .reveal .text-large { font-size: 1.3em; }
 .reveal .text-small { font-size: 0.8em; }
 
-/* Sustainability badge */
-.reveal .sustainability {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--primary);
-  color: white;
-  padding: 8px 16px;
-  font-size: 0.7em;
+/* Highlight */
+.reveal .highlight {
+  background: var(--accent);
+  color: var(--dark);
+  padding: 2px 6px;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin: 20px 0;
-  border-radius: 4px;
 }
 
-/* Navigation controls styling */
+/* Large Emoji */
+.reveal .large-emoji {
+  font-size: 3em;
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Image attribution */
+.image-attribution {
+  font-size: 0.6em;
+  color: #777;
+  margin-top: 0.5em;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Citations */
+.reveal .citations {
+  font-size: 0.8em;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--neutral);
+}
+
+/* NAVIGATION CONTROLS */
 .reveal .controls {
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .reveal .progress {
   color: var(--primary);
+  height: 4px;
 }
 
 .reveal .slide-number {
-  color: var(--primary);
+  color: var(--dark);
   background-color: var(--neutral);
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 4px 8px;
 }
 
-/* Responsive adjustments */
+/* Prevent slide overflow and fit content */
+.reveal .slides {
+  overflow: hidden !important;
+  max-width: 100vw;
+  max-height: 100vh;
+  box-sizing: border-box;
+}
+
+.reveal .slides section {
+  overflow: hidden !important;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: auto;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.reveal .slides section * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.reveal pre, .reveal code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.reveal img {
+  max-width: 100%;
+  max-height: 60vh;
+  height: auto;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .two-cols, .reveal .three-cols {
+  max-width: 100vw;
+  overflow-x: auto;
+}
+
+/* Make swipe-icons larger and vertically centered */
+.reveal .swipe-icons {
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  margin: 24px 0;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
   .reveal .two-cols,
   .reveal .three-cols {
@@ -427,33 +513,14 @@
     gap: 20px;
   }
   
-  .reveal .large-emoji {
-    font-size: 3em;
-  }
-  
-  .reveal .example-card .emoji {
-    font-size: 2em;
+  .reveal .slides section {
+    padding: 20px;
   }
 }
 
-/* Force light mode always */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --r-background-color: #fefefe !important;
-    --r-main-color: #0f0f0f !important;
-    --neutral: #e8e8e8 !important;
+@media (max-width: 600px) {
+  .reveal .course-info {
+    padding: 14px 10px;
+    max-width: 98vw;
   }
-}
-
-.image-attribution {
-    font-size: 0.6em;
-    color: #666;
-    margin-top: 0.5em;
-    text-align: center;
-    font-style: italic;
-}
-
-.image-attribution a {
-    color: #4A6FA5;
-    text-decoration: none;
 }
