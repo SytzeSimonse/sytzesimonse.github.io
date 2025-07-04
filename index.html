@@ -17,37 +17,41 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Sytze Simonse</h1>
-            <p class="intro">Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.</p>
-            <p class="tagline">With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.</p>
+            <div id="language-switcher" class="language-switcher">
+                <button data-lang="en" class="lang-btn active" data-i18n="lang_en">EN</button>
+                <button data-lang="nl" class="lang-btn" data-i18n="lang_nl">NL</button>
+            </div>
+            <h1 data-i18n="name">Sytze Simonse</h1>
+            <p class="intro" data-i18n="intro">Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.</p>
+            <p class="tagline" data-i18n="tagline">With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.</p>
         </header>
 
         <main class="content">
             <!-- Expertise Section -->
             <section class="content-card">
-                <h2>Expertise & Passions</h2>
+                <h2 data-i18n="expertise_title">Expertise & Passions</h2>
                 <div class="skill-container">
-                    <span class="skill-tag">GIS & Geo-Data</span>
-                    <span class="skill-tag">FOSS Tools</span>
-                    <span class="skill-tag">Technical Education</span>
+                    <span class="skill-tag" data-i18n="skill_gis">GIS & Geo-Data</span>
+                    <span class="skill-tag" data-i18n="skill_foss">FOSS Tools</span>
+                    <span class="skill-tag" data-i18n="skill_education">Technical Education</span>
                 </div>
             </section>
 
             <!-- Languages Section -->
             <section class="content-card">
-                <h2>Languages</h2>
+                <h2 data-i18n="languages_title">Languages</h2>
                 <div class="skill-container">
-                    <span class="skill-tag">🇳🇱 Dutch (Native)</span>
-                    <span class="skill-tag">🇬🇧 English (C2)</span>
-                    <span class="skill-tag">🇵🇹 Portuguese (C1)</span>
-                    <span class="skill-tag">🇷🇺 Russian (B1)</span>
-                    <span class="skill-tag">🇩🇪 German (B1)</span>
+                    <span class="skill-tag" data-i18n="dutch_native">🇳🇱 Dutch (Native)</span>
+                    <span class="skill-tag" data-i18n="english_c2">🇬🇧 English (C2)</span>
+                    <span class="skill-tag" data-i18n="portuguese_c1">🇵🇹 Portuguese (C1)</span>
+                    <span class="skill-tag" data-i18n="russian_b1">🇷🇺 Russian (B1)</span>
+                    <span class="skill-tag" data-i18n="german_b1">🇩🇪 German (B1)</span>
                 </div>
             </section>
 
             <!-- Contact Section -->
             <section class="content-card contact-section">
-                <p class="location">📍 Rotterdam, Netherlands</p>
+                <p class="location" data-i18n="location">📍 Rotterdam, Netherlands</p>
                 
                 <div class="social-container">
                     <a href="mailto:sytze.simonse@proton.me" class="social-link" title="Email">
@@ -78,10 +82,11 @@
 
         <footer class="footer">
             <div id="wcb" class="carbonbadge wcb-d"></div>
-            <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
         </footer>
     </div>
 
+    <script src="assets/js/translations.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
