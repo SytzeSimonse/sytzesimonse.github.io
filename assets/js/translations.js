@@ -11,6 +11,7 @@ const translations = {
         
         // Sections
         expertise_title: "Expertise & Passions",
+        projects_title: "Projects",
         languages_title: "Languages",
         
         // Skills
@@ -32,6 +33,11 @@ const translations = {
         business_title: "About My Work",
         business_description: "As a freelancer, I operate under the company name 'CasuarIO', inspired by the legendary Australian cassowary bird. Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, we founded <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, which helps organizations implement value-aligned responsible AI solutions.",
         
+        // Projects
+        project_aarde_title: "De Aarde aan Tafel",
+        project_aarde_description: "A RAG-based chatbot for climate and sustainability queries that gives a voice to the Earth. Built with FastAPI, Langchain, and Ollama to make environmental knowledge more accessible. Developed by <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in collaboration with <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",
+        project_link_demo: "View Demo",
+        
         // Language switcher
         lang_en: "EN",
         lang_nl: "NL"
@@ -48,6 +54,7 @@ const translations = {
         
         // Sections
         expertise_title: "Expertise & Passies",
+        projects_title: "Projecten",
         languages_title: "Talen",
         
         // Skills
@@ -68,6 +75,11 @@ const translations = {
         // Business
         business_title: "Over Mijn Werk",
         business_description: "Als freelancer werk ik onder de bedrijfsnaam 'CasuarIO', geïnspireerd door de legendarische Australische kasuaris vogel. Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> hebben we <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> opgericht, dat organisaties helpt met waardegedreven verantwoorde AI-oplossingen.",
+        
+        // Projects
+        project_aarde_title: "De Aarde aan Tafel",
+        project_aarde_description: "Een RAG-gebaseerde chatbot voor klimaat- en duurzaamheidsvragen die een stem geeft aan de Aarde. Gebouwd met FastAPI, Langchain en Ollama om milieukennis toegankelijker te maken. Ontwikkeld door <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in samenwerking met <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",
+        project_link_demo: "Bekijk Demo",
         
         // Language switcher
         lang_en: "EN",
