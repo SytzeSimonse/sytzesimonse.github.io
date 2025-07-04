@@ -28,6 +28,10 @@ const translations = {
         // Contact
         location: "📍 Rotterdam, Netherlands",
         
+        // Business
+        business_title: "About My Work",
+        business_description: "As a freelancer, I operate under the company name 'CasuarIO', inspired by the legendary Australian cassowary bird. Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, we founded <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, which helps organizations implement value-aligned responsible AI solutions.",
+        
         // Language switcher
         lang_en: "EN",
         lang_nl: "NL"
@@ -60,6 +64,10 @@ const translations = {
         
         // Contact
         location: "📍 Rotterdam, Nederland",
+        
+        // Business
+        business_title: "Over Mijn Werk",
+        business_description: "Als freelancer werk ik onder de bedrijfsnaam 'CasuarIO', geïnspireerd door de legendarische Australische kasuaris vogel. Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> hebben we <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> opgericht, dat organisaties helpt met waardegedreven verantwoorde AI-oplossingen.",
         
         // Language switcher
         lang_en: "EN",
@@ -98,7 +106,12 @@ const i18n = {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (currentTranslations[key]) {
-                element.textContent = currentTranslations[key];
+                // Check if the translation contains HTML (links)
+                if (currentTranslations[key].includes('<a')) {
+                    element.innerHTML = currentTranslations[key];
+                } else {
+                    element.textContent = currentTranslations[key];
+                }
             }
         });
         
