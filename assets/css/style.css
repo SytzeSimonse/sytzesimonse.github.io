@@ -94,19 +94,13 @@ body {
     border-color: var(--primary);
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: calc(var(--grid-base) * 3);
-    color: var(--primary);
-}
 
 .intro {
     font-size: 1.3rem;
     font-weight: 400;
     color: var(--primary);
     margin-bottom: calc(var(--grid-base) * 3);
+    margin-top: calc(var(--grid-base) * 6);
     line-height: 1.4;
 }
 
@@ -256,9 +250,6 @@ body {
 
 /* Responsive */
 @media (max-width: 600px) {
-    .header h1 {
-        font-size: 2rem;
-    }
     
     .intro {
         font-size: 1.1rem;
