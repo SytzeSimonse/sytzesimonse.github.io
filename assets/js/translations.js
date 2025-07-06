@@ -6,18 +6,25 @@ const translations = {
         
         // Header
         name: "Sytze Simonse",
-        intro: "Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.",
-        tagline: "With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.",
+        intro: "Hi! I'm Sytze, a tech enthusiast who makes AI and data science understandable for organizations.",
+        tagline: "With my background in Geo-Information Sciences and experience in the field, I combine technical expertise with a passion for knowledge sharing. My goal: ensuring technology serves us, not the other way around.",
         
         // Sections
         expertise_title: "Expertise & Passions",
         projects_title: "Projects",
+        writings_title: "Writings",
         languages_title: "Languages",
         
         // Skills
         skill_gis: "GIS & Geo-Data",
         skill_foss: "FOSS Tools",
         skill_education: "Technical Education",
+        
+        // Languages
+        languages_description: "I love learning languages, because there's something special about communicating with people in their own language. It opens doors to new friendships, stories, and ways of seeing the world.",
+        
+        // Languages
+        languages_description: "I love learning languages, because there's something special about communicating with people in their own language. It opens doors to new friendships, stories, and ways of seeing the world.",
         
         // Language levels
         dutch_native: "🇳🇱 Dutch (Native)",
@@ -38,6 +45,12 @@ const translations = {
         project_aarde_description: "A RAG-based chatbot for climate and sustainability queries that gives a voice to the Earth. Built with FastAPI, Langchain, and Ollama to make environmental knowledge more accessible. Developed by <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in collaboration with <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",
         project_link_demo: "View Demo",
         
+        // Writings
+        writings_description: "I enjoy practicing my writing by exploring ideas and concepts that interest me. Sometimes it's about technology and society, sometimes it's about completely different topics that pop into my head!",
+        writings_link: "View Articles",
+        writings_page_description: "My writing practice - exploring ideas and concepts through text.",
+        no_articles_yet: "No articles published yet. Check back soon!",
+        
         // Language switcher
         lang_en: "EN",
         lang_nl: "NL"
@@ -49,18 +62,23 @@ const translations = {
         
         // Header
         name: "Sytze Simonse",
-        intro: "Hoi! Ik ben Sytze, een technologie specialist met een passie voor het toegankelijk maken van complexe concepten.",
-        tagline: "Met een achtergrond in Geo-Informatiewetenschappen (GIS) en Informatiewetenschappen, verbind ik technische en sociale werelden. Ik vereenvoudig complexe technologie tot begrijpelijke taal en verbind verschillende disciplines door heldere communicatie.",
+        intro: "Hi! Ik ben Sytze, een techneut die AI en data science begrijpelijk maakt voor organisaties.",
+        tagline: "Met mijn achtergrond in Geo-Informatiekunde en ervaring in het veld combineer ik technische kennis met een passie voor kennisdeling. Mijn doel: ervoor zorgen dat technologie ons dient, niet andersom.",
         
         // Sections
-        expertise_title: "Expertise & Passies",
+        expertise_title: "Expertises & Interesses",
         projects_title: "Projecten",
+        writings_title: "Schrijfsels",
         languages_title: "Talen",
         
         // Skills
         skill_gis: "GIS & Geo-Data",
-        skill_foss: "FOSS Tools",
-        skill_education: "Technisch Onderwijs",
+        skill_foss: "FOSS",
+        skill_education: "Technische educatie",
+        skill_ai: "AI & Machine Learning",
+        
+        // Languages
+        languages_description: "Ik vind het leuk om vreemde talen te leren omdat er iets speciaals is aan het communiceren met mensen in hun moedertaal. Het opent deuren naar nieuwe vriendschappen, verhalen en manieren om naar de wereld te kijken.",
         
         // Language levels
         dutch_native: "🇳🇱 Nederlands (Moedertaal)",
@@ -79,7 +97,13 @@ const translations = {
         // Projects
         project_aarde_title: "De Aarde aan Tafel",
         project_aarde_description: "Een RAG-gebaseerde chatbot voor klimaat- en duurzaamheidsvragen die een stem geeft aan de Aarde. Gebouwd met FastAPI, Langchain en Ollama om milieukennis toegankelijker te maken. Ontwikkeld door <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in samenwerking met <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",
-        project_link_demo: "Bekijk Demo",
+        project_link_demo: "Bekijk demo",
+        
+        // Writings
+        writings_description: "Hier oefen ik mijn schrijfvaardigheid door ideeën en concepten te verkennen die me interesseren. Soms gaat het over technologie en samenleving, soms over heel andere onderwerpen die in me opkomen!",
+        writings_link: "Bekijk Artikelen",
+        writings_page_description: "Ideeën en concepten verkennen door te schrijven.",
+        no_articles_yet: "Nog geen artikelen gepubliceerd. Kom snel terug!",
         
         // Language switcher
         lang_en: "EN",

@@ -214,6 +214,41 @@ body {
     color: var(--primary);
 }
 
+/* Writings Section */
+.writings-description {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: calc(var(--grid-base) * 3);
+    text-align: left;
+}
+
+/* Languages Section */
+.languages-description {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: calc(var(--grid-base) * 3);
+    text-align: left;
+}
+
+.writings-link {
+    background: var(--primary);
+    color: var(--white);
+    padding: calc(var(--grid-base) * 1) calc(var(--grid-base) * 2);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.9rem;
+    border: var(--border-width) solid var(--primary);
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.writings-link:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
 .content-card::before {
     content: '';
     position: absolute;
