@@ -1,4 +1,4 @@
-alert('This is a playful snake animation that runs in the background. It does not affect the functionality of the page. Enjoy!');
+console.log('Snake animation script loaded - This is a playful snake animation that runs in the background.');
 
 // Playful Snake Animation
 class SnakeAnimation {
@@ -23,16 +23,21 @@ class SnakeAnimation {
     }
     
     init() {
+        console.log('Initializing snake animation...');
         this.createCanvas();
         this.initSnake();
+        console.log('Snake initialized with', this.snake.length, 'segments');
         this.spawnFood();
+        console.log('Food spawned:', this.food.length, 'items');
         this.animate();
+        console.log('Animation started');
         
         // Handle window resize
         window.addEventListener('resize', () => this.handleResize());
     }
     
     createCanvas() {
+        console.log('Creating canvas...');
         this.canvas = document.createElement('canvas');
         this.canvas.id = 'snake-animation';
         this.canvas.style.cssText = `
@@ -42,13 +47,16 @@ class SnakeAnimation {
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
-            opacity: 0.3;
+            z-index: 1;
+            opacity: 1;
         `;
         document.body.appendChild(this.canvas);
+        console.log('Canvas added to body');
         
         this.ctx = this.canvas.getContext('2d');
+        console.log('Canvas context created');
         this.resizeCanvas();
+        console.log('Canvas resized, dimensions:', this.canvas.width, 'x', this.canvas.height);
     }
     
     resizeCanvas() {
@@ -76,11 +84,16 @@ class SnakeAnimation {
         const startX = Math.floor(this.gridWidth / 4);
         const startY = Math.floor(this.gridHeight / 2);
         
+        console.log('Grid dimensions:', this.gridWidth, 'x', this.gridHeight);
+        console.log('Snake starting position:', startX, startY);
+        
         this.snake = [
             { x: startX, y: startY },
             { x: startX - 1, y: startY },
             { x: startX - 2, y: startY }
         ];
+        
+        console.log('Snake segments:', this.snake);
     }
     
     spawnFood() {
@@ -192,10 +205,11 @@ class SnakeAnimation {
         // Clear canvas
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
+        
         // Draw snake
-        this.ctx.fillStyle = '#1a3329'; // Primary color
+        this.ctx.fillStyle = '#2a5242'; // Slightly brighter green
         this.snake.forEach((segment, index) => {
-            const alpha = 1 - (index / this.snake.length) * 0.5; // Fade towards tail
+            const alpha = 0.4 - (index / this.snake.length) * 0.2; // Subtle but visible
             this.ctx.globalAlpha = alpha;
             this.ctx.fillRect(
                 segment.x * this.gridSize,
@@ -206,7 +220,7 @@ class SnakeAnimation {
         });
         
         // Draw food
-        this.ctx.globalAlpha = 1;
+        this.ctx.globalAlpha = 0.3;
         this.ctx.fillStyle = '#7fb3d5'; // Accent color
         this.food.forEach(food => {
             this.ctx.beginPath();
@@ -248,12 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Snake animation script loaded, current path:', window.location.pathname);
     
     // Only run on main page (not on writings or other subpages)
-    const isMainPage = window.location.pathname === '/' || 
-                      window.location.pathname.endsWith('index.html') ||
-                      window.location.pathname === '' ||
-                      window.location.pathname.includes('SytzeSimonse.github.io') && !window.location.pathname.includes('/writings/');
+    const isMainPage = !window.location.pathname.includes('/writings/') && 
+                      !window.location.pathname.includes('/presentations/');
     
     console.log('Is main page?', isMainPage);
+    console.log('Current pathname:', window.location.pathname);
     
     if (isMainPage) {
         console.log('Starting snake animation...');
