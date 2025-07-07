@@ -2,7 +2,8 @@
 const writingsManager = {
     // List of markdown files - Add new files here
     markdownFiles: [
-        "weg_van_water.md"
+        "weg_van_water.md",
+        "intellectuele_elite.md",
     ],
     
     // Parsed articles (populated automatically)
