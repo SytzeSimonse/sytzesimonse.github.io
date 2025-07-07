@@ -1,4 +1,4 @@
-console.log('Snake animation script loaded - This is a playful snake animation that runs in the background.');
+console.log('Snake animation script loaded - This is a playful snake animation that runs in the background.');Y
 
 // Playful Snake Animation
 class SnakeAnimation {
@@ -47,8 +47,8 @@ class SnakeAnimation {
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
-            opacity: 1;
+            z-index: -1;
+            opacity: 0.3;
         `;
         document.body.appendChild(this.canvas);
         console.log('Canvas added to body');
@@ -205,11 +205,10 @@ class SnakeAnimation {
         // Clear canvas
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
-        
         // Draw snake
-        this.ctx.fillStyle = '#2a5242'; // Slightly brighter green
+        this.ctx.fillStyle = '#1a3329'; // Primary color
         this.snake.forEach((segment, index) => {
-            const alpha = 0.4 - (index / this.snake.length) * 0.2; // Subtle but visible
+            const alpha = 1 - (index / this.snake.length) * 0.5; // Fade towards tail
             this.ctx.globalAlpha = alpha;
             this.ctx.fillRect(
                 segment.x * this.gridSize,
@@ -220,7 +219,7 @@ class SnakeAnimation {
         });
         
         // Draw food
-        this.ctx.globalAlpha = 0.3;
+        this.ctx.globalAlpha = 1;
         this.ctx.fillStyle = '#7fb3d5'; // Accent color
         this.food.forEach(food => {
             this.ctx.beginPath();
@@ -233,6 +232,11 @@ class SnakeAnimation {
             );
             this.ctx.fill();
         });
+        
+        // Debug: Draw a test rectangle to confirm drawing is working
+        this.ctx.globalAlpha = 1;
+        this.ctx.fillStyle = 'red';
+        this.ctx.fillRect(10, 10, 20, 20);
     }
     
     animate(currentTime = 0) {
