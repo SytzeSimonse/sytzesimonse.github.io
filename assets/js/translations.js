@@ -1,68 +1,74 @@
 const translations = {
     en: {
         // Meta
-        title: "Sytze Simonse - GIS & Technology Specialist",
+        title: "Transparante data-expertise & educatie",
         description: "Tech specialist with a passion for making complex concepts accessible. With a background in Geo-Information Sciences and Information Sciences, I bridge technical and social worlds.",
         
         // Header
         name: "Sytze Simonse",
-        intro: "Hi! I'm Sytze, a tech enthusiast who makes AI and data science understandable for organizations.",
-        tagline: "I believe technology should serve people and society – not the other way around. From this conviction, I use my skills to make complex information accessible and understandable. Whether it's a map, visualization, or web application: I want to make visible what would otherwise remain invisible.",
+        subtitle: "Transparent data expertise & education",
+        tagline: "I make your (geo)data <span class='highlight'>understandable</span> and <span class='highlight'>usable</span>, exclusively with <span class='highlight'>open source tools</span> - no expensive licenses or vendor lock-in. Throughout the entire process, I explain what and why I do, so your team can continue <span class='highlight'>independently</span>.",
         
         // Sections
-        expertise_interests_title: "Expertise & Interests",
-        expertise_subtitle: "Expertise",
-        interests_subtitle: "Interests",
+        expertise_title: "Expertise",
         projects_title: "Projects",
         writings_title: "Writings",
         languages_title: "Languages",
         
-        // Expertise items (condensed)
-        expertise_geodata: "Geo-data & mapping",
-        expertise_geodata_tooltip: "GeoPandas, QGIS, Leaflet.js, CesiumJS, spatial data pipelines",
-        expertise_webdev: "Web development",
-        expertise_webdev_tooltip: "TypeScript, React, Express, REST APIs, D3.js",
-        expertise_ai: "AI & machine learning",
-        expertise_ai_tooltip: "scikit-learn, open source LLMs, local model deployment, data engineering",
-        expertise_opentech: "Open technology",
-        expertise_opentech_tooltip: "FOSS, Linux, privacy-focused solutions",
-        expertise_education: "Technical education",
-        expertise_education_tooltip: "QGIS training, workshops, knowledge sharing",
+        // New 4-category expertise structure
+        expertise_geo_title: "Geographic Data Solutions",
+        expertise_geo_what: "Interactive maps, spatial analysis, 3D visualizations",
+        expertise_geo_tech: "<a href='https://qgis.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>QGIS</a>, <a href='https://postgis.net/' target='_blank' rel='noopener noreferrer' class='tech-link'>PostGIS</a>, <a href='https://leafletjs.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Leaflet</a>, <a href='https://cesium.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Cesium</a>, <a href='https://gdal.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>GDAL</a>",
         
-        // Interests content
-        interests_intro: "With my expertise, I hope to create meaningful impact, such as:",
-        interests_environmental: "Environmental data visualization",
-        interests_storytelling: "Data storytelling & transparency",
-        interests_ai_social: "Privacy-preserving AI for social good",
-        interests_equity: "Digital equity & inclusion",
-        interests_community: "Community mapping & civic engagement",
+        expertise_ai_title: "Data Analysis & AI Implementation",
+        expertise_ai_what: "Dataset analysis, predictive models, (local) AI solutions",
+        expertise_ai_tech: "<a href='https://pandas.pydata.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>Pandas</a>, <a href='https://numpy.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>numpy</a>, <a href='https://scikit-learn.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>scikit-learn</a>, <a href='https://langchain.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>LangChain</a>, <a href='https://ollama.ai/' target='_blank' rel='noopener noreferrer' class='tech-link'>Ollama</a>",
+        
+        expertise_web_title: "Web Development",
+        expertise_web_what: "Front-end applications, version control, AI-assisted development",
+        expertise_web_tech: "<a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>React</a>/<a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>NextJS</a>, <a href='https://www.typescriptlang.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>TypeScript</a>, <a href='https://www.python.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>Python</a>, <a href='https://git-scm.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Git</a>",
+        
+        expertise_foss_title: "FOSS Implementation & Training",
+        expertise_foss_what: "Migration from commercial to open source alternatives",
+        expertise_foss_how: "Workshops, training sessions and advisory services",
+        
         
         // Languages
-        languages_description: "I love learning languages, because there's something special about communicating with people in their own language. It opens doors to new friendships, stories, and ways of seeing the world.",
-        
-        // Languages
-        languages_description: "I love learning languages, because there's something special about communicating with people in their own language. It opens doors to new friendships, stories, and ways of seeing the world.",
+        languages_description: "Learning languages is a hobby. Besides Dutch and English, I speak Portuguese and Russian well, sufficient for business communication and collaboration.",
         
         // Language levels
         dutch_native: "🇳🇱 Dutch (Native)",
         english_c2: "🇬🇧 English (C2)",
         portuguese_c1: "🇵🇹 Portuguese (C1)",
         russian_b1: "🇷🇺 Russian (B1)",
-        german_b1: "🇩🇪 German (B1)",
         
         // Contact
-        location: "📍 Rotterdam, Netherlands",
+        location: "Rotterdam, Netherlands",
+        
+        // Company information
+        company_name: "CasuarIO",
+        kvk_number: "KVK: 85266256",
+        btw_number: "BTW-ID: NL004072678B40",
         
         // Business
-        business_title: "About My Work",
+        business_title: "About me",
         business_description: "As a freelancer, I operate under the company name 'CasuarIO', inspired by the legendary Australian cassowary bird. Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, we founded <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, which helps organizations implement value-aligned responsible AI solutions.",
         
-        // Work subsections
-        casuario_title: "CasuarIO",
-        casuario_description: "Under the name CasuarIO, I work as an independent geodata specialist, helping make questions visible through (geo)data. I enjoy working at the intersection of data, technology, and social relevance – translating complex information into maps, web applications, or interactive visualizations.",
-        enoki_title: "Enoki", 
-        enoki_description: "Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, we founded <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, which helps organizations implement value-aligned responsible AI solutions. We focus on making AI technology accessible, ethical, and aligned with organizational values.",
-        vanoord_mention: "Additionally, I work part-time as a geo-data engineer at <a href='https://www.vanoord.com/' target='_blank' rel='noopener noreferrer' class='inline-link'>Van Oord</a>, where I advise colleagues on spatial challenges, deliver training, and develop interactive geo-visualizations. I also contribute to an AI pilot by translating user requirements into technical solutions.",
+        // Personal introduction
+        personal_intro_p1: "I'm a tech person with a mission: making complex technology <span class='highlight'>accessible</span> to everyone - regardless of technical knowledge. This way we can work together to ensure technology serves our planet, not the other way around.",
+        personal_intro_p2: "I graduated in Geo-Information Science from Wageningen University and have experience with (IT) education. My experience spans from technical research to business implementation at Van Oord. This broad background ensures that I understand both the technical possibilities and the practical needs of organizations.",
+        personal_intro_p3: "For me it's important that organizations can work <span class='highlight'>independently</span> with their own data, without being dependent on opaque systems or expensive licenses.",
+        personal_intro_p4: "In addition to my own work as CasuarIO, I run the company <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, where we help organizations with responsible AI implementation and advice.",
+        
+        // Approach section
+        approach_title: "My approach",
+        approach_intro: "I work according to three pillars:",
+        approach_pillar1_title: "<span class='highlight'>Open-source technology</span>:",
+        approach_pillar1_desc: "I work exclusively with freely available software (FOSS). This means no expensive licenses for you - commercial (GIS) software often costs €2000+ per year.",
+        approach_pillar2_title: "<span class='highlight'>Open data</span>:",
+        approach_pillar2_desc: "I use freely available datasets from governments and open initiatives as much as possible. This means your organization is not dependent on expensive data suppliers, but can rely on data that remains freely available forever.",
+        approach_pillar3_title: "<span class='highlight'>Transparent knowledge transfer</span>:",
+        approach_pillar3_desc: "I ensure your team fully understands the solution, so you retain control even after the project ends - <span class='highlight'>independent</span> of external expertise.",
         
         // Projects
         project_aarde_title: "De Aarde aan Tafel",
@@ -81,65 +87,74 @@ const translations = {
     },
     nl: {
         // Meta
-        title: "Sytze Simonse - GIS & Technologie Specialist",
+        title: "Transparante data-expertise & educatie",
         description: "Technologie specialist met een passie voor het toegankelijk maken van complexe concepten. Met een achtergrond in Geo-Informatiewetenschappen en Informatiewetenschappen, verbind ik technische en sociale werelden.",
         
         // Header
         name: "Sytze Simonse",
-        intro: "Hi! Ik ben Sytze, een techneut die AI en data science begrijpelijk maakt voor organisaties.",
-        tagline: "Ik vind dat technologie in dienst moet staan van mens en maatschappij – niet andersom. Vanuit die overtuiging zet ik mijn vaardigheden in om complexe informatie toegankelijk en begrijpelijk te maken. Of het nu om een kaart, visualisatie of webapplicatie gaat: ik wil zichtbaar maken wat anders onzichtbaar blijft.",
+        subtitle: "Transparante data-expertise & educatie",
+        tagline: "Ik maak jouw (geo)data <span class='highlight'>begrijpelijk</span> en <span class='highlight'>bruikbaar</span>, uitsluitend met <span class='highlight'>open source tools</span> - geen dure licenties of vendor lock-in. Tijdens het hele proces leg ik uit wat en waarom ik doe, zodat jouw team <span class='highlight'>zelfstandig</span> verder kan.",
         
         // Sections
-        expertise_interests_title: "Expertises & Interesses",
-        expertise_subtitle: "Expertises",
-        interests_subtitle: "Interesses",
+        expertise_title: "Expertises",
         projects_title: "Projecten",
         writings_title: "Schrijfsels",
         languages_title: "Talen",
         
-        // Expertise items (condensed)
-        expertise_geodata: "Geo-data & kaarten",
-        expertise_geodata_tooltip: "GeoPandas, QGIS, Leaflet.js, CesiumJS, ruimtelijke data pipelines",
-        expertise_webdev: "Webontwikkeling",
-        expertise_webdev_tooltip: "TypeScript, React, Express, REST APIs, D3.js",
-        expertise_ai: "AI & machine learning",
-        expertise_ai_tooltip: "scikit-learn, open source LLMs, lokale model deployment, data engineering",
-        expertise_opentech: "Open technologie",
-        expertise_opentech_tooltip: "FOSS, Linux, privacy-gerichte oplossingen",
-        expertise_education: "Technische educatie",
-        expertise_education_tooltip: "QGIS training, workshops, kennisdeling",
+        // New 4-category expertise structure
+        expertise_geo_title: "Geografische data vraagstukken",
+        expertise_geo_what: "Interactieve kaarten, ruimtelijke analyse, 3D-visualisaties",
+        expertise_geo_tech: "<a href='https://qgis.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>QGIS</a>, <a href='https://postgis.net/' target='_blank' rel='noopener noreferrer' class='tech-link'>PostGIS</a>, <a href='https://leafletjs.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Leaflet</a>, <a href='https://cesium.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Cesium</a>, <a href='https://gdal.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>GDAL</a>",
         
-        // Interests content
-        interests_intro: "Met mijn expertise hoop ik betekenisvolle impact te creëren, zoals:",
-        interests_environmental: "Omgevingsdata visualisatie",
-        interests_storytelling: "Data storytelling & transparantie",
-        interests_ai_social: "Privacy-behoudende AI voor maatschappelijk goed",
-        interests_equity: "Digitale gelijkheid & inclusie",
-        interests_community: "Community mapping & burgerparticipatie",
+        expertise_ai_title: "Data-analyse & AI-implementatie",
+        expertise_ai_what: "Datasets analyseren, voorspellende modellen, (lokale) AI-oplossingen",
+        expertise_ai_tech: "<a href='https://pandas.pydata.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>Pandas</a>, <a href='https://numpy.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>numpy</a>, <a href='https://scikit-learn.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>scikit-learn</a>, <a href='https://langchain.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>LangChain</a>, <a href='https://ollama.ai/' target='_blank' rel='noopener noreferrer' class='tech-link'>Ollama</a>",
+        
+        expertise_web_title: "Web-development",
+        expertise_web_what: "Front-end applicaties, versiebeheer, AI-geassisteerde development",
+        expertise_web_tech: "<a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>React</a>/<a href='https://nextjs.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>NextJS</a>, <a href='https://www.typescriptlang.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>TypeScript</a>, <a href='https://www.python.org/' target='_blank' rel='noopener noreferrer' class='tech-link'>Python</a>, <a href='https://git-scm.com/' target='_blank' rel='noopener noreferrer' class='tech-link'>Git</a>",
+        
+        expertise_foss_title: "FOSS-implementatie & Training",
+        expertise_foss_what: "Migratie van commerciële naar open source alternatieven",
+        expertise_foss_how: "Workshops, trainingen en advies",
+        
         
         // Languages
-        languages_description: "Ik vind het leuk om vreemde talen te leren omdat er iets speciaals is aan het communiceren met mensen in hun moedertaal. Het opent deuren naar nieuwe vriendschappen, verhalen en manieren om naar de wereld te kijken.",
+        languages_description: "Talen leren is een hobby. Naast Nederlands en Engels spreek ik goed Portugees en Russisch, voldoende voor zakelijke communicatie en samenwerking.",
         
         // Language levels
         dutch_native: "🇳🇱 Nederlands (Moedertaal)",
         english_c2: "🇬🇧 Engels (C2)",
         portuguese_c1: "🇵🇹 Portugees (C1)",
         russian_b1: "🇷🇺 Russisch (B1)",
-        german_b1: "🇩🇪 Duits (B1)",
         
         // Contact
-        location: "📍 Rotterdam, Nederland",
+        location: "Rotterdam, Nederland",
+        
+        // Company information
+        company_name: "CasuarIO",
+        kvk_number: "KVK: 85266256",
+        btw_number: "BTW-ID: NL004072678B40",
         
         // Business
-        business_title: "Over Mijn Werk",
+        business_title: "Over mij",
         business_description: "Als freelancer werk ik onder de bedrijfsnaam 'CasuarIO', geïnspireerd door de legendarische Australische kasuaris vogel. Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> hebben we <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> opgericht, dat organisaties helpt met waardegedreven verantwoorde AI-oplossingen.",
         
-        // Work subsections
-        casuario_title: "CasuarIO",
-        casuario_description: "Onder de naam CasuarIO werk ik als zelfstandig geodata-specialist en help om vraagstukken inzichtelijk te maken met behulp van (geo)data. Ik werk graag op het snijvlak van data, technologie en maatschappelijke relevantie – en vertaal complexe informatie naar kaarten, webapplicaties of interactieve visualisaties.",
-        enoki_title: "Enoki",
-        enoki_description: "Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> hebben we <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> opgericht, dat organisaties helpt met waardegedreven verantwoorde AI-oplossingen. We richten ons op het toegankelijk, ethisch en waardegestuurd maken van AI-technologie.",
-        vanoord_mention: "Daarnaast werk ik parttime als geo-data engineer bij <a href='https://www.vanoord.com/' target='_blank' rel='noopener noreferrer' class='inline-link'>Van Oord</a>, waar ik collega's adviseer bij ruimtelijke vraagstukken, trainingen verzorg en interactieve geo-visualisaties ontwikkel. Ook werk ik mee aan een AI-pilot door gebruikerseisen te vertalen naar technische mogelijkheden.",
+        // Personal introduction
+        personal_intro_p1: "Ik ben een techneut met een missie: complexe technologie toegankelijk maken voor iedereen - onafhankelijk van technische kennis. Zo kunnen we er samen voor zorgen dat technologie in dienst blijft staan van onze planeet, en niet andersom.",
+        personal_intro_p2: "Ik ben afgestudeerd in Geo-informatiekunde aan Wageningen University en heb ervaring met (IT-)onderwijs. Mijn ervaring spant van technisch onderzoek tot business-implementatie bij Van Oord. Deze brede achtergrond zorgt ervoor dat ik zowel de technische mogelijkheden als de praktische behoeften van organisaties begrijp.",
+        personal_intro_p3: "Voor mij is het belangrijk dat organisaties zelfstandig kunnen werken met hun eigen data, zonder afhankelijk te zijn van ondoorzichtige systemen of dure licenties.",
+        personal_intro_p4: "Naast mijn ZZP-werk (CasuarIO) run ik samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> het bedrijf <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, waarmee we organisaties helpen bij verantwoorde AI-implementatie en -advies.",
+        
+        // Approach section
+        approach_title: "Mijn werkwijze",
+        approach_intro: "Ik werk volgens drie pijlers:",
+        approach_pillar1_title: "<span class='highlight'>Open-source technologie</span>:",
+        approach_pillar1_desc: "Ik werk uitsluitend met vrij beschikbare software (FOSS). Dat betekent voor jou dus geen dure licenties - commerciële (GIS-)software kost vaak €2000+ per jaar.",
+        approach_pillar2_title: "<span class='highlight'>Open data</span>:",
+        approach_pillar2_desc: "Ik gebruik vrij beschikbare datasets. Dat betekent dat jouw organisatie niet afhankelijk is van dure dataleveranciers, maar kan vertrouwen op data die altijd gratis beschikbaar blijft.",
+        approach_pillar3_title: "<span class='highlight'>Transparante kennisoverdracht</span>:",
+        approach_pillar3_desc: "Ik zorg dat jouw team de oplossing volledig begrijpt, zodat jullie ook na afloop van het project controle houden - geen afhankelijkheid van externe expertise.",
         
         // Projects
         project_aarde_title: "De Aarde aan Tafel",
@@ -160,7 +175,7 @@ const translations = {
 
 // i18n functionality
 const i18n = {
-    currentLanguage: 'en',
+    currentLanguage: 'nl',
     
     init() {
         // Check for saved language preference or browser language
@@ -189,8 +204,8 @@ const i18n = {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (currentTranslations[key]) {
-                // Check if the translation contains HTML (links)
-                if (currentTranslations[key].includes('<a')) {
+                // Check if the translation contains HTML (links or spans)
+                if (currentTranslations[key].includes('<a') || currentTranslations[key].includes('<span')) {
                     element.innerHTML = currentTranslations[key];
                 } else {
                     element.textContent = currentTranslations[key];
