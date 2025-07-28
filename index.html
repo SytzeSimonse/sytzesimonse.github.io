@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +12,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div id="language-switcher" class="language-switcher">
-                <button data-lang="en" class="lang-btn active" data-i18n="lang_en">EN</button>
-                <button data-lang="nl" class="lang-btn" data-i18n="lang_nl">NL</button>
+                <button data-lang="en" class="lang-btn" data-i18n="lang_en">EN</button>
+                <button data-lang="nl" class="lang-btn active" data-i18n="lang_nl">NL</button>
             </div>
-            <p class="intro" data-i18n="intro">Hi! I'm Sytze, a tech specialist with a passion for making complex concepts accessible.</p>
+            <h1 class="brand-name" data-i18n="name">Sytze Simonse</h1>
+            <p class="subtitle" data-i18n="subtitle">Transparante data-expertise & educatie</p>
             <div class="tagline-content">
-                <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
                 <p class="tagline" data-i18n="tagline">With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.</p>
+                <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
             </div>
         </header>
 
@@ -33,69 +37,125 @@
             <section class="content-card">
                 <h2 data-i18n="business_title">About My Work</h2>
                 
-                <div class="work-subsection">
-                    <div class="work-header">
-                        <img src="assets/images/png/casuario_logo.png" alt="CasuarIO Logo" class="work-logo">
-                        <h3 data-i18n="casuario_title">CasuarIO</h3>
-                    </div>
-                    <p class="work-description" data-i18n="casuario_description">As a freelancer, I operate under 'CasuarIO', inspired by the legendary Australian cassowary bird. I provide specialized GIS and technology consulting services, helping organizations unlock the potential of their spatial data and implement cutting-edge geospatial solutions.</p>
-                </div>
+                <p class="personal-intro" data-i18n="personal_intro_p1">I'm Sytze, graduated in Geo-Information Science from Wageningen University with a background in education.</p>
+                <br>
+                <p class="personal-intro" data-i18n="personal_intro_p2">It is my mission to make technology understandable and usable for everyone - regardless of technical background. I believe organizations should be able to work independently with their own data, without being dependent on opaque systems or expensive licenses.</p>
+                <br>
+                <p class="personal-intro" data-i18n="personal_intro_p4">In addition to my independent work, I run the company Enoki together with Kamiel Verhelst, where we help organizations with responsible AI implementation.</p>
                 
-                <div class="work-subsection">
-                    <div class="work-header">
-                        <img src="assets/images/svg/enoki_logo.svg" alt="Enoki Logo" class="work-logo">
-                        <a href="https://enoki-ai.nl/" target="_blank" rel="noopener noreferrer" class="work-title-link">
-                            <h3 data-i18n="enoki_title">Enoki</h3>
-                        </a>
-                    </div>
-                    <p class="work-description" data-i18n="enoki_description">Together with Kamiel Verhelst, we founded Enoki, which helps organizations implement value-aligned responsible AI solutions. We focus on making AI technology accessible, ethical, and aligned with organizational values.</p>
-                </div>
-                
-                <p class="vanoord-mention" data-i18n="vanoord_mention">Additionally, I work part-time as a geo-data engineer at Van Oord, where I advise on spatial data challenges and provide QGIS training.</p>
             </section>
-            <!-- Expertise & Interests Section -->
-            <section class="content-card">
-                <h2 data-i18n="expertise_interests_title">Expertise & Interests</h2>
+            
+            <!-- Approach Section - Visual Pillars -->
+            <section class="pillars-section">
+                <h2 class="pillars-title" data-i18n="approach_title">My Approach</h2>
+                <p class="pillars-intro" data-i18n="approach_intro">The three pillars of my work are:</p>
                 
-                <div class="expertise-interests-vertical">
-                    <!-- Top: Expertise -->
-                    <div class="expertise-section">
-                        <h3 data-i18n="expertise_subtitle">Expertise</h3>
-                        <div class="expertise-grid">
-                            <div class="expertise-card" data-tooltip-key="expertise_geodata_tooltip">
-                                <span data-i18n="expertise_geodata">Geo-data & mapping</span>
+                <div class="pillars-container">
+                    <div class="pillar">
+                        <div class="pillar-top"></div>
+                        <div class="pillar-content">
+                            <div class="pillar-icon">
+                                <i class="fas fa-code-branch" aria-hidden="true"></i>
                             </div>
-                            <div class="expertise-card" data-tooltip-key="expertise_webdev_tooltip">
-                                <span data-i18n="expertise_webdev">Web development</span>
-                            </div>
-                            <div class="expertise-card" data-tooltip-key="expertise_ai_tooltip">
-                                <span data-i18n="expertise_ai">AI & machine learning</span>
-                            </div>
-                            <div class="expertise-card" data-tooltip-key="expertise_opentech_tooltip">
-                                <span data-i18n="expertise_opentech">Open technology</span>
-                            </div>
-                            <div class="expertise-card" data-tooltip-key="expertise_education_tooltip">
-                                <span data-i18n="expertise_education">Technical education</span>
-                            </div>
+                            <h3 class="pillar-title" data-i18n="approach_pillar1_title">Open-source technology:</h3>
+                            <p class="pillar-description" data-i18n="approach_pillar1_desc">I use QGIS, Python, Leaflet.js and PostGIS. That means no expensive licenses for you (often €2000+ per year for comparable commercial software).</p>
                         </div>
+                        <div class="pillar-base"></div>
                     </div>
                     
-                    <!-- Bottom: Interests -->
-                    <div class="interests-section">
-                        <h3 data-i18n="interests_subtitle">Interests</h3>
-                        <p data-i18n="interests_intro">With my expertise, I hope to create meaningful impact, such as:</p>
-                        <ul class="interests-list">
-                            <li data-i18n="interests_environmental">Environmental data visualization</li>
-                            <li data-i18n="interests_storytelling">Data storytelling & transparency</li>
-                            <li data-i18n="interests_ai_social">Privacy-preserving AI for social good</li>
-                            <li data-i18n="interests_equity">Digital equity & inclusion</li>
-                            <li data-i18n="interests_community">Community mapping & civic engagement</li>
-                        </ul>
+                    <div class="pillar">
+                        <div class="pillar-top"></div>
+                        <div class="pillar-content">
+                            <div class="pillar-icon">
+                                <i class="fas fa-database" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="pillar-title" data-i18n="approach_pillar2_title">Open data:</h3>
+                            <p class="pillar-description" data-i18n="approach_pillar2_desc">I make use of freely available data wherever possible, for example from governments or initiatives like OpenStreetMap (OSM). This means your organization is not dependent on fickle commercial data providers.</p>
+                        </div>
+                        <div class="pillar-base"></div>
+                    </div>
+                    
+                    <div class="pillar">
+                        <div class="pillar-top"></div>
+                        <div class="pillar-content">
+                            <div class="pillar-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="pillar-title" data-i18n="approach_pillar3_title">Transparent knowledge transfer:</h3>
+                            <p class="pillar-description" data-i18n="approach_pillar3_desc">I explain what and why I do during the entire process, so that your team remains independent and does not become dependent on me or others.</p>
+                        </div>
+                        <div class="pillar-base"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Expertise Section -->
+            <section class="content-card">
+                <h2 data-i18n="expertise_title">Expertise</h2>
+                
+                <div class="expertise-section">
+                    <div class="expertise-grid">
+                        <div class="expertise-card">
+                            <div class="card-front">
+                                <h4 class="expertise-card-title" data-i18n="expertise_geo_title">Geografische data vraagstukken</h4>
+                            </div>
+                            <div class="card-back">
+                                <div class="expertise-description">
+                                    <span data-i18n="expertise_geo_what">Interactieve kaarten, ruimtelijke analyse, 3D-visualisaties</span>
+                                </div>
+                                <div class="expertise-tech">
+                                    <strong>Tech:</strong> <span data-i18n="expertise_geo_tech">QGIS, PostGIS, Leaflet.js, Cesium.js, GDAL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-front">
+                                <h4 class="expertise-card-title" data-i18n="expertise_ai_title">Data-analyse & AI-implementatie</h4>
+                            </div>
+                            <div class="card-back">
+                                <div class="expertise-description">
+                                    <span data-i18n="expertise_ai_what">Datasets analyseren, voorspellende modellen, (lokale) AI-oplossingen</span>
+                                </div>
+                                <div class="expertise-tech">
+                                    <strong>Tech:</strong> <span data-i18n="expertise_ai_tech">Pandas, numpy, scikit-learn, LangChain, Ollama</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-front">
+                                <h4 class="expertise-card-title" data-i18n="expertise_web_title">Web-development</h4>
+                            </div>
+                            <div class="card-back">
+                                <div class="expertise-description">
+                                    <span data-i18n="expertise_web_what">Front-end applicaties, versiebeheer, AI-geassisteerde development</span>
+                                </div>
+                                <div class="expertise-tech">
+                                    <strong>Tech:</strong> <span data-i18n="expertise_web_tech">React/NextJS, TypeScript, Python, Git</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="expertise-card">
+                            <div class="card-front">
+                                <h4 class="expertise-card-title" data-i18n="expertise_foss_title">FOSS-implementatie & Training</h4>
+                            </div>
+                            <div class="card-back">
+                                <div class="expertise-description">
+                                    <span data-i18n="expertise_foss_what">Migratie van commerciële naar open source alternatieven</span>
+                                </div>
+                                <div class="expertise-tech">
+                                    <strong>Hoe:</strong> <span data-i18n="expertise_foss_how">Workshops, trainingen en advies</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Projects Section -->
+            <!-- Projects Section - Hidden for now -->
+            <!--
             <section class="content-card">
                 <h2 data-i18n="projects_title">Projects</h2>
                 <div class="projects-container">
@@ -106,6 +166,7 @@
                     </div>
                 </div>
             </section>
+            -->
 
             <!-- Writings Section -->
              <!--
@@ -117,46 +178,63 @@
             -->
 
             <!-- Languages Section -->
-            <section class="content-card">
+            <!-- <section class="content-card">
                 <h2 data-i18n="languages_title">Languages</h2>
-                <p class="languages-description" data-i18n="languages_description">I study languages to connect with people from different cultures and backgrounds through their native tongue. Language is a bridge that enables deeper understanding and meaningful connections across cultural boundaries.</p>
+                <p class="languages-description" data-i18n="languages_description">Learning languages is a hobby. Besides Dutch and English, I speak Portuguese and Russian well, sufficient for business communication and collaboration.</p>
                 <div class="skill-container">
                     <span class="skill-tag" data-i18n="dutch_native">🇳🇱 Dutch (Native)</span>
                     <span class="skill-tag" data-i18n="english_c2">🇬🇧 English (C2)</span>
                     <span class="skill-tag" data-i18n="portuguese_c1">🇵🇹 Portuguese (C1)</span>
                     <span class="skill-tag" data-i18n="russian_b1">🇷🇺 Russian (B1)</span>
-                    <span class="skill-tag" data-i18n="german_b1">🇩🇪 German (B1)</span>
                 </div>
-            </section>
+            </section> -->
 
             <!-- Contact Section -->
             <section class="content-card contact-section">
-                <p class="location" data-i18n="location">📍 Rotterdam, Netherlands</p>
+                <p class="location">
+                    <!-- Feather Icons - Map Pin -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-icon">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span data-i18n="location">Rotterdam, Netherlands</span>
+                </p>
                 
                 <div class="social-container">
                     <a href="mailto:sytze.simonse@proton.me" class="social-link" title="Email">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 14H6V8l6 4 6-4v10zm-6-6L4 6h16l-8 6z"/>
+                        <!-- Feather Icons - Mail -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" class="social-link" title="LinkedIn" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/SytzeSimonse" class="social-link" title="GitHub" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                        <!-- Feather Icons - LinkedIn -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </a>
                     <a href="https://gis.stackexchange.com/users/147844/sytze" class="social-link" title="GIS Stack Exchange" target="_blank">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.36,20.2V14.82h1.79V22H3V14.82H4.8V20.2H17.36M6.77,14.32l0.37-1.76,8.79,1.85-0.37,1.76L6.77,14.32m1.16-4.21L8.69,8.5l8.14,3.78-0.76,1.62L7.93,10.11M10.86,5.56l1.15-1.38l6.9,5.76-1.15,1.38L10.86,5.56m4.5-2.94l6.02,8.05-1.43,1.07l-6.02-8.05L15.36,2.62m-8.67,14h9v1.79h-9V16.62z"/>
+                        <!-- Feather Icons - Compass -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"></polygon>
                         </svg>
                     </a>
                 </div>
                 
-                <p class="kvk">KVK: 85266256</p>
+                <div class="company-info">
+                    <img src="assets/images/png/casuario_logo.png" alt="CasuarIO Logo" class="company-logo">
+                    <div class="company-text">
+                        <p class="company-name" data-i18n="company_name">CasuarIO</p>
+                        <div class="business-numbers">
+                            <p class="kvk" data-i18n="kvk_number">KVK: 85266256</p>
+                            <p class="btw" data-i18n="btw_number">BTW-ID: NL004072678B40</p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
