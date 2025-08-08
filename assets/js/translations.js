@@ -8,8 +8,8 @@ const translations = {
         skip_to_content: "Skip to main content",
         language_switcher_label: "Choose language",
         section_nav_heading: "Page sections",
-        nav_about: "About My Work",
-        nav_approach: "My Approach",
+        nav_about: "About me",
+        nav_approach: "My approach",
         nav_expertise: "Expertise",
         nav_contact: "Contact",
         
@@ -109,8 +109,8 @@ const translations = {
         skip_to_content: "Ga naar hoofdinhoud",
         language_switcher_label: "Kies taal",
         section_nav_heading: "Pagina secties",
-        nav_about: "Over Mijn Werk",
-        nav_approach: "Mijn Aanpak",
+        nav_about: "Over mij",
+        nav_approach: "Mijn werkwijze",
         nav_expertise: "Expertise",
         nav_contact: "Contact",
         
