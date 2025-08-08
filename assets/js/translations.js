@@ -4,6 +4,15 @@ const translations = {
         title: "Transparante data-expertise & educatie",
         description: "Tech specialist with a passion for making complex concepts accessible. With a background in Geo-Information Sciences and Information Sciences, I bridge technical and social worlds.",
         
+        // Accessibility
+        skip_to_content: "Skip to main content",
+        language_switcher_label: "Choose language",
+        section_nav_heading: "Page sections",
+        nav_about: "About My Work",
+        nav_approach: "My Approach",
+        nav_expertise: "Expertise",
+        nav_contact: "Contact",
+        
         // Header
         name: "Sytze Simonse",
         subtitle: "Transparent data expertise & education",
@@ -83,12 +92,27 @@ const translations = {
         
         // Language switcher
         lang_en: "EN",
-        lang_nl: "NL"
+        lang_nl: "NL",
+        
+        // Carbon footprint
+        carbon_title: "Website Carbon Footprint",
+        carbon_explanation: "This website's carbon footprint is measured by Website Carbon. It calculates the CO₂ emissions generated each time someone visits this page, based on energy consumption from data transfer, device usage, and server hosting.",
+        carbon_comparison: "This website is cleaner than",
+        carbon_comparison_suffix: "of websites tested"
     },
     nl: {
         // Meta
         title: "Transparante data-expertise & educatie",
         description: "Technologie specialist met een passie voor het toegankelijk maken van complexe concepten. Met een achtergrond in Geo-Informatiewetenschappen en Informatiewetenschappen, verbind ik technische en sociale werelden.",
+        
+        // Accessibility
+        skip_to_content: "Ga naar hoofdinhoud",
+        language_switcher_label: "Kies taal",
+        section_nav_heading: "Pagina secties",
+        nav_about: "Over Mijn Werk",
+        nav_approach: "Mijn Aanpak",
+        nav_expertise: "Expertise",
+        nav_contact: "Contact",
         
         // Header
         name: "Sytze Simonse",
@@ -169,7 +193,13 @@ const translations = {
         
         // Language switcher
         lang_en: "EN",
-        lang_nl: "NL"
+        lang_nl: "NL",
+        
+        // Carbon footprint
+        carbon_title: "Website Carbon Voetafdruk",
+        carbon_explanation: "De CO₂-voetafdruk van deze website wordt gemeten door Website Carbon. Het berekent de CO₂-uitstoot die wordt gegenereerd elke keer dat iemand deze pagina bezoekt, gebaseerd op energieverbruik van datatransfer, apparaatgebruik en serverhosting.",
+        carbon_comparison: "Deze website is schoner dan",
+        carbon_comparison_suffix: "van de geteste websites"
     }
 };
 
@@ -237,25 +267,45 @@ const i18n = {
         const switcher = document.getElementById('language-switcher');
         if (!switcher) return;
         
-        // Update active state
+        // Update active state and ARIA attributes
         switcher.querySelectorAll('button').forEach(button => {
-            button.classList.remove('active');
-            if (button.getAttribute('data-lang') === this.currentLanguage) {
-                button.classList.add('active');
-            }
+            const isActive = button.getAttribute('data-lang') === this.currentLanguage;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', isActive.toString());
         });
         
         // Add event listeners
         switcher.addEventListener('click', (e) => {
             if (e.target.tagName === 'BUTTON') {
                 const newLanguage = e.target.getAttribute('data-lang');
-                if (newLanguage && translations[newLanguage]) {
+                if (newLanguage && translations[newLanguage] && newLanguage !== this.currentLanguage) {
                     this.currentLanguage = newLanguage;
                     this.updateLanguage();
                     this.setupLanguageSwitcher();
+                    this.announceLanguageChange(newLanguage);
                 }
             }
         });
+    },
+    
+    announceLanguageChange(newLanguage) {
+        const liveRegion = document.getElementById('live-region');
+        if (!liveRegion) return;
+        
+        const languageNames = {
+            'en': { en: 'English', nl: 'Engels' },
+            'nl': { en: 'Dutch', nl: 'Nederlands' }
+        };
+        
+        const announcement = this.currentLanguage === 'en' 
+            ? `Language changed to ${languageNames[newLanguage].en}`
+            : `Taal gewijzigd naar ${languageNames[newLanguage].nl}`;
+            
+        // Clear first, then announce (better for screen readers)
+        liveRegion.textContent = '';
+        setTimeout(() => {
+            liveRegion.textContent = announcement;
+        }, 100);
     }
 };
 
