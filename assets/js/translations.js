@@ -53,6 +53,12 @@ const translations = {
         
         // Contact
         location: "Rotterdam, Netherlands",
+        personal_email_title: "Personal Email",
+        personal_email_aria: "Send personal email to Sytze Simonse",
+        business_email_title: "Business Email", 
+        business_email_aria: "Send business email to Sytze at CasuarIO",
+        bluesky_title: "BlueSky",
+        bluesky_aria: "Visit Sytze Simonse's BlueSky profile",
         
         // Company information
         company_name: "CasuarIO",
@@ -154,6 +160,12 @@ const translations = {
         
         // Contact
         location: "Rotterdam, Nederland",
+        personal_email_title: "Persoonlijke Email",
+        personal_email_aria: "Stuur persoonlijke email naar Sytze Simonse",
+        business_email_title: "Zakelijke Email",
+        business_email_aria: "Stuur zakelijke email naar Sytze bij CasuarIO", 
+        bluesky_title: "BlueSky",
+        bluesky_aria: "Bezoek Sytze Simonse's BlueSky profiel",
         
         // Company information
         company_name: "CasuarIO",
@@ -256,6 +268,14 @@ const i18n = {
             const key = element.getAttribute('data-i18n-title');
             if (currentTranslations[key]) {
                 element.setAttribute('title', currentTranslations[key]);
+            }
+        });
+        
+        // Update aria-label attributes for accessibility
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+            const key = element.getAttribute('data-i18n-aria-label');
+            if (currentTranslations[key]) {
+                element.setAttribute('aria-label', currentTranslations[key]);
             }
         });
         

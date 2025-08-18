@@ -823,6 +823,19 @@ body {
     stroke-width: 2;
 }
 
+.social-link img {
+    width: 24px;
+    height: 24px;
+    /* Apply color filter to match theme colors */
+    filter: brightness(0) saturate(100%) invert(11%) sepia(23%) saturate(1821%) hue-rotate(136deg) brightness(94%) contrast(94%);
+    transition: filter 0.3s ease;
+}
+
+.social-link:hover img {
+    /* Apply accent color filter on hover */
+    filter: brightness(0) saturate(100%) invert(67%) sepia(23%) saturate(462%) hue-rotate(174deg) brightness(97%) contrast(87%);
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -955,6 +968,11 @@ body {
     }
     
     .social-link svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .social-link img {
         width: 22px;
         height: 22px;
     }
