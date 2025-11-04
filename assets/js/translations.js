@@ -1,8 +1,8 @@
 const translations = {
     en: {
         // Meta
-        title: "Transparante data-expertise & educatie",
-        description: "Tech specialist with a passion for making complex concepts accessible. With a background in Geo-Information Sciences and Information Sciences, I bridge technical and social worlds.",
+        title: "Investigative journalist in development - Sytze Simonse",
+        description: "Investigative journalist in development using geodata and open-source tools to uncover hidden connections. Available for freelance geodata & AI projects.",
         
         // Accessibility
         skip_to_content: "Skip to main content",
@@ -11,15 +11,19 @@ const translations = {
         nav_about: "About me",
         nav_approach: "My approach",
         nav_expertise: "Expertise",
+        nav_portfolio: "Portfolio",
         nav_contact: "Contact",
         
         // Header
         name: "Sytze Simonse",
-        subtitle: "Transparent data expertise & education",
-        tagline: "I make your (geo)data <span class='highlight'>understandable</span> and <span class='highlight'>usable</span>, exclusively with <span class='highlight'>open source tools</span> - no expensive licenses or vendor lock-in. Throughout the entire process, I explain what and why I do, so your team can continue <span class='highlight'>independently</span>.",
+        subtitle: "Investigative journalist in development",
+        subtitle_secondary: "Using geodata and open-source tools to uncover hidden connections",
+        subtitle_tertiary: "Available for freelance geodata & AI projects",
+        tagline: "As a geodata specialist, I am developing into an investigative journalist. With my background in geo-information science (Wageningen University), I make complex datasets comprehensible and literally put hidden connections on the map.",
         
         // Sections
         expertise_title: "Expertise",
+        portfolio_title: "Portfolio",
         projects_title: "Projects",
         writings_title: "Writings",
         languages_title: "Languages",
@@ -70,21 +74,42 @@ const translations = {
         business_description: "As a freelancer, I operate under the company name 'CasuarIO', inspired by the legendary Australian cassowary bird. Together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, we founded <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, which helps organizations implement value-aligned responsible AI solutions.",
         
         // Personal introduction
-        personal_intro_p1: "I'm a tech person with a mission: making complex technology <span class='highlight'>accessible</span> to everyone - regardless of technical knowledge. This way we can work together to ensure technology serves our planet, not the other way around.",
-        personal_intro_p2: "I graduated in Geo-Information Science from Wageningen University and have experience with (IT) education. My experience spans from technical research to business implementation at Van Oord. This broad background ensures that I understand both the technical possibilities and the practical needs of organizations.",
-        personal_intro_p3: "For me it's important that organizations can work <span class='highlight'>independently</span> with their own data, without being dependent on opaque systems or expensive licenses.",
-        personal_intro_p4: "In addition to my own work as CasuarIO, I run the company <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, where we help organizations with responsible AI implementation and advice.",
+        personal_intro_p1: "As a geodata specialist, I am developing into an investigative journalist. With my background in geo-information science (Wageningen University), I make complex datasets comprehensible and literally put hidden connections on the map.",
+        personal_intro_p2: "Currently pursuing investigative journalism training at Open Eyes while leveraging my expertise in AI and open-source technology to tell impactful stories. The same principles that guide my freelance work - <span class='highlight'>open-source tools, open data, and transparent knowledge transfer</span> - now also drive my investigative journalism, ensuring stories are built on accessible, verifiable foundations.",
+        personal_intro_p3: "Alongside my journalistic development, I remain available for freelance projects in geodata analysis, AI implementation, and visualization.",
+        personal_intro_p4: "In addition to my independent work, I run the company <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> together with <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a>, where we help organizations with responsible AI implementation.",
         
         // Approach section
         approach_title: "My approach",
-        approach_intro: "I work according to three pillars:",
+        approach_intro: "Whether working on freelance projects or investigative stories, I follow three core principles:",
         approach_pillar1_title: "<span class='highlight'>Open-source technology</span>:",
-        approach_pillar1_desc: "I work exclusively with freely available software (FOSS). This means no expensive licenses for you - commercial (GIS) software often costs €2000+ per year.",
+        approach_pillar1_desc: "I work exclusively with freely available software (FOSS). This means no expensive licenses for clients, and for journalism, it ensures investigative tools remain accessible and transparent - essential for credible reporting.",
         approach_pillar2_title: "<span class='highlight'>Open data</span>:",
-        approach_pillar2_desc: "I use freely available datasets from governments and open initiatives as much as possible. This means your organization is not dependent on expensive data suppliers, but can rely on data that remains freely available forever.",
+        approach_pillar2_desc: "I prioritize freely available datasets from governments and open initiatives. This creates independence from expensive data suppliers and ensures journalistic investigations can be verified and built upon by others.",
         approach_pillar3_title: "<span class='highlight'>Transparent knowledge transfer</span>:",
-        approach_pillar3_desc: "I ensure your team fully understands the solution, so you retain control even after the project ends - <span class='highlight'>independent</span> of external expertise.",
+        approach_pillar3_desc: "I ensure full understanding of methods and sources, so teams remain <span class='highlight'>independent</span> after project completion. In journalism, this transparency is crucial for accountability and allows others to verify and extend investigations.",
         
+        // Portfolio
+        portfolio_filter_all: "All",
+        portfolio_filter_web: "Web Development",
+        portfolio_filter_geodata: "Geodata Analysis",
+        portfolio_filter_social: "Social Impact",
+        portfolio_filter_ai: "AI Ethics",
+        portfolio_filter_research: "Research",
+        portfolio_filter_journalism: "Journalism",
+        portfolio_view_project: "View Project",
+        portfolio_view_demo: "View Demo",
+
+        // Portfolio Projects
+        project_hoopzaaiers_title: "Hoopzaaiers.nl",
+        project_hoopzaaiers_desc: "Political engagement platform connecting citizens with local representatives and encouraging democratic participation through accessible tools and information.",
+
+        project_enoki_title: "Enoki AI",
+        project_enoki_desc: "Responsible AI consultancy helping organizations implement ethical AI solutions with focus on transparency, fairness, and human-centered design.",
+
+        project_vanoord_title: "Van Oord Digital Innovation",
+        project_vanoord_desc: "Digital transformation initiatives in marine engineering, including geospatial data analysis, predictive modeling, and workflow optimization.",
+
         // Projects
         project_aarde_title: "De Aarde aan Tafel",
         project_aarde_description: "A RAG-based chatbot for climate and sustainability queries that gives a voice to the Earth. Built with FastAPI, Langchain, and Ollama to make environmental knowledge more accessible. Developed by <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in collaboration with <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",
@@ -108,8 +133,8 @@ const translations = {
     },
     nl: {
         // Meta
-        title: "Transparante data-expertise & educatie",
-        description: "Technologie specialist met een passie voor het toegankelijk maken van complexe concepten. Met een achtergrond in Geo-Informatiewetenschappen en Informatiewetenschappen, verbind ik technische en sociale werelden.",
+        title: "Onderzoeksjournalist in ontwikkeling - Sytze Simonse",
+        description: "Onderzoeksjournalist in ontwikkeling die geodata en open-source tools gebruikt om verborgen verbanden bloot te leggen. Beschikbaar voor freelance geodata & AI projecten.",
         
         // Accessibility
         skip_to_content: "Ga naar hoofdinhoud",
@@ -118,15 +143,19 @@ const translations = {
         nav_about: "Over mij",
         nav_approach: "Mijn werkwijze",
         nav_expertise: "Expertise",
+        nav_portfolio: "Portfolio",
         nav_contact: "Contact",
         
         // Header
         name: "Sytze Simonse",
-        subtitle: "Transparante data-expertise & educatie",
-        tagline: "Ik maak jouw (geo)data <span class='highlight'>begrijpelijk</span> en <span class='highlight'>bruikbaar</span>, uitsluitend met <span class='highlight'>open source tools</span> - geen dure licenties of vendor lock-in. Tijdens het hele proces leg ik uit wat en waarom ik doe, zodat jouw team <span class='highlight'>zelfstandig</span> verder kan.",
+        subtitle: "Onderzoeksjournalist in ontwikkeling",
+        subtitle_secondary: "Met geodata en open-source tools verborgen verbanden blootleggen",
+        subtitle_tertiary: "Beschikbaar voor freelance geodata & AI projecten",
+        tagline: "Als geodata specialist ben ik me aan het ontwikkelen tot onderzoeksjournalist. Met mijn achtergrond in geo-informatiekunde (Wageningen University) maak ik complexe datasets begrijpelijk en zet letterlijk verborgen verbanden op de kaart.",
         
         // Sections
         expertise_title: "Expertises",
+        portfolio_title: "Portfolio",
         projects_title: "Projecten",
         writings_title: "Schrijfsels",
         languages_title: "Talen",
@@ -177,21 +206,42 @@ const translations = {
         business_description: "Als freelancer werk ik onder de bedrijfsnaam 'CasuarIO', geïnspireerd door de legendarische Australische kasuaris vogel. Samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> hebben we <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> opgericht, dat organisaties helpt met waardegedreven verantwoorde AI-oplossingen.",
         
         // Personal introduction
-        personal_intro_p1: "Ik ben een techneut met een missie: complexe technologie toegankelijk maken voor iedereen - onafhankelijk van technische kennis. Zo kunnen we er samen voor zorgen dat technologie in dienst blijft staan van onze planeet, en niet andersom.",
-        personal_intro_p2: "Ik ben afgestudeerd in Geo-informatiekunde aan Wageningen University en heb ervaring met (IT-)onderwijs. Mijn ervaring spant van technisch onderzoek tot business-implementatie bij Van Oord. Deze brede achtergrond zorgt ervoor dat ik zowel de technische mogelijkheden als de praktische behoeften van organisaties begrijp.",
-        personal_intro_p3: "Voor mij is het belangrijk dat organisaties zelfstandig kunnen werken met hun eigen data, zonder afhankelijk te zijn van ondoorzichtige systemen of dure licenties.",
-        personal_intro_p4: "Naast mijn ZZP-werk (CasuarIO) run ik samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> het bedrijf <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, waarmee we organisaties helpen bij verantwoorde AI-implementatie en -advies.",
+        personal_intro_p1: "Als geodata specialist ben ik me aan het ontwikkelen tot onderzoeksjournalist. Met mijn achtergrond in geo-informatiekunde (Wageningen University) maak ik complexe datasets begrijpelijk en zet letterlijk verborgen verbanden op de kaart.",
+        personal_intro_p2: "Momenteel volg ik een opleiding onderzoeksjournalistiek bij Open Eyes terwijl ik mijn expertise in AI en open-source technologie inzet om impactvolle verhalen te vertellen. Dezelfde principes die mijn freelancewerk leiden - <span class='highlight'>open-source tools, open data, en transparante kennisoverdracht</span> - sturen nu ook mijn onderzoeksjournalistiek, zodat verhalen gebouwd zijn op toegankelijke, verifieerbare fundamenten.",
+        personal_intro_p3: "Naast mijn journalistieke ontwikkeling blijf ik beschikbaar voor freelance projecten in geodata-analyse, AI-implementatie en visualisatie.",
+        personal_intro_p4: "Naast mijn zelfstandige werk run ik samen met <a href='https://spatiality.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Kamiel Verhelst</a> het bedrijf <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a>, waarmee we organisaties helpen bij verantwoorde AI-implementatie.",
         
         // Approach section
         approach_title: "Mijn werkwijze",
-        approach_intro: "Ik werk volgens drie pijlers:",
+        approach_intro: "Of het nu gaat om freelance projecten of onderzoeksverhalen, ik volg drie kernprincipes:",
         approach_pillar1_title: "<span class='highlight'>Open-source technologie</span>:",
-        approach_pillar1_desc: "Ik werk uitsluitend met vrij beschikbare software (FOSS). Dat betekent voor jou dus geen dure licenties - commerciële (GIS-)software kost vaak €2000+ per jaar.",
+        approach_pillar1_desc: "Ik werk uitsluitend met vrij beschikbare software (FOSS). Dat betekent geen dure licenties voor opdrachtgevers, en voor journalistiek zorgt het ervoor dat onderzoekstools toegankelijk en transparant blijven - essentieel voor geloofwaardige berichtgeving.",
         approach_pillar2_title: "<span class='highlight'>Open data</span>:",
-        approach_pillar2_desc: "Ik gebruik vrij beschikbare datasets. Dat betekent dat jouw organisatie niet afhankelijk is van dure dataleveranciers, maar kan vertrouwen op data die altijd gratis beschikbaar blijft.",
+        approach_pillar2_desc: "Ik prioriteer vrij beschikbare datasets van overheden en open initiatieven. Dit zorgt voor onafhankelijkheid van dure dataleveranciers en stelt anderen in staat om journalistieke onderzoeken te verifiëren en uit te breiden.",
         approach_pillar3_title: "<span class='highlight'>Transparante kennisoverdracht</span>:",
-        approach_pillar3_desc: "Ik zorg dat jouw team de oplossing volledig begrijpt, zodat jullie ook na afloop van het project controle houden - geen afhankelijkheid van externe expertise.",
+        approach_pillar3_desc: "Ik zorg voor volledig begrip van methoden en bronnen, zodat teams <span class='highlight'>onafhankelijk</span> blijven na projectafloop. In de journalistiek is deze transparantie cruciaal voor verantwoording en stelt het anderen in staat onderzoeken te verifiëren en voort te zetten.",
         
+        // Portfolio
+        portfolio_filter_all: "Alles",
+        portfolio_filter_web: "Web Development",
+        portfolio_filter_geodata: "Geodata Analyse",
+        portfolio_filter_social: "Maatschappelijke Impact",
+        portfolio_filter_ai: "AI Ethiek",
+        portfolio_filter_research: "Onderzoek",
+        portfolio_filter_journalism: "Journalistiek",
+        portfolio_view_project: "Bekijk Project",
+        portfolio_view_demo: "Bekijk Demo",
+
+        // Portfolio Projects
+        project_hoopzaaiers_title: "Hoopzaaiers.nl",
+        project_hoopzaaiers_desc: "Platform voor politieke betrokkenheid dat burgers verbindt met lokale vertegenwoordigers en democratische participatie bevordert door toegankelijke tools en informatie.",
+
+        project_enoki_title: "Enoki AI",
+        project_enoki_desc: "Verantwoorde AI-consultancy die organisaties helpt bij het implementeren van ethische AI-oplossingen met focus op transparantie, eerlijkheid en mensgericht ontwerp.",
+
+        project_vanoord_title: "Van Oord Digital Innovation",
+        project_vanoord_desc: "Digitale transformatie-initiatieven in mariene techniek, inclusief geospatiale data-analyse, voorspellende modellering en workflow-optimalisatie.",
+
         // Projects
         project_aarde_title: "De Aarde aan Tafel",
         project_aarde_description: "Een RAG-gebaseerde chatbot voor klimaat- en duurzaamheidsvragen die een stem geeft aan de Aarde. Gebouwd met FastAPI, Langchain en Ollama om milieukennis toegankelijker te maken. Ontwikkeld door <a href='https://www.enoki-ai.nl/' target='_blank' rel='noopener noreferrer' class='inline-link'>Enoki</a> in samenwerking met <a href='https://www.thenextwilson.ai/' target='_blank' rel='noopener noreferrer' class='inline-link'>The Next Wilson</a>.",

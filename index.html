@@ -36,9 +36,11 @@
                         aria-pressed="true">NL</button>
             </div>
             <h1 class="brand-name" data-i18n="name">Sytze Simonse</h1>
-            <p class="subtitle" data-i18n="subtitle">Transparante data-expertise & educatie</p>
+            <p class="subtitle" data-i18n="subtitle">Onderzoeksjournalist in ontwikkeling</p>
+            <p class="subtitle-secondary" data-i18n="subtitle_secondary">Met geodata en open-source tools verborgen verbanden blootleggen</p>
+            <p class="subtitle-tertiary" data-i18n="subtitle_tertiary">Beschikbaar voor freelance geodata & AI projecten</p>
             <div class="tagline-content">
-                <p class="tagline" data-i18n="tagline">With a background in Geo-Information Sciences (GIS) and Information Sciences, I bridge technical and social worlds. I simplify complex technology into understandable language and connect different disciplines through clear communication.</p>
+                <p class="tagline" data-i18n="tagline">Als geodata specialist ben ik me aan het ontwikkelen tot onderzoeksjournalist. Met mijn achtergrond in geo-informatiekunde (Wageningen University) maak ik complexe datasets begrijpelijk en zet letterlijk verborgen verbanden op de kaart.</p>
                 <img src="assets/images/profile_photo_Sytze.jpg" alt="Sytze Simonse" class="profile-photo">
             </div>
         </header>
@@ -50,6 +52,7 @@
                 <li><a href="#about-section" class="nav-link" data-i18n="nav_about">About My Work</a></li>
                 <li><a href="#approach-section" class="nav-link" data-i18n="nav_approach">My Approach</a></li>
                 <li><a href="#expertise-section" class="nav-link" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="#portfolio-section" class="nav-link" data-i18n="nav_portfolio">Portfolio</a></li>
                 <li><a href="#contact-section" class="nav-link" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </nav>
@@ -176,19 +179,63 @@
                 </div>
             </section>
 
-            <!-- Projects Section - Hidden for now -->
-            <!--
-            <section class="content-card">
-                <h2 data-i18n="projects_title">Projects</h2>
-                <div class="projects-container">
-                    <div class="project-card">
-                        <h3 data-i18n="project_aarde_title">De Aarde aan Tafel</h3>
-                        <p class="project-description" data-i18n="project_aarde_description">A RAG-based chatbot for climate and sustainability queries that gives a voice to the Earth. Built with FastAPI, Langchain, and Ollama to make environmental knowledge more accessible.</p>
-                        <a href="https://gaia.enoki-ai.nl/" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="project_link_demo">View Demo</a>
+            <!-- Portfolio Section -->
+            <section class="content-card" id="portfolio-section">
+                <h2 data-i18n="portfolio_title">Portfolio</h2>
+
+                <!-- Tag Filter Buttons -->
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="portfolio_filter_all">Alles</button>
+                    <button class="filter-btn" data-filter="web-development" data-i18n="portfolio_filter_web">Web Development</button>
+                    <button class="filter-btn" data-filter="geodata-analysis" data-i18n="portfolio_filter_geodata">Geodata Analyse</button>
+                    <button class="filter-btn" data-filter="social-impact" data-i18n="portfolio_filter_social">Maatschappelijke Impact</button>
+                    <button class="filter-btn" data-filter="ai-ethics" data-i18n="portfolio_filter_ai">AI Ethiek</button>
+                    <button class="filter-btn" data-filter="research" data-i18n="portfolio_filter_research">Onderzoek</button>
+                    <button class="filter-btn" data-filter="journalism" data-i18n="portfolio_filter_journalism">Journalistiek</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid">
+                    <!-- Hoopzaaiers.nl -->
+                    <div class="portfolio-card" data-tags="web-development social-impact">
+                        <div class="portfolio-card-content">
+                            <h3 class="portfolio-card-title" data-i18n="project_hoopzaaiers_title">Hoopzaaiers.nl</h3>
+                            <p class="portfolio-card-description" data-i18n="project_hoopzaaiers_desc">Platform voor politieke betrokkenheid dat burgers verbindt met lokale vertegenwoordigers en democratische participatie bevordert door toegankelijke tools en informatie.</p>
+                            <div class="portfolio-card-tags">
+                                <span class="tag">Web Development</span>
+                                <span class="tag">Social Impact</span>
+                            </div>
+                            <a href="https://hoopzaaiers.nl" class="portfolio-card-link" target="_blank" rel="noopener noreferrer" data-i18n="portfolio_view_project">Bekijk Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Enoki AI -->
+                    <div class="portfolio-card" data-tags="ai-ethics geodata-analysis">
+                        <div class="portfolio-card-content">
+                            <h3 class="portfolio-card-title" data-i18n="project_enoki_title">Enoki AI</h3>
+                            <p class="portfolio-card-description" data-i18n="project_enoki_desc">Verantwoorde AI-consultancy die organisaties helpt bij het implementeren van ethische AI-oplossingen met focus op transparantie, eerlijkheid en mensgericht ontwerp.</p>
+                            <div class="portfolio-card-tags">
+                                <span class="tag">AI Ethics</span>
+                                <span class="tag">Geodata Analysis</span>
+                            </div>
+                            <a href="https://www.enoki-ai.nl/" class="portfolio-card-link" target="_blank" rel="noopener noreferrer" data-i18n="portfolio_view_project">Bekijk Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Van Oord -->
+                    <div class="portfolio-card" data-tags="geodata-analysis research">
+                        <div class="portfolio-card-content">
+                            <h3 class="portfolio-card-title" data-i18n="project_vanoord_title">Van Oord Digital Innovation</h3>
+                            <p class="portfolio-card-description" data-i18n="project_vanoord_desc">Digitale transformatie-initiatieven in mariene techniek, inclusief geospatiale data-analyse, voorspellende modellering en workflow-optimalisatie.</p>
+                            <div class="portfolio-card-tags">
+                                <span class="tag">Geodata Analysis</span>
+                                <span class="tag">Research</span>
+                            </div>
+                            <div class="portfolio-card-link-placeholder" data-i18n="portfolio_view_project">Bekijk Project</div>
+                        </div>
                     </div>
                 </div>
             </section>
-            -->
 
             <!-- Writings Section -->
              <!--
@@ -223,19 +270,19 @@
                 </p>
                 
                 <div class="social-container">
-                    <a href="mailto:sytze.simonse@proton.me" class="social-link" data-i18n-title="personal_email_title" data-i18n-aria-label="personal_email_aria">
-                        <!-- Feather Icons - Mail -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
                     <a href="mailto:sytze@casuario.nl" class="social-link" data-i18n-title="business_email_title" data-i18n-aria-label="business_email_aria">
                         <!-- Feather Icons - Mail with Business styling -->
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                             <path d="M8 10l4 2 4-2"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:sytze.simonse@proton.me" class="social-link" data-i18n-title="personal_email_title" data-i18n-aria-label="personal_email_aria">
+                        <!-- Feather Icons - Mail -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
                     <a href="https://www.linkedin.com/in/sytze-simonse-935955105/" class="social-link" title="LinkedIn" target="_blank" aria-label="Visit Sytze Simonse's LinkedIn profile" rel="noopener noreferrer">
@@ -307,15 +354,50 @@
                     observer.disconnect();
                 }
             });
-            
+
             observer.observe(document.body, {
                 childList: true,
                 subtree: true
             });
         }
-        
+
+        // Portfolio filtering functionality
+        function initPortfolioFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            if (filterBtns.length === 0 || portfolioCards.length === 0) return;
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter cards
+                    portfolioCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.classList.remove('hidden');
+                        } else {
+                            const cardTags = card.getAttribute('data-tags');
+                            if (cardTags && cardTags.includes(filterValue)) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        }
+                    });
+                });
+            });
+        }
+
         // Start observing when DOM is loaded
-        document.addEventListener('DOMContentLoaded', updateCarbonPercentage);
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarbonPercentage();
+            initPortfolioFilters();
+        });
     </script>
     <!-- <script src="assets/js/snake-animation.js"></script> -->
 </body>
