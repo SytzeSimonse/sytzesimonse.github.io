@@ -1,0 +1,43 @@
+<!-- Scene 4: Bol.com Login -->
+<div class="scene" id="scene-bol-login">
+    <div class="phone-screen bol-bg">
+        <!-- Bol.com Header -->
+        <div class="bol-header">
+            <button class="back-btn" id="back-to-home">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+            <img src="images/bol_logo.png" alt="Bol.com" class="bol-logo-header">
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-container">
+            <h2 class="login-title">Inloggen</h2>
+            <p class="login-subtitle">Log in met je e-mailadres en wachtwoord</p>
+
+            <form id="bol-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="naam@voorbeeld.nl" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Wachtwoord" required>
+                </div>
+
+                <div class="error-message hidden" id="login-error">
+                    ❌ E-mailadres of wachtwoord is onjuist
+                </div>
+
+                <button type="submit" class="login-btn">Inloggen</button>
+            </form>
+
+            <div class="login-footer">
+                <a href="#" class="login-link">Wachtwoord vergeten?</a>
+                <a href="#" class="login-link">Nieuw account aanmaken</a>
+            </div>
+        </div>
+    </div>
+</div>

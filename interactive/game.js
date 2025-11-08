@@ -11,10 +11,10 @@ const VALID_CREDENTIALS = {
 
 // Product catalog
 const PRODUCTS = [
-    { id: 1, name: 'Smartphone XYZ', price: 599, emoji: '📱', description: 'Premium smartphone met 5G, 128GB opslag en hoogwaardige camera. Perfect voor dagelijks gebruik en multitasking.' },
-    { id: 2, name: 'Laptop Pro', price: 1299, emoji: '💻', description: 'Krachtige laptop met Intel Core i7 processor, 16GB RAM en 512GB SSD. Ideaal voor werk en entertainment.' },
-    { id: 3, name: 'Koptelefoon', price: 149, emoji: '🎧', description: 'Draadloze noise-cancelling koptelefoon met premium geluidskwaliteit en lange batterijduur van 30 uur.' },
-    { id: 4, name: 'Smartwatch', price: 299, emoji: '⌚', description: 'Fitness smartwatch met hartslagmeter, GPS tracking en waterdicht tot 50 meter. Compatibel met iOS en Android.' }
+    { id: 1, name: 'Philips 5000 Series Dual Basket Airfryer', price: 199.99, image: 'images/airfryer.jpeg', description: 'Philips Airfryer met dubbele basket technologie. Bak twee gerechten tegelijk met verschillende instellingen. 8,3L capaciteit, ideaal voor grotere gezinnen.' },
+    { id: 2, name: 'Philips Stoomstrijkijzer DST7020/20', price: 51.95, image: 'images/strijkijzer.jpg', description: 'Krachtig stoomstrijkijzer met OptimalTemp technologie. Geschikt voor alle strijkbare stoffen zonder verstellen. 3000W vermogen voor snel opwarmen.' },
+    { id: 3, name: 'Apple iPhone 16 - 128GB - Zwart', price: 688, image: 'images/iphone.jpg', description: 'De nieuwste iPhone 16 met A18 chip, geavanceerd camerasysteem en langere batterijduur. 128GB opslag in klassiek zwart.' },
+    { id: 4, name: 'Apple MacBook Air (2025) 13', price: 984.99, image: 'images/apple.jpg', description: 'Ultradunne en lichte MacBook Air met M3 chip. 13 inch Liquid Retina display, tot 18 uur batterijduur. Perfect voor werken en studeren.' }
 ];
 
 // Shopping cart state
@@ -40,21 +40,70 @@ const EDUCATIONAL_TERMS = {
     }
 };
 
+// Legal warning definitions
+const LEGAL_WARNINGS = {
+    download_zip: {
+        title: "Educatieve Waarschuwing: Illegale Gegevens",
+        content: `
+            <p><em>💡 Dit is een educatieve simulatie - de gegevens zijn fictief.</em></p>
+            <p><strong>Artikel 139d lid 2 Wetboek van Strafrecht</strong></p>
+            <p>In de echte wereld zou het downloaden van gestolen inloggegevens strafbaar zijn volgens Nederlands recht:</p>
+            <ul>
+                <li><strong>Misdrijf:</strong> Bezit van gegevens waarvan je redelijkerwijs kunt vermoeden dat ze worden misbruikt</li>
+                <li><strong>Strafmaat:</strong> Gevangenisstraf tot 6 jaar of geldboete (€87.000)</li>
+                <li><strong>Gevolgen:</strong> Strafrechtelijk antecedent dat impact heeft op werk en reizen</li>
+            </ul>
+            <p class="warning-emphasis">In werkelijkheid is het downloaden en gebruiken van gestolen gegevens een ernstig misdrijf.</p>
+        `
+    },
+
+    login_stolen: {
+        title: "Educatieve Waarschuwing: Computervredebreuk & Identiteitsfraude",
+        content: `
+            <p><em>💡 Dit is een educatieve simulatie - de gegevens zijn fictief.</em></p>
+            <p><strong>Artikel 138ab Sr (Computervredebreuk) + Artikel 231b Sr (Identiteitsfraude)</strong></p>
+            <p>In de echte wereld zou inloggen met gestolen gegevens meerdere strafbare feiten zijn:</p>
+            <ul>
+                <li><strong>Computervredebreuk:</strong> Onbevoegd toegang krijgen tot een computersysteem</li>
+                <li><strong>Identiteitsfraude:</strong> Gebruik maken van andermans identificerende gegevens</li>
+                <li><strong>Strafmaat:</strong> Gevangenisstraf tot 6 jaar of geldboete (€87.000)</li>
+            </ul>
+            <p class="warning-emphasis">Slachtoffers van identiteitsfraude kunnen jaren last hebben van de gevolgen. Dit is geen spelletje.</p>
+        `
+    },
+
+    place_order: {
+        title: "Educatieve Waarschuwing: Diefstal & Oplichting",
+        content: `
+            <p><em>💡 Dit is een educatieve simulatie - de gegevens zijn fictief.</em></p>
+            <p><strong>Artikel 311 Sr (Diefstal met verzwarende omstandigheden)</strong></p>
+            <p>In de echte wereld zou het plaatsen van een bestelling met gestolen gegevens diefstal en oplichting zijn:</p>
+            <ul>
+                <li><strong>Diefstal:</strong> Wegnemen van goederen die je niet toebehoren</li>
+                <li><strong>Oplichting:</strong> Gebruik van valse identiteit voor eigen gewin</li>
+                <li><strong>Strafmaat:</strong> Gevangenisstraf tot 4 jaar of geldboete (€87.000)</li>
+                <li><strong>Civiel:</strong> Je bent aansprakelijk voor alle schade + proceskosten</li>
+            </ul>
+            <p class="warning-emphasis">Slachtoffers worden geconfronteerd met onterechte rekeningen en beschadigde kredietwaardigheid. De politie neemt deze meldingen serieus.</p>
+        `
+    }
+};
+
 // Scene Manager
 class SceneManager {
     constructor() {
         this.currentScene = 'scene-whatsapp';
         this.scenes = ['scene-whatsapp', 'scene-telegram', 'scene-home', 'scene-bol-login', 'scene-bol-shop',
-                       'scene-product-detail', 'scene-cart', 'scene-checkout', 'scene-confirmation', 'scene-profile'];
+                       'scene-product-detail', 'scene-cart', 'scene-checkout', 'scene-confirmation', 'scene-profile', 'scene-arrest'];
         this.currentProduct = null;
-        this.init();
+        this.warningManager = null;  // Will be set before calling init()
     }
 
     init() {
         // Show initial scene
         this.showScene(this.currentScene);
 
-        // Setup event listeners
+        // Setup event listeners (warningManager must be set before calling this)
         this.setupEventListeners();
     }
 
@@ -73,6 +122,53 @@ class SceneManager {
             targetScene.classList.add('active');
             this.currentScene = sceneId;
             console.log(`📱 Navigated to: ${sceneId}`);
+
+            // Update time when showing home screen
+            if (sceneId === 'scene-home') {
+                this.updateHomeScreenTime();
+            }
+
+            // Add delayed WhatsApp notification on initial load
+            if (sceneId === 'scene-whatsapp') {
+                this.showWhatsAppNotificationDelayed();
+            }
+
+            // Transition to arrest scene after confirmation
+            if (sceneId === 'scene-confirmation') {
+                setTimeout(() => {
+                    this.showScene('scene-arrest');
+                }, 3000); // Show arrest scene after 3 seconds
+            }
+        }
+    }
+
+    showWhatsAppNotificationDelayed() {
+        const notification = document.getElementById('whatsapp-notification');
+        if (notification) {
+            // Hide notification initially
+            notification.style.opacity = '0';
+            notification.style.pointerEvents = 'none';
+
+            // Show notification after 2 seconds
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.pointerEvents = 'auto';
+
+                // Play sound after notification appears
+                setTimeout(() => {
+                    this.playNotificationSound();
+                }, 300);
+            }, 2000);
+        }
+    }
+
+    updateHomeScreenTime() {
+        const statusTime = document.getElementById('status-time');
+        if (statusTime) {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            statusTime.textContent = `${hours}:${minutes}`;
         }
     }
 
@@ -98,10 +194,28 @@ class SceneManager {
         const fileAttachment = document.querySelector('.file-attachment');
         if (fileAttachment) {
             fileAttachment.addEventListener('click', (e) => {
-                // Let download happen, then show home screen after delay
-                setTimeout(() => {
-                    this.showScene('scene-home');
-                }, 1000);
+                // Prevent default download temporarily
+                e.preventDefault();
+
+                // Show legal warning before allowing download
+                this.warningManager.showWarning('download_zip', {
+                    acknowledge: () => {
+                        // User acknowledged - allow download and continue
+                        const link = document.createElement('a');
+                        link.href = 'mooncloudfree.zip';
+                        link.download = 'mooncloudfree.zip';
+                        link.click();
+
+                        // Navigate to home screen after delay
+                        setTimeout(() => {
+                            this.showScene('scene-home');
+                        }, 1000);
+                    },
+                    cancel: () => {
+                        // User cancelled - stay on telegram
+                        console.log('Download cancelled by user');
+                    }
+                });
             });
         }
 
@@ -242,6 +356,18 @@ class SceneManager {
                 this.showScene('scene-bol-shop');
             });
         }
+
+        // Restart game from arrest scene
+        const restartBtn = document.getElementById('restart-game');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => {
+                // Clear cart
+                cart = [];
+                this.updateCartBadge();
+                // Return to beginning
+                this.showScene('scene-whatsapp');
+            });
+        }
     }
 
     showProductDetail(productId) {
@@ -251,9 +377,14 @@ class SceneManager {
         this.currentProduct = product;
 
         // Update product detail page
-        document.getElementById('product-detail-image').textContent = product.emoji;
+        const imageElement = document.getElementById('product-detail-image');
+        if (product.image) {
+            imageElement.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: contain;">`;
+        } else {
+            imageElement.textContent = product.emoji || '';
+        }
         document.getElementById('product-detail-name').textContent = product.name;
-        document.getElementById('product-detail-price').textContent = `€ ${product.price},-`;
+        document.getElementById('product-detail-price').textContent = `€ ${product.price.toFixed(2).replace('.', ',')}`;
         document.getElementById('product-detail-description').textContent = product.description;
 
         this.showScene('scene-product-detail');
@@ -297,15 +428,20 @@ class SceneManager {
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<div class="cart-empty">Je winkelmandje is leeg</div>';
         } else {
-            cartItemsContainer.innerHTML = cart.map(item => `
-                <div class="cart-item">
-                    <div class="cart-item-image">${item.emoji}</div>
-                    <div class="cart-item-info">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">€ ${item.price},-</div>
+            cartItemsContainer.innerHTML = cart.map(item => {
+                const imageHtml = item.image
+                    ? `<img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: contain;">`
+                    : (item.emoji || '');
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-image">${imageHtml}</div>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">€ ${item.price.toFixed(2).replace('.', ',')}</div>
+                        </div>
                     </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         this.updateCartTotal();
@@ -329,18 +465,27 @@ class SceneManager {
     }
 
     placeOrder() {
-        // Generate random order number
-        const orderNumber = Math.floor(100000 + Math.random() * 900000);
-        document.getElementById('order-number').textContent = orderNumber;
+        // Show legal warning before completing order
+        this.warningManager.showWarning('place_order', {
+            acknowledge: () => {
+                // User acknowledged - complete the order
+                const orderNumber = Math.floor(100000 + Math.random() * 900000);
+                document.getElementById('order-number').textContent = orderNumber;
 
-        // Clear cart
-        cart = [];
-        this.updateCartBadge();
+                // Clear cart
+                cart = [];
+                this.updateCartBadge();
 
-        // Show confirmation
-        this.showScene('scene-confirmation');
+                // Show confirmation
+                this.showScene('scene-confirmation');
 
-        console.log('✅ Bestelling geplaatst! Ordernummer:', orderNumber);
+                console.log('✅ Bestelling geplaatst! Ordernummer:', orderNumber);
+            },
+            cancel: () => {
+                // User cancelled - return to checkout
+                console.log('Order cancelled by user');
+            }
+        });
     }
 
     transitionToTelegram() {
@@ -359,14 +504,27 @@ class SceneManager {
 
         // Check credentials
         if (email === VALID_CREDENTIALS.email && password === VALID_CREDENTIALS.password) {
-            // Success! Go to shop
+            // Success! Show legal warning before shop access
             console.log('✅ Login successful');
             errorMessage.classList.add('hidden');
-            this.showScene('scene-bol-shop');
 
-            // Clear form
-            emailInput.value = '';
-            passwordInput.value = '';
+            // Show legal warning about identity fraud
+            this.warningManager.showWarning('login_stolen', {
+                acknowledge: () => {
+                    // User acknowledged - proceed to shop
+                    this.showScene('scene-bol-shop');
+
+                    // Clear form
+                    emailInput.value = '';
+                    passwordInput.value = '';
+                },
+                cancel: () => {
+                    // User cancelled - clear form and stay on login
+                    emailInput.value = '';
+                    passwordInput.value = '';
+                    console.log('Login cancelled by user after credentials accepted');
+                }
+            });
         } else {
             // Failed login
             console.log('❌ Login failed');
@@ -381,25 +539,13 @@ class SceneManager {
     }
 
     playNotificationSound() {
-        // Use Web Audio API for notification sound
-        // Fallback to silent if not supported
+        // Play WhatsApp notification sound
         try {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-
-            // Create a pleasant notification sound
-            oscillator.frequency.value = 800;
-            oscillator.type = 'sine';
-
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.3);
+            const audio = new Audio('sounds/incoming-message-online-whatsapp.mp3');
+            audio.volume = 0.5;
+            audio.play().catch(e => {
+                console.log('Audio playback failed (may require user interaction):', e);
+            });
         } catch (e) {
             // Silent fallback
             console.log('Audio not supported, continuing silently');
@@ -463,6 +609,112 @@ class SceneManager {
     }
 }
 
+// Legal Warning Manager
+class LegalWarningManager {
+    constructor() {
+        this.warningModal = null;
+        this.pendingCallbacks = {};
+        this.init();
+    }
+
+    init() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.setup());
+        } else {
+            this.setup();
+        }
+    }
+
+    setup() {
+        this.warningModal = document.getElementById('legal-warning-modal');
+        if (!this.warningModal) {
+            console.warn('Legal warning modal not found');
+            return;
+        }
+        this.setupCloseHandlers();
+    }
+
+    showWarning(warningKey, callbacks = {}) {
+        const warning = LEGAL_WARNINGS[warningKey];
+        if (!warning) {
+            console.error(`Warning '${warningKey}' not found`);
+            return;
+        }
+
+        // Store callbacks for action buttons
+        this.pendingCallbacks = callbacks;
+
+        // Update content
+        const titleElement = document.getElementById('legal-warning-title');
+        const contentElement = document.getElementById('legal-warning-content');
+
+        if (titleElement && contentElement) {
+            titleElement.textContent = warning.title;
+            contentElement.innerHTML = warning.content;
+        }
+
+        // Show modal
+        if (this.warningModal) {
+            this.warningModal.classList.remove('hidden');
+        }
+
+        // Log for analytics
+        console.log(`⚠️ Legal warning shown: ${warningKey}`);
+    }
+
+    acknowledgeWarning() {
+        if (this.warningModal) {
+            this.warningModal.classList.add('hidden');
+        }
+        if (this.pendingCallbacks.acknowledge) {
+            this.pendingCallbacks.acknowledge();
+        }
+        this.pendingCallbacks = {};
+    }
+
+    cancelWarning() {
+        if (this.warningModal) {
+            this.warningModal.classList.add('hidden');
+        }
+        if (this.pendingCallbacks.cancel) {
+            this.pendingCallbacks.cancel();
+        }
+        this.pendingCallbacks = {};
+    }
+
+    setupCloseHandlers() {
+        const acknowledgeBtn = document.getElementById('legal-warning-acknowledge');
+        const cancelBtn = document.getElementById('legal-warning-cancel');
+        const closeBtn = document.getElementById('legal-warning-close');
+
+        if (acknowledgeBtn) {
+            acknowledgeBtn.addEventListener('click', () => {
+                this.acknowledgeWarning();
+            });
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                this.cancelWarning();
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                this.cancelWarning();
+            });
+        }
+
+        // ESC key to cancel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.warningModal && !this.warningModal.classList.contains('hidden')) {
+                this.cancelWarning();
+            }
+        });
+    }
+}
+
 // Keyboard navigation helper
 class KeyboardNavigation {
     constructor() {
@@ -484,13 +736,20 @@ class KeyboardNavigation {
     }
 }
 
-// Initialize game on DOM load
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize game after scenes are loaded
+document.addEventListener('scenes-loaded', () => {
     console.log('🎮 Cybercrime Educatie Game - Volledige flow geladen');
 
     // Initialize managers
     const sceneManager = new SceneManager();
+    const warningManager = new LegalWarningManager();
     const keyboardNav = new KeyboardNavigation();
+
+    // Connect warning manager to scene manager
+    sceneManager.warningManager = warningManager;
+
+    // Now that warningManager is set, initialize the scene manager
+    sceneManager.init();
 
     // Add keyboard nav class for CSS
     const style = document.createElement('style');

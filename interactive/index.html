@@ -8,414 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Scene 1: WhatsApp Notification -->
-    <div class="scene active" id="scene-whatsapp">
-        <div class="phone-screen">
-            <div class="notification-bubble whatsapp" id="whatsapp-notification">
-                <div class="notification-icon">
-                    <svg viewBox="0 0 24 24" fill="#25d366" width="32" height="32">
-                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.39.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.76-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01z"/>
-                    </svg>
-                </div>
-                <div class="notification-content">
-                    <div class="notification-header">
-                        <span class="notification-sender">Mike</span>
-                        <span class="notification-time">Nu</span>
-                    </div>
-                    <div class="notification-message">Bro check telegram 💰</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Scene Container - scenes will be loaded here -->
+    <div id="scene-container"></div>
 
-    <!-- Scene 2: Telegram Interface -->
-    <div class="scene" id="scene-telegram">
-        <div class="phone-screen telegram-bg">
-            <!-- Telegram Header -->
-            <div class="telegram-header">
-                <div class="header-left">
-                    <button class="back-btn" id="back-to-whatsapp">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                        </svg>
-                    </button>
-                    <img src="images/mooncloud.jpg" alt="MoonCloud" class="channel-avatar-img">
-                </div>
-                <div class="channel-info">
-                    <h2 class="channel-name">MoonCloud Free</h2>
-                    <p class="channel-subscribers">2.4K subscribers</p>
-                </div>
-            </div>
-
-            <!-- Channel Description -->
-            <div class="channel-description">
-                <p>🫥Welcome to the MoonCloud cloud🫥</p>
-                <p>Only here you will find in the free chat not full working out😱</p>
-                <p>Bays will be made every day if possible🫡</p>
-                <p>You will not find such high-quality free logs anywhere!</p>
-                <p class="admin-link">Admin: https://t.me/Wsx11111xxx77</p>
-                <p class="channel-link">https://t.me/mooncloudfree</p>
-            </div>
-
-            <!-- Messages Container -->
-            <div class="messages-container">
-                <!-- Message 1: File attachment -->
-                <div class="message">
-                    <div class="message-time">15:23</div>
-                    <a href="mooncloudfree.zip" download class="file-attachment">
-                        <div class="file-icon">📦</div>
-                        <div class="file-info">
-                            <div class="file-name">mooncloudfree.zip</div>
-                            <div class="file-size">0.7 KB</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Message 2: Price list -->
-                <div class="message">
-                    <div class="message-time">15:24</div>
-                    <div class="message-content">
-                        <p>🕵️ PRICE LIST 🕵️</p>
-                        <p>💎 Moon Cloud 1 month - 200$</p>
-                        <p>💎 Moon Cloud 3 month - 400$</p>
-                        <p>💎 Moon Cloud Lifetime - 900$</p>
-                        <p>🌝 TELEGRAM: https://t.me/Wsx11111xxx77</p>
-                        <p>💲 FREE CLOUD: https://t.me/mooncloudfree</p>
-                    </div>
-                </div>
-
-                <!-- Message 3: Additional context with tooltips -->
-                <div class="message">
-                    <div class="message-time">16:42</div>
-                    <div class="message-content">
-                        <p>🔥 Nieuwe batch <span class="tooltip-trigger" data-term="logs">logs</span> binnen!</p>
-                        <p>📊 5000+ <span class="tooltip-trigger" data-term="leads">leads</span> beschikbaar</p>
-                        <p>💳 Premium <span class="tooltip-trigger" data-term="combolijst">combolijsten</span> en <span class="tooltip-trigger" data-term="binlist">binlists</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Empty Chat Box -->
-            <div class="action-container">
-                <div class="chat-input-box">
-                    <input type="text" placeholder="Bericht..." class="chat-input" disabled>
-                    <button class="send-btn" disabled>
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 3: Phone Home Screen -->
-    <div class="scene" id="scene-home">
-        <div class="phone-screen home-bg">
-            <!-- Status Bar -->
-            <div class="status-bar">
-                <span class="status-time">14:32</span>
-                <div class="status-icons">
-                    <span>📶</span>
-                    <span>📡</span>
-                    <span>🔋</span>
-                </div>
-            </div>
-
-            <!-- App Grid -->
-            <div class="app-grid">
-                <div class="app-icon" id="app-telegram">
-                    <img src="images/telegram_logo.png" alt="Telegram">
-                    <span class="app-name">Telegram</span>
-                </div>
-                <div class="app-icon" id="app-mail">
-                    <img src="images/mail_logo.png" alt="Mail">
-                    <span class="app-name">Mail</span>
-                </div>
-                <div class="app-icon" id="app-bol">
-                    <img src="images/bol_logo.png" alt="Bol.com">
-                    <span class="app-name">Bol.com</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 4: Bol.com Login -->
-    <div class="scene" id="scene-bol-login">
-        <div class="phone-screen bol-bg">
-            <!-- Bol.com Header -->
-            <div class="bol-header">
-                <button class="back-btn" id="back-to-home">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
-                </button>
-                <img src="images/bol_logo.png" alt="Bol.com" class="bol-logo-header">
-            </div>
-
-            <!-- Login Form -->
-            <div class="login-container">
-                <h2 class="login-title">Inloggen</h2>
-                <p class="login-subtitle">Log in met je e-mailadres en wachtwoord</p>
-
-                <form id="bol-login-form" class="login-form">
-                    <div class="form-group">
-                        <label for="email">E-mailadres</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="naam@voorbeeld.nl" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Wachtwoord</label>
-                        <input type="password" id="password" name="password" class="form-input" placeholder="Wachtwoord" required>
-                    </div>
-
-                    <div class="error-message hidden" id="login-error">
-                        ❌ E-mailadres of wachtwoord is onjuist
-                    </div>
-
-                    <button type="submit" class="login-btn">Inloggen</button>
-                </form>
-
-                <div class="login-footer">
-                    <a href="#" class="login-link">Wachtwoord vergeten?</a>
-                    <a href="#" class="login-link">Nieuw account aanmaken</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 5: Bol.com Shop -->
-    <div class="scene" id="scene-bol-shop">
-        <div class="phone-screen bol-bg">
-            <!-- Bol.com Shop Header -->
-            <div class="bol-shop-header">
-                <button class="hamburger-menu">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </button>
-                <img src="images/bol_logo.png" alt="Bol.com" class="bol-logo-shop">
-                <div class="header-icons">
-                    <button class="icon-btn" id="user-profile-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                        </svg>
-                    </button>
-                    <button class="icon-btn" id="cart-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
-                        <span class="cart-badge" id="cart-badge">0</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Waar ben je naar op zoek?">
-                <button class="search-btn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-container">
-                <h3 class="products-title">Populaire producten</h3>
-                <div class="products-grid">
-                    <div class="product-card" data-product-id="1">
-                        <div class="product-image">📱</div>
-                        <h4 class="product-name">Smartphone XYZ</h4>
-                        <p class="product-price">€ 599,-</p>
-                    </div>
-                    <div class="product-card" data-product-id="2">
-                        <div class="product-image">💻</div>
-                        <h4 class="product-name">Laptop Pro</h4>
-                        <p class="product-price">€ 1.299,-</p>
-                    </div>
-                    <div class="product-card" data-product-id="3">
-                        <div class="product-image">🎧</div>
-                        <h4 class="product-name">Koptelefoon</h4>
-                        <p class="product-price">€ 149,-</p>
-                    </div>
-                    <div class="product-card" data-product-id="4">
-                        <div class="product-image">⌚</div>
-                        <h4 class="product-name">Smartwatch</h4>
-                        <p class="product-price">€ 299,-</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 6: Product Detail -->
-    <div class="scene" id="scene-product-detail">
-        <div class="phone-screen bol-bg">
-            <div class="bol-header">
-                <button class="back-btn" id="back-to-shop">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
-                </button>
-                <img src="images/bol_logo.png" alt="Bol.com" class="bol-logo-header">
-            </div>
-
-            <div class="product-detail-container">
-                <div class="product-detail-image" id="product-detail-image">📱</div>
-                <h2 class="product-detail-name" id="product-detail-name">Smartphone XYZ</h2>
-                <p class="product-detail-price" id="product-detail-price">€ 599,-</p>
-                <div class="product-detail-description">
-                    <h3>Productomschrijving</h3>
-                    <p id="product-detail-description">Premium smartphone met uitstekende specificaties.</p>
-                </div>
-                <button class="add-to-cart-btn" id="add-to-cart-btn">Toevoegen aan winkelmandje</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 7: Shopping Cart -->
-    <div class="scene" id="scene-cart">
-        <div class="phone-screen bol-bg">
-            <div class="bol-header">
-                <button class="back-btn" id="back-to-shop-from-cart">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
-                </button>
-                <h2 class="cart-header-title">Winkelmandje</h2>
-            </div>
-
-            <div class="cart-container">
-                <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be inserted here -->
-                </div>
-                <div class="cart-summary">
-                    <div class="cart-total">
-                        <span>Totaal:</span>
-                        <span class="cart-total-price" id="cart-total-price">€ 0,-</span>
-                    </div>
-                    <button class="checkout-btn" id="checkout-btn">Naar de kassa</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 8: Checkout -->
-    <div class="scene" id="scene-checkout">
-        <div class="phone-screen bol-bg">
-            <div class="bol-header">
-                <button class="back-btn" id="back-to-cart">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
-                </button>
-                <h2 class="cart-header-title">Afrekenen</h2>
-            </div>
-
-            <div class="checkout-container">
-                <div class="checkout-section">
-                    <h3>Bezorgadres</h3>
-                    <div class="address-option selected">
-                        <input type="radio" name="address" id="address-1" checked>
-                        <label for="address-1">
-                            <strong>Karel de Jong</strong><br>
-                            Dorpsweg 22<br>
-                            9712 CC Groningen
-                        </label>
-                    </div>
-                </div>
-
-                <div class="checkout-section">
-                    <h3>Betaalmethode</h3>
-                    <div class="payment-option">
-                        <input type="radio" name="payment" id="payment-ideal">
-                        <label for="payment-ideal">iDEAL</label>
-                    </div>
-                    <div class="payment-option selected">
-                        <input type="radio" name="payment" id="payment-later" checked>
-                        <label for="payment-later">Achteraf betalen</label>
-                    </div>
-                </div>
-
-                <div class="checkout-section">
-                    <div class="checkout-total">
-                        <span>Totaalbedrag:</span>
-                        <span class="checkout-total-price" id="checkout-total-price">€ 0,-</span>
-                    </div>
-                </div>
-
-                <button class="place-order-btn" id="place-order-btn">Bestellen en betalen</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 9: Order Confirmation -->
-    <div class="scene" id="scene-confirmation">
-        <div class="phone-screen bol-bg">
-            <div class="confirmation-container">
-                <div class="confirmation-icon">✅</div>
-                <h2 class="confirmation-title">Bedankt voor je bestelling!</h2>
-                <p class="confirmation-message">Je bestelling is succesvol geplaatst en wordt zo snel mogelijk verwerkt.</p>
-                <div class="confirmation-details">
-                    <p><strong>Ordernummer:</strong> #BOL-2024-<span id="order-number"></span></p>
-                    <p><strong>Bezorgadres:</strong><br>Dorpsweg 22<br>9712 CC Groningen</p>
-                    <p><strong>Betaalmethode:</strong> Achteraf betalen</p>
-                </div>
-                <button class="back-to-shop-btn" id="back-to-shop-final">Terug naar winkel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scene 10: User Profile -->
-    <div class="scene" id="scene-profile">
-        <div class="phone-screen bol-bg">
-            <div class="bol-header">
-                <button class="back-btn" id="back-to-shop-from-profile">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                    </svg>
-                </button>
-                <h2 class="cart-header-title">Mijn account</h2>
-            </div>
-
-            <div class="profile-container">
-                <div class="profile-section">
-                    <h3>Persoonlijke gegevens</h3>
-                    <div class="profile-field">
-                        <span class="profile-label">E-mailadres:</span>
-                        <span class="profile-value">karel.dejong@gmail.com</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Wachtwoord:</span>
-                        <span class="profile-value password-masked">••••••••••</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Voornaam:</span>
-                        <span class="profile-value">Karel</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Achternaam:</span>
-                        <span class="profile-value">de Jong</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Adres:</span>
-                        <span class="profile-value">Dorpsweg 22, 9712 CC Groningen</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Geboortedatum:</span>
-                        <span class="profile-value">30-12-1985</span>
-                    </div>
-                    <div class="profile-field">
-                        <span class="profile-label">Telefoonnummer:</span>
-                        <span class="profile-value">9004541637</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Educational Tooltips -->
+    <!-- Component: Educational Tooltips -->
     <div class="tooltip-overlay hidden" id="tooltip-overlay">
         <div class="tooltip-box">
             <button class="tooltip-close" id="tooltip-close">✕</button>
@@ -423,6 +19,71 @@
             <p class="tooltip-description" id="tooltip-description"></p>
         </div>
     </div>
+
+    <!-- Component: Legal Warning Modal -->
+    <div class="legal-warning-modal hidden" id="legal-warning-modal">
+        <div class="legal-warning-box">
+            <button class="legal-warning-close" id="legal-warning-close">✕</button>
+            <div class="legal-warning-header">
+                <span class="legal-warning-icon">⚠️</span>
+                <h2 class="legal-warning-title" id="legal-warning-title"></h2>
+            </div>
+            <div class="legal-warning-content" id="legal-warning-content"></div>
+            <div class="legal-warning-footer">
+                <button class="legal-warning-btn-acknowledge" id="legal-warning-acknowledge">
+                    Ik begrijp
+                </button>
+                <button class="legal-warning-btn-cancel" id="legal-warning-cancel">
+                    Annuleren
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene Templates -->
+    <script id="scene-templates" type="text/template"></script>
+
+    <script>
+        // Load scenes from external files and insert into template
+        document.addEventListener('DOMContentLoaded', async () => {
+            const sceneFiles = [
+                'scenes/scene-whatsapp.html',
+                'scenes/scene-telegram.html',
+                'scenes/scene-home.html',
+                'scenes/scene-bol-login.html',
+                'scenes/scene-bol-shop.html',
+                'scenes/scene-product-detail.html',
+                'scenes/scene-cart.html',
+                'scenes/scene-checkout.html',
+                'scenes/scene-confirmation.html',
+                'scenes/scene-profile.html',
+                'scenes/scene-arrest.html'
+            ];
+
+            try {
+                // Load all scenes
+                const scenePromises = sceneFiles.map(file =>
+                    fetch(file).then(response => response.text())
+                );
+
+                const scenes = await Promise.all(scenePromises);
+
+                // Insert all scenes into container
+                const container = document.getElementById('scene-container');
+                container.innerHTML = scenes.join('\n');
+
+                console.log('✅ All scenes loaded successfully');
+
+                // Trigger custom event to signal scenes are ready
+                document.dispatchEvent(new Event('scenes-loaded'));
+            } catch (error) {
+                console.error('❌ Error loading scenes:', error);
+                // Fallback: show error message
+                document.getElementById('scene-container').innerHTML =
+                    '<div style="padding: 20px; color: #ff6b35;">Error loading game scenes. Please refresh the page.</div>';
+            }
+        });
+    </script>
 
     <script src="game.js"></script>
 </body>
