@@ -1,5 +1,4 @@
 import { Languages } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface HeaderProps {
   language: 'nl' | 'en';
