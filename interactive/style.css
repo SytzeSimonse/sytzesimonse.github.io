@@ -103,6 +103,81 @@ body {
 }
 
 /* ===========================
+   Start Scene
+   =========================== */
+.start-container {
+    padding: var(--spacing-xl);
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.start-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.start-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.start-explanation {
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+}
+
+.start-explanation p {
+    margin-bottom: var(--spacing-md);
+}
+
+.start-explanation strong {
+    color: var(--telegram-blue);
+}
+
+.start-warning {
+    background: rgba(255, 107, 53, 0.15);
+    border-left: 3px solid #ff6b35;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.start-warning p {
+    margin: 0;
+    color: #ffb89a;
+}
+
+.start-btn {
+    width: 100%;
+    background: var(--telegram-blue);
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.start-btn:hover {
+    background: #0077b3;
+    transform: translateY(-2px);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+/* ===========================
    WhatsApp Notification (Scene 1)
    =========================== */
 .notification-bubble {
@@ -117,6 +192,9 @@ body {
     margin: auto var(--spacing-md);
     width: calc(100% - var(--spacing-lg));
     max-width: 100%;
+}
+
+.notification-bubble.show {
     animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -953,6 +1031,8 @@ button:focus-visible,
     background: white;
     margin: var(--spacing-md);
     border-radius: var(--radius-md);
+    overflow-y: auto;
+    max-height: calc(667px - 60px - var(--spacing-lg));
 }
 
 .product-detail-image {
@@ -1113,6 +1193,7 @@ button:focus-visible,
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: var(--spacing-md);
+    color: #333;
 }
 
 .cart-total-price {
@@ -1151,6 +1232,8 @@ button:focus-visible,
    =========================== */
 .checkout-container {
     padding: var(--spacing-md);
+    overflow-y: auto;
+    max-height: calc(667px - 60px);
 }
 
 .checkout-section {
@@ -1198,6 +1281,7 @@ button:focus-visible,
 .payment-option label {
     flex: 1;
     cursor: pointer;
+    color: #333;
 }
 
 .checkout-total {
@@ -1205,6 +1289,7 @@ button:focus-visible,
     justify-content: space-between;
     font-size: 1.25rem;
     font-weight: 700;
+    color: #333;
 }
 
 .checkout-total-price {
@@ -1380,29 +1465,6 @@ button:focus-visible,
     animation: scaleIn var(--transition-normal);
 }
 
-.legal-warning-close {
-    position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-md);
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color var(--transition-fast), color var(--transition-fast);
-    z-index: 1;
-}
-
-.legal-warning-close:hover {
-    background-color: rgba(255, 107, 53, 0.2);
-    color: #ff6b35;
-}
 
 .legal-warning-header {
     display: flex;
@@ -1478,24 +1540,21 @@ button:focus-visible,
 
 .legal-warning-footer {
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .legal-warning-btn-acknowledge {
     background: #ff6b35;
     color: white;
     border: none;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--radius-sm);
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
     transition: all var(--transition-fast);
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-    flex: 1;
-    min-width: 120px;
+    min-width: 200px;
 }
 
 .legal-warning-btn-acknowledge:hover {
@@ -1506,30 +1565,6 @@ button:focus-visible,
 
 .legal-warning-btn-acknowledge:active {
     transform: translateY(0);
-}
-
-.legal-warning-btn-cancel {
-    background: transparent;
-    color: var(--text-secondary);
-    border: 1px solid var(--text-secondary);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    flex: 1;
-    min-width: 120px;
-}
-
-.legal-warning-btn-cancel:hover {
-    color: var(--text-primary);
-    border-color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.legal-warning-btn-cancel:active {
-    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile responsive adjustments */
@@ -1547,12 +1582,7 @@ button:focus-visible,
         font-size: 0.9rem;
     }
 
-    .legal-warning-footer {
-        flex-direction: column;
-    }
-
-    .legal-warning-btn-acknowledge,
-    .legal-warning-btn-cancel {
+    .legal-warning-btn-acknowledge {
         width: 100%;
     }
 }
