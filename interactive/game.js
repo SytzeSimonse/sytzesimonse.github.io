@@ -24,7 +24,7 @@ let cart = [];
 const EDUCATIONAL_TERMS = {
     logs: {
         title: "Wat zijn 'logs'?",
-        description: "Logs zijn gestolen inloggegevens (gebruikersnamen en wachtwoorden) van websites en apps. Criminelen verkopen deze in bulk aan anderen die ermee proberen in te loggen op accounts. Dit wordt 'credential stuffing' genoemd en is strafbaar."
+        description: "Logs zijn gestolen inloggegevens (gebruikersnamen en wachtwoorden) van websites en apps. Criminelen verkopen deze in bulk aan anderen die ermee proberen in te loggen op accounts."
     },
     leads: {
         title: "Wat zijn 'leads'?",
@@ -46,43 +46,42 @@ const LEGAL_WARNINGS = {
         title: "Waarschuwing: Illegale Gegevens",
         content: `
             <p><strong>Artikel 139d lid 2 Wetboek van Strafrecht</strong></p>
-            <p>Het downloaden van gestolen inloggegevens is strafbaar volgens Nederlands recht:</p>
+            <p>Je staat op het punt een bestand te downloaden met gestolen inloggegevens. Dit is strafbaar volgens Nederlands recht:</p>
             <ul>
                 <li><strong>Misdrijf:</strong> Bezit van gegevens waarvan je redelijkerwijs kunt vermoeden dat ze worden misbruikt</li>
                 <li><strong>Strafmaat:</strong> Gevangenisstraf tot 6 jaar of geldboete (€87.000)</li>
+                <li><strong>Gevolgen:</strong> Strafrechtelijk antecedent dat impact heeft op werk en reizen</li>
             </ul>
-            <p class="warning-emphasis">Alleen het bezit van illegale gevens kan al strafbaar zijn. </p>
+            <p class="warning-emphasis">Dit bestand bevat echte gestolen persoonsgegevens. Het downloaden en gebruiken hiervan is cybercriminaliteit.</p>
         `
     },
 
     login_stolen: {
         title: "Waarschuwing: Computervredebreuk & Identiteitsfraude",
         content: `
-            <p><strong>Artikelen 138ab en 231b Sr</strong></p>
-            <p><strong>Computervredebreuk en identiteitsfraude</strong></p>
-            <p>Inloggen met gestolen gegevens kan meerdere strafbare feiten opleveren:</p>
+            <p><strong>Artikel 138ab Sr (Computervredebreuk) + Artikel 231b Sr (Identiteitsfraude)</strong></p>
+            <p>Je probeert in te loggen met gestolen inloggegevens van iemand anders. Dit zijn meerdere strafbare feiten:</p>
             <ul>
-                <li><strong>Computervredebreuk (art. 138ab Sr):</strong> opzettelijk en zonder toestemming binnendringen in een computersysteem.</li>
-                <li><strong>Identiteitsfraude (art. 231b Sr):</strong> gebruik maken van andermans identificerende gegevens om iets te verbergen of voordeel te behalen.</li>
-                <li><strong>Strafmaat:</strong> gevangenisstraf tot 4 à 5 jaar of een geldboete tot €87.000 (afhankelijk van de ernst van de zaak).</li>
+                <li><strong>Computervredebreuk:</strong> Onbevoegd toegang krijgen tot een computersysteem</li>
+                <li><strong>Identiteitsfraude:</strong> Gebruik maken van andermans identificerende gegevens</li>
+                <li><strong>Strafmaat:</strong> Gevangenisstraf tot 6 jaar of geldboete (€87.000)</li>
             </ul>
-            <p class="warning-emphasis">Slachtoffers van identiteitsfraude kunnen jarenlang hinder ondervinden van misbruik van hun gegevens. Dit is geen spelletje.</p>
+            <p class="warning-emphasis">Slachtoffers van identiteitsfraude kunnen jaren last hebben van de gevolgen. Dit is geen spelletje.</p>
         `
     },
 
     place_order: {
         title: "Waarschuwing: Diefstal & Oplichting",
         content: `
-            <p><strong>Artikel 311 Sr (Diefstal met verzwarende omstandigheden)</strong><br>
-            <strong>Artikel 326 Sr (Oplichting)</strong></p>
-            <p>Een bestelling plaatsen met gestolen gegevens is géén onschuldig experiment. Het is een combinatie van meerdere strafbare feiten:</p>
+            <p><strong>Artikel 311 Sr (Diefstal met verzwarende omstandigheden)</strong></p>
+            <p>Je staat op het punt een bestelling te plaatsen met gestolen gegevens. Dit is diefstal en oplichting:</p>
             <ul>
-                <li><strong>Diefstal:</strong> je neemt goederen weg die je niet toebehoren, bijvoorbeeld door een bestelling te laten bezorgen op basis van valse gegevens.</li>
-                <li><strong>Oplichting:</strong> je gebruikt een valse identiteit of gestolen gegevens om iemand iets te laten afgeven.</li>
-                <li><strong>Strafmaat:</strong> gevangenisstraf tot 4 jaar of een geldboete tot € 87.000, afhankelijk van de ernst en samenloop met andere delicten (zoals computervredebreuk of identiteitsfraude).</li>
-                <li><strong>Civiel:</strong> daarnaast kun je aansprakelijk worden gesteld voor alle schade en proceskosten.</li>
+                <li><strong>Diefstal:</strong> Wegnemen van goederen die je niet toebehoren</li>
+                <li><strong>Oplichting:</strong> Gebruik van valse identiteit voor eigen gewin</li>
+                <li><strong>Strafmaat:</strong> Gevangenisstraf tot 4 jaar of geldboete (€87.000)</li>
+                <li><strong>Civiel:</strong> Je bent aansprakelijk voor alle schade + proceskosten</li>
             </ul>
-            <p class="warning-emphasis">Slachtoffers blijven vaak achter met onterechte rekeningen en een beschadigde vertrouwen.</p>
+            <p class="warning-emphasis">Slachtoffers worden geconfronteerd met onterechte rekeningen en beschadigde kredietwaardigheid. De politie neemt deze meldingen serieus.</p>
         `
     }
 };
@@ -90,9 +89,9 @@ const LEGAL_WARNINGS = {
 // Scene Manager
 class SceneManager {
     constructor() {
-        this.currentScene = 'scene-start';
-        this.scenes = ['scene-start', 'scene-whatsapp', 'scene-telegram', 'scene-home', 'scene-bol-login', 'scene-bol-shop',
-                       'scene-product-detail', 'scene-cart', 'scene-checkout', 'scene-confirmation', 'scene-profile', 'scene-arrest'];
+        this.currentScene = 'scene-whatsapp';
+        this.scenes = ['scene-whatsapp', 'scene-telegram', 'scene-home', 'scene-bol-login', 'scene-bol-shop',
+                       'scene-product-detail', 'scene-cart', 'scene-checkout', 'scene-confirmation', 'scene-profile'];
         this.currentProduct = null;
         this.warningManager = null;  // Will be set before calling init()
     }
@@ -120,63 +119,10 @@ class SceneManager {
             targetScene.classList.add('active');
             this.currentScene = sceneId;
             console.log(`📱 Navigated to: ${sceneId}`);
-
-            // Update time when showing home screen
-            if (sceneId === 'scene-home') {
-                this.updateHomeScreenTime();
-            }
-
-            // Add delayed WhatsApp notification on initial load
-            if (sceneId === 'scene-whatsapp') {
-                this.showWhatsAppNotificationDelayed();
-            }
-
-            // Transition to arrest scene after confirmation
-            if (sceneId === 'scene-confirmation') {
-                setTimeout(() => {
-                    this.showScene('scene-arrest');
-                }, 3000); // Show arrest scene after 3 seconds
-            }
-        }
-    }
-
-    showWhatsAppNotificationDelayed() {
-        const notification = document.getElementById('whatsapp-notification');
-        if (notification) {
-            // Keep notification hidden initially (already set in HTML)
-            // Show notification after 2 seconds with fade-in animation
-            setTimeout(() => {
-                notification.style.opacity = '1';
-                notification.style.pointerEvents = 'auto';
-                notification.classList.add('show');
-
-                // Play sound after notification appears
-                setTimeout(() => {
-                    this.playNotificationSound();
-                }, 300);
-            }, 2000);
-        }
-    }
-
-    updateHomeScreenTime() {
-        const statusTime = document.getElementById('status-time');
-        if (statusTime) {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            statusTime.textContent = `${hours}:${minutes}`;
         }
     }
 
     setupEventListeners() {
-        // Scene Start → Scene 1: Start button click
-        const startGameBtn = document.getElementById('start-game-btn');
-        if (startGameBtn) {
-            startGameBtn.addEventListener('click', () => {
-                this.showScene('scene-whatsapp');
-            });
-        }
-
         // Scene 1 → Scene 2: WhatsApp notification click
         const whatsappNotification = document.getElementById('whatsapp-notification');
         if (whatsappNotification) {
@@ -234,11 +180,11 @@ class SceneManager {
             });
         }
 
-        // if (appMail) {
-        //     appMail.addEventListener('click', () => {
-        //         alert('Mail app - geen functionaliteit in deze demo');
-        //     });
-        // }
+        if (appMail) {
+            appMail.addEventListener('click', () => {
+                alert('Mail app - geen functionaliteit in deze demo');
+            });
+        }
 
         if (appBol) {
             appBol.addEventListener('click', () => {
@@ -360,18 +306,6 @@ class SceneManager {
                 this.showScene('scene-bol-shop');
             });
         }
-
-        // Restart game from arrest scene
-        const restartBtn = document.getElementById('restart-game');
-        if (restartBtn) {
-            restartBtn.addEventListener('click', () => {
-                // Clear cart
-                cart = [];
-                this.updateCartBadge();
-                // Return to beginning
-                this.showScene('scene-whatsapp');
-            });
-        }
     }
 
     showProductDetail(productId) {
@@ -469,13 +403,6 @@ class SceneManager {
     }
 
     placeOrder() {
-        // Check if iDEAL is selected
-        const idealRadio = document.getElementById('payment-ideal');
-        if (idealRadio && idealRadio.checked) {
-            alert('iDEAL is niet beschikbaar in deze simulatie. Selecteer "Achteraf betalen".');
-            return;
-        }
-
         // Show legal warning before completing order
         this.warningManager.showWarning('place_order', {
             acknowledge: () => {
@@ -491,6 +418,10 @@ class SceneManager {
                 this.showScene('scene-confirmation');
 
                 console.log('✅ Bestelling geplaatst! Ordernummer:', orderNumber);
+            },
+            cancel: () => {
+                // User cancelled - return to checkout
+                console.log('Order cancelled by user');
             }
         });
     }
@@ -692,12 +623,26 @@ class LegalWarningManager {
 
     setupCloseHandlers() {
         const acknowledgeBtn = document.getElementById('legal-warning-acknowledge');
+        const cancelBtn = document.getElementById('legal-warning-cancel');
 
         if (acknowledgeBtn) {
             acknowledgeBtn.addEventListener('click', () => {
                 this.acknowledgeWarning();
             });
         }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                this.cancelWarning();
+            });
+        }
+
+        // ESC key to cancel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.warningModal && !this.warningModal.classList.contains('hidden')) {
+                this.cancelWarning();
+            }
+        });
     }
 }
 
