@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sytze's Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="max-w-4xl mt-16 font-mono mx-auto p-4 border-black-50 border-2">
+    <!-- HEADER -->
+    <header class="bg-teal-200 text-left p-5 grid grid-cols-3">
+        <h1 class="text-4xl ">[ Sytze Simonse ]</h1>
+        <h2 class="text-2xl pt-3">
+            Geodata, Tech & Journalism</h2>
+        <span class='pr-5 text-8xl text-right'>&#x1F573;</span>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="h-1/4 mt-5 text-lg">
+        <a class="hover:font-semibold 	
+text-decoration-line: underline" href="#about_me">About me</a>
+        <span class="mx-1">|</span>
+        <a class="hover:font-semibold 	
+text-decoration-line: underline" href="#my_projects">My projects</a>
+        <span class="mx-1">|</span>
+        <a class="hover:font-semibold 	
+text-decoration-line: underline" href="#my_articles">My articles</a>
+        <span class="mx-1">|</span>
+        <a class="hover:font-semibold 	
+text-decoration-line: underline" href="#contact">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="mr-10 my-5 text-base space-y-5">
+        <section id="about_me" class="grid grid-cols-3">
+            <div class="col-span-3">
+                <h2 class="text-3xl mb-2 border-b-2 border-black">About</h2>
+                <p class="">
+                    Graduated in Geo-Information Sciences (MSc) at Wageningen University.
+                    I am working part-time for maritime contractor Van Oord as geodata engineer.
+                    Currently, I am pursuing a one year part-time study investigative journalism.
+                    It is my ambition to publish about pressing issues in the field of tech. 
+                    I am quite curious, and love to learn new skills in the field of cyber, programming and AI. 
+                    </p>
+                <!-- More about my programming -->
+                <p class="mt-2">
+                    I build stuff with:
+                    <ul class="ml-8 mt-2">
+                        <li>HTML5, CSS & JavaScript</li>
+                        <li>Python</li>
+                        <li>React (and NextJS)</li>
+                    </ul>
+                </p>
+                <!-- Link to LI -->
+                <!-- <button class="mt-4 bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-teal-600 rounded">
+                    Full profile and updates on LinkedIn
+                </button> -->
+            </div>
+            <!-- PHOTO -->
+            <!-- <div class="h-50 border-2 bg-red-500 border-black align-middle">
+                <img class="object-scale" src="pf_sytze.jpg">
+            </div> -->
+        </section>
+
+        <!-- My projects -->
+        <section id="my_projects">
+            <h2 class="text-3xl mb-2 border-b-2 border-black">My projects</h2>
+            <p>You can hire me as a freelance developer and data analyst.
+                I also make ((geo)data)visualisations: static <em>and</em> interactive web maps.</p>
+            <p class="mt-2">Some of my projects:</p>
+            <div id="projects">
+                <div id="project_1">Website for Hoopzaaiers (2025)</div>
+                <div id="project_2">GAIA: Geo-intelligence chatbot (2025)</div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2 class="text-3xl mb-2 border-b-2 border-black">Contact</h2>
+            <p>Good news: there are plenty of ways to get into touch with me!</p>
+            <ul class="ml-8 mt-3 list-disc">
+                <li>By sending me a message on <a href="" class="text-decoration-line: underline">LinkedIn</a>, for
+                    example</li>
+                <li>With an old-skool e-mail, either to:</li>
+                <ul class="ml-4 mt-3 text-base">
+                    <li><a href="mailto:sytze.simonse@proton.me">sytze.simonse@proton.me (personal)</a> or;</li>
+                    <li><a href="mailto:sytze@casuario.nl">sytze@casuario.nl (work)</a></li>
+                </ul>
+            </ul>
+        </section>
+
+        <!-- My articles -->
+        <section id="my_articles">
+            <h2 class="text-3xl mb-2 border-b-2 border-black">My articles</h2>
+            <ul>
+                <li>Computerkruimeldief (October, 2025) - Available in </li>
+                <li>De Weg van Water (October, 2025) - Available in </li>
+            </ul>
+        </section>
+
+        <!-- Trivial -->
+        <!-- <section id="trivial">
+            <h2 class="text-3xl mb-2 border-b-2 border-black">Trivial things <span class="text-small">(which is why it is not in the navigation
+                    bar)</span></h2>
+            <p>I like learning languages and aside from my native Dutch, I speak English, Portuguese and Russian.</p>
+            <p>A good carrot cake is unbeatable, and banana bread is <b>not</b> a bread.</p>
+        </section> -->
+
+    </main>
+    <footer class="h-full text-xs border-t-2 p-2">
+        <p>© 2025 Sytze Simonse. This site is 100% hand-coded and hosted on GitHub Pages.</p>
+        <!-- <p>This website was handcoded without direct help of AI.</p>
+        <p>This website follows the <a href="https://brutalist-web.design/#detailed-guidelines">guidelines on brutalist
+                webdesign.</a></p>
+        <p>It does use Tailwind CSS, because sometimes a framework is better than the original.</p> -->
+    </footer>
+</body>
