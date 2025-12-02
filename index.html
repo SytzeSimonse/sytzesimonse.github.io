@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="max-w-4xl mt-16 font-mono mx-auto p-4 border-black-50 border-2">
+<body class="max-w-4xl mt-16 mb-8 font-mono mx-auto p-4 border-black-50 border-2">
     <!-- HEADER -->
     <header class="bg-teal-200 text-left p-5 grid grid-cols-3">
         <h1 class="text-4xl ">[ Sytze Simonse ]</h1>
@@ -68,12 +68,12 @@ text-decoration-line: underline" href="#contact">Contact</a>
         <!-- My projects -->
         <section id="my_projects">
             <h2 class="text-3xl mb-2 border-b-2 border-black">My projects</h2>
-            <p>You can hire me as a freelance developer and data analyst.
+            <p>You can hire me as a freelance web developer and data analyst.
                 I also make ((geo)data)visualisations: static <em>and</em> interactive web maps.</p>
-            <p class="mt-2">Some of my projects:</p>
-            <div id="projects">
-                <div id="project_1">Website for Hoopzaaiers (2025)</div>
-                <div id="project_2">GAIA: Geo-intelligence chatbot (2025)</div>
+            <p class="mt-2">Some of my recent projects:</p>
+            <div id="projects" class="grid gap-2">
+                <div class="border-2 border-black p-2 bg-teal-100 text-center hover:bg-teal-300" id="project_1"><a href="https://hoopzaaiers.nl/">Website for Hoopzaaiers</a></div>
+                <div class="border-2 border-black p-2 bg-teal-100 text-center hover:bg-teal-300" id="project_2">GAIA: Geo-intelligence chatbot</div>
             </div>
         </section>
 
@@ -110,11 +110,9 @@ text-decoration-line: underline" href="#contact">Contact</a>
         </section> -->
 
     </main>
-    <footer class="h-full text-xs border-t-2 p-2">
+    <footer class="h-full text-xs border-t-2 pt-4 text-center">
         <p>© 2025 Sytze Simonse. This site is 100% hand-coded and hosted on GitHub Pages.</p>
-        <!-- <p>This website was handcoded without direct help of AI.</p>
-        <p>This website follows the <a href="https://brutalist-web.design/#detailed-guidelines">guidelines on brutalist
+        <p class="pt-2">This website follows the <a href="https://brutalist-web.design/#detailed-guidelines">guidelines on brutalist
                 webdesign.</a></p>
-        <p>It does use Tailwind CSS, because sometimes a framework is better than the original.</p> -->
     </footer>
 </body>
