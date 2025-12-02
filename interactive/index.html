@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computerkruimeldief: Een educatieve simulatie</title>
+    <meta name="description" content="Educatieve interactieve game over cybercriminaliteit voor jongeren">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Scene Container - scenes will be loaded here -->
+    <div id="scene-container"></div>
+
+    <!-- Component: Educational Tooltips -->
+    <div class="tooltip-overlay hidden" id="tooltip-overlay">
+        <div class="tooltip-box">
+            <button class="tooltip-close" id="tooltip-close">✕</button>
+            <h3 class="tooltip-title" id="tooltip-title"></h3>
+            <p class="tooltip-description" id="tooltip-description"></p>
+        </div>
+    </div>
+
+    <!-- Component: Legal Warning Modal -->
+    <div class="legal-warning-modal hidden" id="legal-warning-modal">
+        <div class="legal-warning-box">
+            <div class="legal-warning-header">
+                <span class="legal-warning-icon">⚠️</span>
+                <h2 class="legal-warning-title" id="legal-warning-title"></h2>
+            </div>
+            <div class="legal-warning-content" id="legal-warning-content"></div>
+            <div class="legal-warning-footer">
+                <button class="legal-warning-btn-acknowledge" id="legal-warning-acknowledge">
+                    Ga verder
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene Templates -->
+    <script id="scene-templates" type="text/template"></script>
+
+    <script>
+        // Load scenes from external files and insert into template
+        document.addEventListener('DOMContentLoaded', async () => {
+            const sceneFiles = [
+                'scenes/scene-start.html',
+                'scenes/scene-whatsapp.html',
+                'scenes/scene-telegram.html',
+                'scenes/scene-home.html',
+                'scenes/scene-bol-login.html',
+                'scenes/scene-bol-shop.html',
+                'scenes/scene-product-detail.html',
+                'scenes/scene-cart.html',
+                'scenes/scene-checkout.html',
+                'scenes/scene-confirmation.html',
+                'scenes/scene-profile.html',
+                'scenes/scene-arrest.html'
+            ];
+
+            try {
+                // Load all scenes
+                const scenePromises = sceneFiles.map(file =>
+                    fetch(file).then(response => response.text())
+                );
+
+                const scenes = await Promise.all(scenePromises);
+
+                // Insert all scenes into container
+                const container = document.getElementById('scene-container');
+                container.innerHTML = scenes.join('\n');
+
+                console.log('✅ All scenes loaded successfully');
+
+                // Trigger custom event to signal scenes are ready
+                document.dispatchEvent(new Event('scenes-loaded'));
+            } catch (error) {
+                console.error('❌ Error loading scenes:', error);
+                // Fallback: show error message
+                document.getElementById('scene-container').innerHTML =
+                    '<div style="padding: 20px; color: #ff6b35;">Error loading game scenes. Please refresh the page.</div>';
+            }
+        });
+    </script>
+
+    <script src="game.js"></script>
+</body>
+</html>

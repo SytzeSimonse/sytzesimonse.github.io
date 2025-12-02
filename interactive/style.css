@@ -1,0 +1,1704 @@
+/* ===========================
+   CSS Variables - Dark Theme
+   =========================== */
+:root {
+    /* Dark Theme Colors */
+    --bg-dark: #0e0e0e;
+    --bg-phone: #1e1e1e;
+    --telegram-bg: #17212b;
+    --telegram-header: #242f3d;
+    --telegram-message: #182533;
+    --telegram-blue: #0088cc;
+    --whatsapp-green: #25d366;
+    --text-primary: #e8e8e8;
+    --text-secondary: #8b8b8b;
+    --text-muted: #5a5a5a;
+    --accent: #0088cc;
+    --shadow: rgba(0, 0, 0, 0.5);
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+/* ===========================
+   Scene Management
+   =========================== */
+.scene {
+    display: none;
+    width: 375px;
+    margin: 0 auto;
+}
+
+.scene.active {
+    display: flex;
+    animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   Phone Screen Container
+   =========================== */
+.phone-screen {
+    width: 375px;
+    height: 667px;
+    background: var(--bg-phone);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 40px var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-screen.telegram-bg {
+    background: var(--telegram-bg) url('images/telegram_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ===========================
+   Start Scene
+   =========================== */
+.start-container {
+    padding: var(--spacing-xl);
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.start-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.start-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.start-explanation {
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xl);
+}
+
+.start-explanation p {
+    margin-bottom: var(--spacing-md);
+}
+
+.start-explanation strong {
+    color: var(--telegram-blue);
+}
+
+.start-warning {
+    background: rgba(255, 107, 53, 0.15);
+    border-left: 3px solid #ff6b35;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.start-warning p {
+    margin: 0;
+    color: #ffb89a;
+}
+
+.start-btn {
+    width: 100%;
+    background: var(--telegram-blue);
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.start-btn:hover {
+    background: #0077b3;
+    transform: translateY(-2px);
+}
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   WhatsApp Notification (Scene 1)
+   =========================== */
+.notification-bubble {
+    background: var(--bg-phone);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 12px var(--shadow);
+    display: flex;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity 0.5s ease;
+    margin: auto var(--spacing-md);
+    width: calc(100% - var(--spacing-lg));
+    max-width: 100%;
+}
+
+.notification-bubble.show {
+    animation: slideInBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.8);
+    }
+    60% {
+        transform: translateY(10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.notification-bubble:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.notification-bubble:active {
+    transform: scale(0.98);
+}
+
+.notification-icon {
+    flex-shrink: 0;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+}
+
+.notification-sender {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.notification-time {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.notification-message {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ===========================
+   Telegram Interface (Scene 2)
+   =========================== */
+
+/* Header */
+.telegram-header {
+    background: var(--telegram-header);
+    padding: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: var(--telegram-blue);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    transition: opacity var(--transition-fast);
+}
+
+.back-btn:hover {
+    opacity: 0.7;
+}
+
+.channel-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--telegram-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.channel-info {
+    flex: 1;
+}
+
+.channel-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.channel-subscribers {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Channel Description */
+.channel-description {
+    background: var(--telegram-message);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-left: 3px solid var(--telegram-blue);
+}
+
+.channel-description p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.channel-description p:last-child {
+    margin-bottom: 0;
+}
+
+.admin-link,
+.channel-link {
+    color: var(--telegram-blue);
+    word-break: break-all;
+}
+
+/* Messages Container */
+.messages-container {
+    flex: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.message {
+    background: var(--telegram-message);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    max-width: 85%;
+    align-self: flex-start;
+    animation: messageSlideIn var(--transition-normal);
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.message-content {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.message-content p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* File Attachment */
+.file-attachment {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+}
+
+.file-icon {
+    font-size: 2rem;
+}
+
+.file-info {
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 600;
+    color: var(--telegram-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+.file-size {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ===========================
+   Tooltips
+   =========================== */
+.tooltip-trigger {
+    color: var(--telegram-blue);
+    cursor: help;
+    border-bottom: 1px dashed var(--telegram-blue);
+    transition: background-color var(--transition-fast);
+    padding: 0 2px;
+}
+
+.tooltip-trigger:hover {
+    background-color: rgba(0, 136, 204, 0.1);
+}
+
+.tooltip-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-md);
+    animation: fadeIn var(--transition-normal);
+}
+
+.tooltip-overlay.hidden {
+    display: none;
+}
+
+.tooltip-box {
+    background: var(--telegram-header);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 40px var(--shadow);
+    position: relative;
+    animation: scaleIn var(--transition-normal);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tooltip-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast);
+}
+
+.tooltip-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-title {
+    color: var(--telegram-blue);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+}
+
+.tooltip-description {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   Action Button
+   =========================== */
+.action-container {
+    padding: var(--spacing-md);
+    background: var(--telegram-header);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--telegram-blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.primary-btn:not(:disabled):hover {
+    background: #0077b3;
+    transform: translateY(-2px);
+}
+
+.primary-btn:not(:disabled):active {
+    transform: translateY(0);
+}
+
+.primary-btn:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn-subtitle {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .scene {
+        width: 100%;
+    }
+
+    .phone-screen {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .notification-bubble {
+        margin: var(--spacing-md);
+        max-width: calc(100% - var(--spacing-lg));
+    }
+
+    .tooltip-box {
+        margin: var(--spacing-md);
+    }
+}
+
+/* ===========================
+   Accessibility
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Styles */
+button:focus-visible,
+.tooltip-trigger:focus-visible {
+    outline: 2px solid var(--telegram-blue);
+    outline-offset: 2px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Channel Avatar Image */
+.channel-avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--telegram-blue);
+}
+
+/* File Attachment Link */
+.file-attachment {
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--transition-fast);
+}
+
+.file-attachment:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.file-attachment:active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===========================
+   Chat Input Box (Scene 2)
+   =========================== */
+.chat-input-box {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.chat-input {
+    flex: 1;
+    background: var(--telegram-message);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.chat-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.send-btn {
+    background: var(--telegram-blue);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===========================
+   Scene 3: Phone Home Screen
+   =========================== */
+.home-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-icons {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.status-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.app-icon:hover {
+    transform: scale(1.1);
+}
+
+.app-icon:active {
+    transform: scale(0.95);
+}
+
+.app-icon img {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.app-name {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   Scene 4: Bol.com Login
+   =========================== */
+.bol-bg {
+    background: #f5f5f5;
+}
+
+.bol-header {
+    background: #0000a4;
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.bol-header .back-btn {
+    color: white;
+}
+
+.bol-logo-header {
+    height: 32px;
+    width: auto;
+}
+
+.login-container {
+    padding: var(--spacing-xl);
+    background: white;
+    margin: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0000a4;
+    margin-bottom: var(--spacing-sm);
+}
+
+.login-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-lg);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-input {
+    padding: var(--spacing-md);
+    border: 1px solid #ddd;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #0000a4;
+}
+
+.error-message {
+    background: #fee;
+    color: #c00;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    border: 1px solid #fcc;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+.login-btn {
+    background: #0000a4;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.login-btn:hover {
+    background: #000088;
+}
+
+.login-btn:active {
+    background: #000066;
+}
+
+.login-footer {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.login-link {
+    color: #0000a4;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   Scene 5: Bol.com Shop
+   =========================== */
+.bol-shop-header {
+    background: #0000a4;
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger-menu,
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.bol-logo-shop {
+    height: 28px;
+    width: auto;
+}
+
+.header-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.search-container {
+    padding: var(--spacing-md);
+    background: white;
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.search-input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 1px solid #ddd;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+}
+
+.search-btn {
+    background: #0000a4;
+    border: none;
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.products-container {
+    padding: var(--spacing-md);
+}
+
+.products-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-md);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.product-card {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 550 / 334;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: white;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Legacy emoji support */
+.product-image:not(:has(img)) {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0000a4;
+}
+
+/* ===========================
+   Cart Badge
+   =========================== */
+.icon-btn {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #ff0000;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ===========================
+   Scene 6: Product Detail
+   =========================== */
+.product-detail-container {
+    padding: var(--spacing-xl);
+    background: white;
+    margin: var(--spacing-md);
+    border-radius: var(--radius-md);
+    overflow-y: auto;
+    max-height: calc(667px - 60px - var(--spacing-lg));
+}
+
+.product-detail-image {
+    width: 100%;
+    aspect-ratio: 550 / 334;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Legacy emoji support */
+.product-detail-image:not(:has(img)) {
+    font-size: 6rem;
+    text-align: center;
+}
+
+.product-detail-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-detail-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0000a4;
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-detail-description {
+    margin-bottom: var(--spacing-xl);
+}
+
+.product-detail-description h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-detail-description p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background: #0000a4;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.add-to-cart-btn:hover {
+    background: #000088;
+}
+
+.add-to-cart-btn:active {
+    background: #000066;
+}
+
+/* ===========================
+   Scene 7: Shopping Cart
+   =========================== */
+.cart-header-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+.cart-item {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.cart-item-image {
+    width: 80px;
+    aspect-ratio: 550 / 334;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: white;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Legacy emoji support */
+.cart-item-image:not(:has(img)) {
+    font-size: 2.5rem;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: var(--spacing-xs);
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0000a4;
+}
+
+.cart-summary {
+    background: white;
+    padding: var(--spacing-lg);
+    border-top: 1px solid #ddd;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: #333;
+}
+
+.cart-total-price {
+    color: #0000a4;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #0000a4;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.checkout-btn:hover {
+    background: #000088;
+}
+
+.checkout-btn:active {
+    background: #000066;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: #666;
+}
+
+/* ===========================
+   Scene 8: Checkout
+   =========================== */
+.checkout-container {
+    padding: var(--spacing-md);
+    overflow-y: auto;
+    max-height: calc(667px - 60px);
+}
+
+.checkout-section {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.checkout-section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-md);
+}
+
+.address-option,
+.payment-option {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 2px solid #ddd;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+}
+
+.address-option.selected,
+.payment-option.selected {
+    border-color: #0000a4;
+}
+
+.address-option:hover,
+.payment-option:hover {
+    border-color: #0000a4;
+}
+
+.address-option input,
+.payment-option input {
+    margin-top: 2px;
+}
+
+.address-option label,
+.payment-option label {
+    flex: 1;
+    cursor: pointer;
+    color: #333;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.checkout-total-price {
+    color: #0000a4;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: #0000a4;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.place-order-btn:hover {
+    background: #000088;
+}
+
+.place-order-btn:active {
+    background: #000066;
+}
+
+/* ===========================
+   Scene 9: Order Confirmation
+   =========================== */
+.confirmation-container {
+    padding: var(--spacing-xl);
+    background: white;
+    margin: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.confirmation-icon {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.confirmation-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0000a4;
+    margin-bottom: var(--spacing-md);
+}
+
+.confirmation-message {
+    color: #666;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.confirmation-details {
+    background: #f5f5f5;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    text-align: left;
+}
+
+.confirmation-details p {
+    margin-bottom: var(--spacing-md);
+    color: #333;
+}
+
+.confirmation-details p:last-child {
+    margin-bottom: 0;
+}
+
+.back-to-shop-btn {
+    width: 100%;
+    background: #0000a4;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.back-to-shop-btn:hover {
+    background: #000088;
+}
+
+.back-to-shop-btn:active {
+    background: #000066;
+}
+
+/* ===========================
+   Scene 10: User Profile
+   =========================== */
+.profile-container {
+    padding: var(--spacing-md);
+}
+
+.profile-section {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-lg);
+}
+
+.profile-section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-field {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-field:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.profile-value {
+    color: #333;
+    text-align: right;
+}
+
+.password-masked {
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+/* ===========================
+   Legal Warning Modal
+   =========================== */
+.legal-warning-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: var(--spacing-md);
+    animation: fadeIn var(--transition-normal);
+}
+
+.legal-warning-modal.hidden {
+    display: none;
+}
+
+.legal-warning-box {
+    background: linear-gradient(135deg, #2a1a1a 0%, #1a1a1a 100%);
+    border: 2px solid #ff6b35;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 50px rgba(255, 107, 53, 0.4),
+                0 0 20px rgba(255, 107, 53, 0.2);
+    position: relative;
+    animation: scaleIn var(--transition-normal);
+}
+
+
+.legal-warning-header {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+}
+
+.legal-warning-icon {
+    font-size: 2.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.legal-warning-title {
+    color: #ff6b35;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+}
+
+.legal-warning-content {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.legal-warning-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.legal-warning-content p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-warning-content strong {
+    color: #ff8b60;
+    font-weight: 600;
+}
+
+.legal-warning-content ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.legal-warning-content li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.warning-emphasis {
+    background: rgba(255, 107, 53, 0.15);
+    border-left: 3px solid #ff6b35;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    color: #ffb89a !important;
+    margin-top: var(--spacing-md) !important;
+}
+
+.legal-warning-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.legal-warning-btn-acknowledge {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    min-width: 200px;
+}
+
+.legal-warning-btn-acknowledge:hover {
+    background: #ff5722;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+.legal-warning-btn-acknowledge:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .legal-warning-box {
+        max-width: 95%;
+        padding: var(--spacing-md);
+    }
+
+    .legal-warning-title {
+        font-size: 1.1rem;
+    }
+
+    .legal-warning-content {
+        font-size: 0.9rem;
+    }
+
+    .legal-warning-btn-acknowledge {
+        width: 100%;
+    }
+}
+
+/* ===========================
+   Scene 11: Arrest Scene
+   =========================== */
+.arrest-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('images/gevangenis.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.arrest-overlay {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+.arrest-container {
+    background: rgba(30, 30, 30, 0.95);
+    border: 2px solid #ff6b35;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.arrest-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.arrest-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: var(--spacing-lg);
+}
+
+.arrest-explanation {
+    text-align: left;
+    margin-bottom: var(--spacing-xl);
+}
+
+.arrest-explanation p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.arrest-explanation strong {
+    color: #ff8b60;
+}
+
+.arrest-list {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.arrest-list li {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.arrest-reality,
+.arrest-help {
+    background: rgba(255, 107, 53, 0.1);
+    border-left: 3px solid #ff6b35;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin: var(--spacing-lg) 0;
+}
+
+.arrest-reality h3,
+.arrest-help h3 {
+    color: #ff6b35;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.arrest-reality ul,
+.arrest-help ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.arrest-reality li,
+.arrest-help li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.restart-btn {
+    width: 100%;
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.restart-btn:hover {
+    background: #ff5722;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+.restart-btn:active {
+    transform: translateY(0);
+}
